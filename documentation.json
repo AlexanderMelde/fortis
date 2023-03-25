@@ -2,97 +2,6 @@
     "pipes": [],
     "interfaces": [
         {
-            "name": "Database",
-            "id": "interface-Database-f149d9d8af4fc435ad1f499c3cd90efce12da3852d11c2c06344afbcb7a317e083d0d273523a9279aace69a51206fcb92a82b47fa4c892e7cb4cb0293cb63744",
-            "file": "server/generate.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "import faker from 'faker';\r\n\r\ninterface Product {\r\n  id: number;\r\n  name: string;\r\n  description: string;\r\n  price: string;\r\n  imageUrl: string;\r\n  quantity: number;\r\n}\r\n\r\ninterface Database {\r\n  products: Product[];\r\n}\r\n\r\nconst db: Database = {products: []};\r\n\r\nfor (let i = 1; i <= 300; i++) {\r\n  const newProduct: Product = {\r\n    id: i,\r\n    name: faker.address.city(),\r\n    description: faker.lorem.sentences(),\r\n    price: faker.commerce.price(),\r\n    imageUrl: \"https://source.unsplash.com/1600x900/?gym\",\r\n    quantity: faker.random.number()\r\n  };\r\n  db.products.push(newProduct);\r\n}\r\n\r\nconsole.log(JSON.stringify(db));\r\n",
-            "properties": [
-                {
-                    "name": "products",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Product[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 14
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 165,
-            "methods": []
-        },
-        {
-            "name": "Product",
-            "id": "interface-Product-f149d9d8af4fc435ad1f499c3cd90efce12da3852d11c2c06344afbcb7a317e083d0d273523a9279aace69a51206fcb92a82b47fa4c892e7cb4cb0293cb63744",
-            "file": "server/generate.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "import faker from 'faker';\r\n\r\ninterface Product {\r\n  id: number;\r\n  name: string;\r\n  description: string;\r\n  price: string;\r\n  imageUrl: string;\r\n  quantity: number;\r\n}\r\n\r\ninterface Database {\r\n  products: Product[];\r\n}\r\n\r\nconst db: Database = {products: []};\r\n\r\nfor (let i = 1; i <= 300; i++) {\r\n  const newProduct: Product = {\r\n    id: i,\r\n    name: faker.address.city(),\r\n    description: faker.lorem.sentences(),\r\n    price: faker.commerce.price(),\r\n    imageUrl: \"https://source.unsplash.com/1600x900/?gym\",\r\n    quantity: faker.random.number()\r\n  };\r\n  db.products.push(newProduct);\r\n}\r\n\r\nconsole.log(JSON.stringify(db));\r\n",
-            "properties": [
-                {
-                    "name": "description",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 7
-                },
-                {
-                    "name": "id",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "number",
-                    "optional": false,
-                    "description": "",
-                    "line": 5
-                },
-                {
-                    "name": "imageUrl",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 9
-                },
-                {
-                    "name": "name",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 6
-                },
-                {
-                    "name": "price",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 8
-                },
-                {
-                    "name": "quantity",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "number",
-                    "optional": false,
-                    "description": "",
-                    "line": 10
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 165,
-            "methods": []
-        },
-        {
             "name": "Task",
             "id": "interface-Task-d4d37e919bf153b85cd73cf76b3d81234228b20ae5a9a500ccf0118c584fdae333a8448d8becdbaa20c0fdaf47fd111516c76691ee76980e2a62f442b656bd75",
             "file": "src/app/models/task.model.ts",
@@ -957,16 +866,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "db",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "server/generate.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Database",
-                "defaultValue": "{products: []}"
-            },
-            {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1213,18 +1112,6 @@
                     "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: actionsData.onPinTask,\r\n    onArchiveTask: actionsData.onArchiveTask,\r\n  },\r\n})"
                 }
             ],
-            "server/generate.ts": [
-                {
-                    "name": "db",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "server/generate.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Database",
-                    "defaultValue": "{products: []}"
-                }
-            ],
             "src/app/task-list/task-list.stories.ts": [
                 {
                     "name": "Default",
@@ -1427,37 +1314,9 @@
         ]
     },
     "coverage": {
-        "count": 5,
+        "count": 6,
         "status": "low",
         "files": [
-            {
-                "filePath": "server/generate.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "Database",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "server/generate.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "Product",
-                "coveragePercent": 0,
-                "coverageCount": "0/7",
-                "status": "low"
-            },
-            {
-                "filePath": "server/generate.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "db",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
             {
                 "filePath": "src/app/about/about.component.ts",
                 "type": "component",

@@ -11,20 +11,26 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
+
       - name: Install Node.js and NPM
         uses: actions/setup-node@v2
         with:
           node-version: '18'
-      
+
       - name: Install Dependencies
         run: npm install
-      
-      - name: Build
+
+      - name: Build App
         run: npm run build --prod
-      
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Build Storybook Docs
+        run: npm run build-storybook-docs
+
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/gymbox
+          publish_dir: ./dist/
