@@ -97,14 +97,42 @@
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
-            "browserTarget": "angular-cli:build",
+            "browserTarget": "gymbox:serve-storybook",
             "port": 6006
+          }
+        },
+        "storybook-docs": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "browserTarget": "gymbox:serve-storybook",
+            "port": 6007,
+            "docs": true
           }
         },
         "build-storybook": {
           "builder": "@storybook/angular:build-storybook",
           "options": {
-            "browserTarget": "angular-cli:build"
+            "outputDir": "dist/storybook",
+            "browserTarget": "gymbox:serve-storybook"
+          }
+        },
+        "build-storybook-docs": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "docs": true,
+            "outputDir": "dist/storybook-docs",
+            "browserTarget": "gymbox:serve-storybook"
+          }
+        },
+        "serve-storybook": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "tsConfig": ".storybook/tsconfig.json",
+            "assets": [],
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "outputPath": "../app/src/main/webapp/",
+            "styles": []
           }
         }
       }

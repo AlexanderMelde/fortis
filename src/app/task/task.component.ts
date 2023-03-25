@@ -8,7 +8,11 @@ import { Task } from '../models/task.model';
 })
 
 export class TaskComponent {
-  @Input() task: Task | undefined;
+  @Input() task: Task = {
+    id: "default-task-id",
+    state: "TASK_NEW",
+    title: "default-task-name",
+  }
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output()
