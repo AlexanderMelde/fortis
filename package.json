@@ -10,7 +10,9 @@
     "storybook": "ng run gymbox:storybook",
     "build-storybook": "ng run gymbox:build-storybook",
     "storybook-docs": "ng run gymbox:storybook-docs",
-    "build-storybook-docs": "ng run gymbox:build-storybook-docs"
+    "build-storybook-docs": "ng run gymbox:build-storybook-docs",
+    "generate-fake-data": "node ./server/generate-fake-data.js > ./server/database.json",
+    "start-database-server": "json-server --watch ./server/database.json"
   },
   "private": true,
   "dependencies": {

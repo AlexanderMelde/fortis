@@ -16,6 +16,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatButtonModule} from "@angular/material/button";
 import { TaskComponent } from './task/task.component';
 import { TaskListComponent } from './task-list/task-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TaskListComponent } from './task-list/task-list.component';
     HomeComponent,
     AboutComponent,
     TaskComponent,
-    TaskListComponent
+    TaskListComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
