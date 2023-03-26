@@ -2,6 +2,74 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "Gym",
+            "id": "interface-Gym-00f59b4c63bfd8ac212563665cf4325739027fca4b99bdb5779ed58d6fd11f07a0ad5a8dd26b0481c7ca129fe31a7bbd882acd960336a14be400829c85f68984",
+            "file": "src/app/models/gym.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface Gym {\r\n  id: number,\r\n  name: string,\r\n  description: string,\r\n  price: string,\r\n  imageUrl: string,\r\n  quantity: number\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "imageUrl",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "price",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "quantity",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
             "name": "Task",
             "id": "interface-Task-d4d37e919bf153b85cd73cf76b3d81234228b20ae5a9a500ccf0118c584fdae333a8448d8becdbaa20c0fdaf47fd111516c76691ee76980e2a62f442b656bd75",
             "file": "src/app/models/task.model.ts",
@@ -55,7 +123,103 @@
             "methods": []
         }
     ],
-    "injectables": [],
+    "injectables": [
+        {
+            "name": "ApiService",
+            "id": "injectable-ApiService-7d945d84ad20f786f45d1a223af2e2608cb6bc1028222912fcbeb9ff03a8e7751b3c43bd39edb35b82223fa1557d55ed9a17d8c6f1c451fface6e1717dd58d73",
+            "file": "src/app/api.service.ts",
+            "properties": [
+                {
+                    "name": "SERVER_URL",
+                    "defaultValue": "\"http://localhost:3000/gyms\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "modifierKind": [
+                        121
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "name": "handleError",
+                    "args": [
+                        {
+                            "name": "error",
+                            "type": "HttpErrorResponse",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "error",
+                            "type": "HttpErrorResponse",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "sendGetRequest",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import {Injectable} from '@angular/core';\nimport {HttpClient, HttpErrorResponse} from \"@angular/common/http\";\n\nimport {throwError} from 'rxjs';\nimport {catchError} from 'rxjs/operators';\n\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ApiService {\n  private SERVER_URL = \"http://localhost:3000/gyms\";\n\n  constructor(private httpClient: HttpClient) {\n  }\n\n  handleError(error: HttpErrorResponse) {\n    let errorMessage: string;\n    if (error.error instanceof ErrorEvent) {\n      // Client-side errors\n      errorMessage = `Error: ${error.error.message}`;\n    } else {\n      // Server-side errors\n      errorMessage = `Error Code: ${error.status}\\nMessage: ${error.message}`;\n    }\n    window.alert(errorMessage);\n    return throwError(errorMessage);\n  }\n\n  public sendGetRequest() {\n    return this.httpClient.get(this.SERVER_URL).pipe(catchError(this.handleError));\n  }\n\n}\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "httpClient",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "httpClient",
+                        "type": "HttpClient",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "type": "injectable"
+        }
+    ],
     "guards": [],
     "interceptors": [],
     "classes": [],
@@ -150,7 +314,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<mat-toolbar color=\"primary\">\r\n  <h1>\r\n    Gymbox\r\n  </h1>\r\n  <button mat-button routerLink=\"/\">Home</button>\r\n  <button mat-button routerLink=\"/about\">About</button>\r\n</mat-toolbar>\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<mat-slide-toggle>Toggle me!</mat-slide-toggle>\r\n<!-- Next Steps -->\r\n<h2>Next Steps</h2>\r\n<p>What do you want to do next with your app?</p>\r\n"
+            "templateData": "<mat-toolbar color=\"primary\">\r\n  <h1>\r\n    Gymbox\r\n  </h1>\r\n  <button mat-button routerLink=\"/\">Home</button>\r\n  <button mat-button routerLink=\"/about\">About</button>\r\n  <button mat-button routerLink=\"/room\">Room</button>\r\n</mat-toolbar>\r\n\r\n<router-outlet></router-outlet>\r\n\r\n<mat-divider></mat-divider>\r\nFooter\r\n\r\n<mat-slide-toggle>Toggle me!</mat-slide-toggle>\r\n"
         },
         {
             "name": "ButtonComponent",
@@ -351,7 +515,7 @@
         },
         {
             "name": "HomeComponent",
-            "id": "component-HomeComponent-87fe5ca343fcedd4b91d283dce74bdf433414ec4e5d88bae2162ca040b666428ccc3fcac2c0ea972e0e384931ef56e1f48f49c18a26cce2c7a4c3a988d588641",
+            "id": "component-HomeComponent-e065b800709e422595c1ff6998a73472d498eace8167fd52687ad21c977f78db913cec7581b26af9b0375bd2227d147f13a67438266cfb5add374a1b4d25d842",
             "file": "src/app/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -369,8 +533,30 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "gyms",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Gym[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -378,7 +564,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.css']\n})\nexport class HomeComponent {\n\n}\n",
+            "sourceCode": "import {Component, OnInit} from '@angular/core';\nimport {ApiService} from '../api.service';\nimport { Gym } from '../models/gym.model';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.css']\n})\nexport class HomeComponent implements OnInit {\n  gyms : Gym[] = [];\n\n  constructor(private apiService: ApiService) {\n  }\n\n  ngOnInit() {\n    this.apiService.sendGetRequest().subscribe((data: any) => {\n      console.log(\"got gym data\", data);\n      this.gyms = data;\n    })\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -387,7 +573,97 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<p>home works!</p>\n"
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "apiService",
+                        "type": "ApiService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "apiService",
+                        "type": "ApiService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div style=\"padding: 13px;\">\n  <mat-spinner *ngIf=\"gyms.length === 0\"></mat-spinner>\n\n  <mat-card *ngFor=\"let gym of gyms\" style=\"margin-top:10px;\">\n    <mat-card-header>\n      <mat-card-title>{{gym.name}}</mat-card-title>\n      <mat-card-subtitle>{{gym.price}} $/ {{gym.quantity}}\n      </mat-card-subtitle>\n    </mat-card-header>\n    <mat-card-content>\n      <p>\n        {{gym.description}}\n      </p>\n      <img style=\"height:100%; width: 100%;\" src=\"{{ gym.imageUrl }}\" alt=\"gym image\" />\n    </mat-card-content>\n    <mat-card-actions>\n      <button mat-button> Book gym</button>\n    </mat-card-actions>\n  </mat-card>\n</div>\n"
+        },
+        {
+            "name": "MatSqButtonComponent",
+            "id": "component-MatSqButtonComponent-bf8ffbca9d6c9a57ac7f3e73a067c5d01f9947ceb9aa81dd7b1bae0d6b75a4891e0d7a83326b54fdd92f6b163df6690e6a75790adcc70be32e03eb57cb13ac9d",
+            "file": "src/app/mat-sq-button/mat-sq-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "mat-sq-button",
+            "styleUrls": [
+                "./mat-sq-button.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./mat-sq-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "icon",
+                    "defaultValue": "faCircleQuestion",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "IconDefinition",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "faAngleRight",
+                    "defaultValue": "faAngleRight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, ContentChild, Input} from '@angular/core';\nimport {faAngleRight, faCircleQuestion, IconDefinition} from \"@fortawesome/free-solid-svg-icons\";\n\n@Component({\n  selector: 'mat-sq-button',\n  templateUrl: './mat-sq-button.component.html',\n  styleUrls: ['./mat-sq-button.component.css']\n})\nexport class MatSqButtonComponent {\n  @Input() icon: IconDefinition = faCircleQuestion;\n  faAngleRight = faAngleRight;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "button[mat-stroked-button] {\r\n  height: 6rem;\r\n  width: 6rem;\r\n  display: flex;\r\n  justify-content: flex-start;\r\n  margin-right: 10px;\r\n  padding: 0;\r\n}\r\n\r\n.mdc-button_label {\r\n  display: block;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\ndiv {\r\n  width: 100%;\r\n  vertical-align: bottom;\r\n}\r\n\r\n.main_icon {\r\n  display: block;\r\n  font-size: 1.6rem;\r\n  width: 100%;\r\n}\r\n.caret_icon {\r\n  display: inline-block;\r\n  font-size: 1.1rem;\r\n  text-align: right;\r\n  width: 1.1rem;\r\n}\r\n\r\nspan {\r\n  display: inline-block;\r\n  width: calc(100% - 1.1rem);\r\n\r\n}\r\n",
+                    "styleUrl": "./mat-sq-button.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<button mat-stroked-button>\n  <fa-icon [icon]=\"icon\" class=\"main_icon\"></fa-icon>\n  <div>\n    <span><ng-content></ng-content></span>\n    <fa-icon [icon]=\"faAngleRight\" class=\"caret_icon\"></fa-icon>\n  </div>\n</button>\n"
         },
         {
             "name": "PageComponent",
@@ -468,6 +744,157 @@
                 }
             ],
             "stylesData": ""
+        },
+        {
+            "name": "PageNotFoundComponent",
+            "id": "component-PageNotFoundComponent-f32a6b0b7744285f368448258c7645792ce220515617531e71e75a17f6a3d6faf2f17b4092650e43108bb1ddbf1fe965e362e5ac2058c62d971b7e6479a5ad8e",
+            "file": "src/app/page-not-found/page-not-found.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-page-not-found",
+            "styleUrls": [
+                "./page-not-found.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./page-not-found.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-page-not-found',\n  templateUrl: './page-not-found.component.html',\n  styleUrls: ['./page-not-found.component.css']\n})\nexport class PageNotFoundComponent {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./page-not-found.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<p>404 - this page could not be found!</p>\n"
+        },
+        {
+            "name": "RoomComponent",
+            "id": "component-RoomComponent-e53229f85f8fa0d972249b9d2646a13a10b63f3f3a5e1cae454238f5abb5f596b4c6fe50671021c317057b8775a94cc861b6ddfd79cd6c186bc0f7cd13fc5f0c",
+            "file": "src/app/room/room.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-room",
+            "styleUrls": [
+                "./room.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./room.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "faAngleRight",
+                    "defaultValue": "faAngleRight",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "faClock",
+                    "defaultValue": "faClock",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "faDoorOpen",
+                    "defaultValue": "faDoorOpen",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "faLightbulb",
+                    "defaultValue": "faLightbulb",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "faLocationPin",
+                    "defaultValue": "faLocationPin",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "faPersonBooth",
+                    "defaultValue": "faPersonBooth",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "faUser",
+                    "defaultValue": "faUser",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { faLocationPin, faClock, faUser, faLightbulb, faPersonBooth, faDoorOpen, faAngleRight } from '@fortawesome/free-solid-svg-icons';\n\n@Component({\n  selector: 'app-room',\n  templateUrl: './room.component.html',\n  styleUrls: ['./room.component.css']\n})\nexport class RoomComponent {\n  faLocationPin = faLocationPin;\n  faClock = faClock;\n  faUser = faUser;\n\n  faLightbulb = faLightbulb;\n  faPersonBooth = faPersonBooth;\n\n  faDoorOpen = faDoorOpen;\n\n  faAngleRight = faAngleRight;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".example-button-row.bigButtons {\r\n  display: flex;\r\n  flex-direction: row;\r\n  flex-wrap: nowrap;\r\n  overflow: scroll;\r\n}\r\n\r\n.example-button-row.bigButtons mat-sq-button {\r\n  margin-right: 0.1rem;\r\n}\r\n",
+                    "styleUrl": "./room.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<h1>Your GYMBOX</h1>\n<p>\n  <fa-icon [icon]=\"faLocationPin\"></fa-icon>\n  <span><b>GYMBOX BERLIN</b> City Center</span>\n</p>\n<p>\n  <fa-icon [icon]=\"faUser\"></fa-icon>\n  <span><b>Make you sweat core workout with Jessy</b></span>\n</p>\n<p>\n  <fa-icon [icon]=\"faClock\"></fa-icon>\n  <span><b>12:30 - 14:00</b> (73 minutes remaining)</span>\n</p>\n<section>\n  <div class=\"example-label\">Room Booking Options</div>\n  <div class=\"example-button-row btn-with-caret\">\n    <button mat-stroked-button>Add Time</button>\n    <button mat-stroked-button color=\"primary\">Add Personal Trainer</button>\n    <button mat-stroked-button color=\"accent\">Add Friends</button>\n  </div>\n</section>\n<section class=\"\">\n  <div class=\"example-label\">Smart Controls</div>\n  <div class=\"example-button-row bigButtons\">\n    <mat-sq-button [icon]=\"faLightbulb\">\n      Lights\n    </mat-sq-button>\n    <mat-sq-button [icon]=\"faPersonBooth\">\n      Window Blinds\n    </mat-sq-button>\n    <mat-sq-button [icon]=\"faDoorOpen\">\n      Doors\n    </mat-sq-button>\n  </div>\n</section>\n"
         },
         {
             "name": "TaskComponent",
@@ -748,13 +1175,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-2f18d33c018d0a9435e12d5521358edcff7a7278c2c80dddbe1b8b3eb6b970ee59a98ad193f4222bf8bca3a8d079fbfb9f7476a56e02a26449802b8118b3c3dc",
+            "id": "module-AppModule-860ac89a7bb29e5a821ad976c3a90db0e5a2347b3e6e0940759d7812bb32e992e42617a49990cee416ad75100c7d198eecc136b224afed197d8b152c28b2281e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n\r\nimport { MatSlideToggleModule } from '@angular/material/slide-toggle';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { AboutComponent } from './about/about.component';\r\nimport {MatToolbarModule} from \"@angular/material/toolbar\";\r\nimport {MatIconModule} from \"@angular/material/icon\";\r\nimport {MatCardModule} from \"@angular/material/card\";\r\nimport {MatProgressSpinnerModule} from \"@angular/material/progress-spinner\";\r\nimport {MatButtonModule} from \"@angular/material/button\";\nimport { TaskComponent } from './task/task.component';\nimport { TaskListComponent } from './task-list/task-list.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    HomeComponent,\r\n    AboutComponent,\r\n    TaskComponent,\r\n    TaskListComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    HttpClientModule,\r\n    BrowserAnimationsModule,\r\n    MatSlideToggleModule,\r\n    MatToolbarModule,\r\n    MatIconModule,\r\n    MatButtonModule,\r\n    MatCardModule,\r\n    MatProgressSpinnerModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { HttpClientModule } from '@angular/common/http';\r\n\r\nimport { MatSlideToggleModule } from '@angular/material/slide-toggle';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { AboutComponent } from './about/about.component';\r\nimport {MatToolbarModule} from \"@angular/material/toolbar\";\r\nimport {MatIconModule} from \"@angular/material/icon\";\r\nimport {MatCardModule} from \"@angular/material/card\";\r\nimport {MatProgressSpinnerModule} from \"@angular/material/progress-spinner\";\r\nimport {MatButtonModule} from \"@angular/material/button\";\r\nimport { TaskComponent } from './task/task.component';\r\nimport { TaskListComponent } from './task-list/task-list.component';\r\nimport { PageNotFoundComponent } from './page-not-found/page-not-found.component';\r\nimport { RoomComponent } from './room/room.component';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\nimport {MatDividerModule} from \"@angular/material/divider\";\nimport { MatSqButtonComponent } from './mat-sq-button/mat-sq-button.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    HomeComponent,\r\n    AboutComponent,\r\n    TaskComponent,\r\n    TaskListComponent,\r\n    PageNotFoundComponent,\r\n    RoomComponent,\r\n    MatSqButtonComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    HttpClientModule,\r\n    BrowserAnimationsModule,\r\n    MatSlideToggleModule,\r\n    MatToolbarModule,\r\n    MatIconModule,\r\n    MatButtonModule,\r\n    MatCardModule,\r\n    MatProgressSpinnerModule,\r\n    FontAwesomeModule,\r\n    MatDividerModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -771,6 +1198,15 @@
                         },
                         {
                             "name": "HomeComponent"
+                        },
+                        {
+                            "name": "MatSqButtonComponent"
+                        },
+                        {
+                            "name": "PageNotFoundComponent"
+                        },
+                        {
+                            "name": "RoomComponent"
                         },
                         {
                             "name": "TaskComponent"
@@ -808,13 +1244,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-3e765b97c64090a5c62966a5a6c7d886e64b4d3563e09f12541cd0f5cc3f5b38b07b28e77059064f3c6bf524ff1f681175b40d5f9d0477cb4ff044ea51224f06",
+            "id": "module-AppRoutingModule-c093c83fb8ab181a292a333f303d809d9eefea70812991ab2a3ff79d876a1234fdf74ac5b9d31f0dc1da57aab83285b5a8647ab20b133d3f8de28d3da5b6e8a2",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { Routes, RouterModule } from '@angular/router';\r\nimport { HomeComponent } from './home/home.component';\r\nimport { AboutComponent } from './about/about.component';\r\n\r\n\r\nconst routes: Routes = [\r\n  { path: '', redirectTo: 'home', pathMatch: 'full'},\r\n  { path: 'home', component: HomeComponent },\r\n  { path: 'about', component: AboutComponent },\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
+            "sourceCode": "import {NgModule} from '@angular/core';\r\nimport {Routes, RouterModule} from '@angular/router';\r\nimport {HomeComponent} from './home/home.component';\r\nimport {AboutComponent} from './about/about.component';\r\nimport {PageNotFoundComponent} from \"./page-not-found/page-not-found.component\";\r\nimport {RoomComponent} from \"./room/room.component\";\r\n\r\nconst routes: Routes = [\r\n  { path: 'about', component: AboutComponent },\r\n  { path: 'room', component: RoomComponent },\r\n  { path: 'home',        component: HomeComponent },\r\n  { path: '',   redirectTo: '/home', pathMatch: 'full' },\r\n  { path: '**', component: PageNotFoundComponent }\r\n\r\n];\r\n\r\n@NgModule({\r\n  imports: [\r\n    RouterModule.forRoot(routes,\r\n      {enableTracing: true} // <-- debugging purposes only\r\n    )],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -854,6 +1290,16 @@
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\r\n  onPinTask: action('onPinTask'),\r\n  onArchiveTask: action('onArchiveTask'),\r\n}"
+            },
+            {
+                "name": "AllDefaults",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/mat-sq-button/mat-sq-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "Archived",
@@ -996,6 +1442,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "SmileIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/mat-sq-button/mat-sq-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1024,6 +1480,16 @@
                 "deprecationMessage": "",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/mat-sq-button/mat-sq-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<MatSqButtonComponent>",
+                "defaultValue": "(args: MatSqButtonComponent) => ({\r\n  component: MatSqButtonComponent,\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1110,6 +1576,38 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: actionsData.onPinTask,\r\n    onArchiveTask: actionsData.onArchiveTask,\r\n  },\r\n})"
+                }
+            ],
+            "src/app/mat-sq-button/mat-sq-button.stories.ts": [
+                {
+                    "name": "AllDefaults",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/mat-sq-button/mat-sq-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "SmileIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/mat-sq-button/mat-sq-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/mat-sq-button/mat-sq-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<MatSqButtonComponent>",
+                    "defaultValue": "(args: MatSqButtonComponent) => ({\r\n  component: MatSqButtonComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/app/task-list/task-list.stories.ts": [
@@ -1296,17 +1794,25 @@
                 "module": "AppRoutingModule",
                 "children": [
                     {
-                        "path": "",
-                        "redirectTo": "home",
-                        "pathMatch": "full"
+                        "path": "about",
+                        "component": "AboutComponent"
+                    },
+                    {
+                        "path": "room",
+                        "component": "RoomComponent"
                     },
                     {
                         "path": "home",
                         "component": "HomeComponent"
                     },
                     {
-                        "path": "about",
-                        "component": "AboutComponent"
+                        "path": "",
+                        "redirectTo": "/home",
+                        "pathMatch": "full"
+                    },
+                    {
+                        "path": "**",
+                        "component": "PageNotFoundComponent"
                     }
                 ],
                 "kind": "module"
@@ -1314,7 +1820,7 @@
         ]
     },
     "coverage": {
-        "count": 6,
+        "count": 5,
         "status": "low",
         "files": [
             {
@@ -1324,6 +1830,15 @@
                 "name": "AboutComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/api.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "ApiService",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -1341,7 +1856,55 @@
                 "linktype": "component",
                 "name": "HomeComponent",
                 "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mat-sq-button/mat-sq-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MatSqButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mat-sq-button/mat-sq-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AllDefaults",
+                "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mat-sq-button/mat-sq-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SmileIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mat-sq-button/mat-sq-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/models/gym.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Gym",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -1351,6 +1914,24 @@
                 "name": "Task",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/page-not-found/page-not-found.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageNotFoundComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/room/room.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RoomComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {

@@ -1,0 +1,69 @@
+.content_width_wrapper {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
+.example-card {
+  margin: var(--min-content-wrap-margin);
+  padding-bottom: var(--min-content-wrap-margin);
+}
+
+.row-label {
+  padding: 0 var(--min-content-wrap-margin);
+}
+
+.flat-button-row, .sq-button-row {
+  display: block;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.flat-button-row button {
+  margin: 0 0.2rem;
+  display: inline-block;
+}
+
+.flat-button-row button:first-of-type {
+  margin-left: var(--min-content-wrap-margin);
+}
+
+.flat-button-row button {
+  white-space: nowrap;
+}
+
+.sq-button-row-container {
+  margin-bottom: var(--min-content-wrap-margin);
+}
+
+mat-sq-button:first-of-type {
+  margin-left: var(--min-content-wrap-margin);
+}
+
+mat-card-content {
+  margin-top: var(--min-content-wrap-margin);
+}
+
+mat-card-content>mat-divider.divider-with-margin {
+  margin-top: var(--min-content-wrap-margin);
+  margin-bottom: var(--min-content-wrap-margin);
+
+}
+.icon_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.icon_list li {
+  margin-bottom: 0.1rem;
+}
+
+.icon_list fa-icon {
+  width: 1rem;
+  display: inline-block;
+  text-align: center;
+  margin-right: 0.5rem;
+}

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from '../api.service';
-import { Gym } from '../models/gym.model';
+import {ApiService} from '../../api.service';
+import { Gym } from '../../models/gym.model';
 
 @Component({
   selector: 'app-home',

@@ -1,0 +1,95 @@
+<div class="content_width_wrapper">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Your GYMBOX</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="https://source.unsplash.com/1000x300/?gym" alt="Photo of a Gym">
+    <mat-card-content>
+      <ul class="icon_list">
+        <li>
+          <fa-icon [icon]="faLocationPin"></fa-icon>
+          <span><b>GYMBOX BERLIN</b> City Center</span>
+        </li>
+        <li>
+          <fa-icon [icon]="faUser"></fa-icon>
+          <span><b>Make you sweat core workout with Jessy</b></span>
+        </li>
+        <li>
+          <fa-icon [icon]="faClock"></fa-icon>
+          <span><b>12:30 - 14:00</b> (73 minutes remaining)</span>
+        </li>
+      </ul>
+
+      <mat-divider class="divider-with-margin"></mat-divider>
+    </mat-card-content>
+    <div>
+      <div class="row-label">Room Booking Options</div>
+      <div class="flat-button-row">
+        <button mat-stroked-button color="primary">Add Time
+          <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
+        </button>
+        <button mat-stroked-button>Add Personal Trainer
+          <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
+        </button>
+        <button mat-stroked-button>Add Friends
+          <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </mat-card>
+
+</div>
+
+<section class="sq-button-row-container">
+  <div class="row-label">Smart Controls</div>
+  <div class="sq-button-row">
+    <mat-sq-button [icon]="faLightbulb" dialog_ref="help_lights">
+      Lights
+    </mat-sq-button>
+    <mat-sq-button [icon]="faPersonBooth" dialog_ref="help_blinds">
+      Window Blinds
+    </mat-sq-button>
+    <mat-sq-button [icon]="faFan" dialog_ref="help_climate">
+      Climate Control
+    </mat-sq-button>
+    <mat-sq-button [icon]="faDoorOpen" dialog_ref="help_door">
+      Unlock Door
+    </mat-sq-button>
+  </div>
+</section>
+
+
+<section class="sq-button-row-container">
+  <div class="row-label">Equipment</div>
+  <div class="sq-button-row">
+    <mat-sq-button [icon]="faDumbbell" dialog_ref="help_dumbbell">
+      Dumb&shy;bells
+    </mat-sq-button>
+    <mat-sq-button [icon]="faWeightHanging">
+      Weights
+    </mat-sq-button>
+    <mat-sq-button [icon]="faPersonBiking">
+      Bike
+    </mat-sq-button>
+  </div>
+</section>
+
+<section class="sq-button-row-container">
+  <div class="row-label">Amenities</div>
+  <div class="sq-button-row">
+    <ng-container *ngFor="let number of [0,1,2,3]">
+      <mat-sq-button [icon]="faSheetPlastic">
+        Towels
+      </mat-sq-button>
+      <mat-sq-button [icon]="faShower">
+        Shower
+      </mat-sq-button>
+      <mat-sq-button [icon]="faHotTubPerson">
+        Sauna
+      </mat-sq-button>
+      <mat-sq-button [icon]="faBottleWater">
+        Drinks
+      </mat-sq-button>
+    </ng-container>
+  </div>
+</section>

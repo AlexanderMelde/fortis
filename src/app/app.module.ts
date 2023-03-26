@@ -7,8 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
@@ -16,7 +16,13 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatButtonModule} from "@angular/material/button";
 import { TaskComponent } from './task/task.component';
 import { TaskListComponent } from './task-list/task-list.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { RoomComponent } from './pages/room/room.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {MatDividerModule} from "@angular/material/divider";
+import { MatSqButtonComponent } from './mat-sq-button/mat-sq-button.component';
+import { HelpComponent } from './help/help.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -25,7 +31,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AboutComponent,
     TaskComponent,
     TaskListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RoomComponent,
+    MatSqButtonComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +46,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    FontAwesomeModule,
+    MatDividerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

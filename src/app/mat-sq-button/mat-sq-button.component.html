@@ -1,0 +1,9 @@
+<button mat-stroked-button (click)="openDialog(dialog_ref)">
+  <span class="wrapper">
+    <fa-icon [icon]="icon" class="main_icon"></fa-icon>
+    <div>
+      <span class="label"><ng-content></ng-content></span>
+      <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
+    </div>
+  </span>
+</button>

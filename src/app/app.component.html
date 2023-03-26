@@ -1,14 +1,15 @@
 <mat-toolbar color="primary">
   <h1>
-    Gymbox
   </h1>
+  GYMBOX
   <button mat-button routerLink="/">Home</button>
   <button mat-button routerLink="/about">About</button>
+  <button mat-button routerLink="/room">Room</button>
 </mat-toolbar>
-
-<router-outlet></router-outlet>
+<div id="page_wrapper">
+  <router-outlet></router-outlet>
+</div>
+<mat-divider></mat-divider>
+Footer
 
 <mat-slide-toggle>Toggle me!</mat-slide-toggle>
-<!-- Next Steps -->
-<h2>Next Steps</h2>
-<p>What do you want to do next with your app?</p>
