@@ -1,0 +1,30 @@
+{
+  "help_dumbbells": {
+    "title": "Dumbbells",
+    "content": "Dumbbells are located at ..."
+  },
+  "help_weights": {
+    "title": "Weights",
+    "content": "Weights are located at..."
+  },
+  "help_bike": {
+    "title": "Bike",
+    "content": "To start cycling, please ensure the bike is unlocked."
+  },
+  "help_towels": {
+    "title": "Towels",
+    "content": "Free Towel Service, please place any used towel in the green bin."
+  },
+  "help_shower": {
+    "title": "Shower",
+    "content": "Showers can be used free of charge."
+  },
+  "help_sauna": {
+    "title": "Sauna",
+    "content": "Sauna is operated between 10:00 and 19:00, for other times please contact us at: +49 176 99556677."
+  },
+  "help_drinks": {
+    "title": "Drinks",
+    "content": "A great selection of non-alcoholic drinks can be found at the fridge next to the changing rooms."
+  }
+}

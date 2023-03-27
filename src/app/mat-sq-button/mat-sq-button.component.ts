@@ -9,20 +9,31 @@ import {HelpComponent} from "../help/help.component";
   styleUrls: ['./mat-sq-button.component.css']
 })
 export class MatSqButtonComponent {
-  @Input() icon: IconDefinition = faCircleQuestion;
-  @Input() dialog_ref: string = "unknown_dialog_ref";
   faAngleRight = faAngleRight;
+
+  @Input() icon: IconDefinition = faCircleQuestion;
+  @Input() help_topic: string | undefined;
+  @Input() disabled: boolean = false;
+
+
+  // reference any class decorated with @Component, that will be opened in a popup
+  @Input() popup: { new(...args: any[]): any; } = HelpComponent;
 
   constructor(public dialog: MatDialog) {
   }
 
-  openDialog(content_ref: string) {
-    const dialogRef = this.dialog.open(HelpComponent, {
-      data: content_ref
-    });
+  onClickHandler() {
+    if(this.help_topic === undefined && this.popup == HelpComponent){
+      console.log("Nothing happened, either define help_topic or popup.")
+    }else{
+      const dialogRef = this.dialog.open(this.popup, {
+        data: this.help_topic
+      });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
+
   }
 }

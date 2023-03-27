@@ -16,7 +16,10 @@ import {
   faUser,
   faWeightHanging
 } from '@fortawesome/free-solid-svg-icons';
-
+import {LightsHelpComponent} from "../../help/lights/lights-help.component";
+import {BlindsHelpComponent} from "../../help/blinds-help/blinds-help.component";
+import {ClimateHelpComponent} from "../../help/climate-help/climate-help.component";
+import {DoorHelpComponent} from "../../help/door-help/door-help.component";
 @Component({
   selector: 'app-room',
   templateUrl: './room.component.html',
@@ -38,4 +41,12 @@ export class RoomComponent {
   faHotTubPerson = faHotTubPerson;
   faFan = faFan;
   faBottleWater = faBottleWater;
+  LightsHelpComponent = LightsHelpComponent;
+  BlindsHelpComponent = BlindsHelpComponent;
+  ClimateHelpComponent = ClimateHelpComponent;
+  DoorHelpComponent = DoorHelpComponent;
+
+  public toggleWorkoutTools() {
+    //TODO: Implement
+  }
 }

@@ -1,0 +1,6 @@
+mat-progress-bar {
+  margin: var(--min-content-wrap-margin) auto;
+}
+mat-card {
+  margin-top: var(--min-content-wrap-margin);
+}

@@ -1,3 +1,5 @@
+<div class="room-container">
+
 <div class="content_width_wrapper">
   <mat-card class="example-card">
     <mat-card-header>
@@ -8,7 +10,7 @@
       <ul class="icon_list">
         <li>
           <fa-icon [icon]="faLocationPin"></fa-icon>
-          <span><b>GYMBOX BERLIN</b> City Center</span>
+          <span><b>GYMBOX BERLIN</b><i>City Center</i></span>
         </li>
         <li>
           <fa-icon [icon]="faUser"></fa-icon>
@@ -16,7 +18,7 @@
         </li>
         <li>
           <fa-icon [icon]="faClock"></fa-icon>
-          <span><b>12:30 - 14:00</b> (73 minutes remaining)</span>
+          <span><b>12:30 - 14:00</b><i>(73 minutes remaining)</i></span>
         </li>
       </ul>
 
@@ -43,16 +45,16 @@
 <section class="sq-button-row-container">
   <div class="row-label">Smart Controls</div>
   <div class="sq-button-row">
-    <mat-sq-button [icon]="faLightbulb" dialog_ref="help_lights">
+    <mat-sq-button [icon]="faLightbulb" [popup]="LightsHelpComponent">
       Lights
     </mat-sq-button>
-    <mat-sq-button [icon]="faPersonBooth" dialog_ref="help_blinds">
+    <mat-sq-button [icon]="faPersonBooth" [popup]="BlindsHelpComponent">
       Window Blinds
     </mat-sq-button>
-    <mat-sq-button [icon]="faFan" dialog_ref="help_climate">
+    <mat-sq-button [icon]="faFan" [popup]="ClimateHelpComponent">
       Climate Control
     </mat-sq-button>
-    <mat-sq-button [icon]="faDoorOpen" dialog_ref="help_door">
+    <mat-sq-button [icon]="faDoorOpen" [popup]="DoorHelpComponent">
       Unlock Door
     </mat-sq-button>
   </div>
@@ -62,14 +64,17 @@
 <section class="sq-button-row-container">
   <div class="row-label">Equipment</div>
   <div class="sq-button-row">
-    <mat-sq-button [icon]="faDumbbell" dialog_ref="help_dumbbell">
+    <mat-sq-button [icon]="faDumbbell" help_topic="help_dumbbells">
       Dumb&shy;bells
     </mat-sq-button>
-    <mat-sq-button [icon]="faWeightHanging">
+    <mat-sq-button [icon]="faWeightHanging" help_topic="help_weights">
       Weights
     </mat-sq-button>
-    <mat-sq-button [icon]="faPersonBiking">
+    <mat-sq-button [icon]="faPersonBiking" help_topic="help_bike">
       Bike
+    </mat-sq-button>
+    <mat-sq-button [icon]="faPersonBiking" help_topic="help_unknown">
+      Unknown
     </mat-sq-button>
   </div>
 </section>
@@ -78,18 +83,43 @@
   <div class="row-label">Amenities</div>
   <div class="sq-button-row">
     <ng-container *ngFor="let number of [0,1,2,3]">
-      <mat-sq-button [icon]="faSheetPlastic">
+      <mat-sq-button [icon]="faSheetPlastic" help_topic="help_towels">
         Towels
       </mat-sq-button>
-      <mat-sq-button [icon]="faShower">
+      <mat-sq-button [icon]="faShower" help_topic="help_shower">
         Shower
       </mat-sq-button>
-      <mat-sq-button [icon]="faHotTubPerson">
+      <mat-sq-button [icon]="faHotTubPerson" help_topic="help_sauna">
         Sauna
       </mat-sq-button>
-      <mat-sq-button [icon]="faBottleWater">
+      <mat-sq-button [icon]="faBottleWater" help_topic="help_drinks">
         Drinks
       </mat-sq-button>
     </ng-container>
   </div>
 </section>
+
+<button mat-stroked-button color="primary" (click)="toggleWorkoutTools()">
+  Open Workout Tools
+  <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
+</button>
+
+
+</div>
+<div class="media-player-container">
+  <mat-toolbar class="mat-elevation-z2">
+    <button mat-icon-button class="example-icon"  aria-label="Example icon-button with menu icon">
+      <mat-icon>play_circle_filled</mat-icon>
+    </button>
+    <span>Current Song...</span>
+    <mat-slider>
+      <input matSliderThumb>
+    </mat-slider>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>

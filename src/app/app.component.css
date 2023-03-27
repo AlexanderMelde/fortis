@@ -1,5 +1,49 @@
+mat-toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: auto;
+
+}
+.profile-image-bg {
+  background-image: url("https://source.unsplash.com/500x500/?profile+photo+sport+portrait+adult");
+  background-size: cover;
+  vertical-align: middle;
+}
+
+
 #page_wrapper {
   /*width: calc(100% - 2rem);*/
   max-width: var(--max-content-width);
+  margin: 0 auto var(--bot-toolbar-height) auto;
+}
+nav[mat-tab-nav-bar] {
   margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 5;
+}
+
+/*mat-sidenav-container {*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  bottom: 0;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*}*/
+mat-sidenav-container {
+  height: calc(100% - var(--bot-toolbar-height));
+}
+mat-sidenav-content {
+}
+mat-sidenav {
+  width: 200px;
+}
+.main_nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }

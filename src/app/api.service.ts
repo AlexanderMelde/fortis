@@ -4,7 +4,6 @@ import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -23,10 +22,9 @@ export class ApiService {
       // Server-side errors
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    window.alert(errorMessage);
+    console.log(errorMessage);
     return throwError(errorMessage);
   }
-
   public sendGetRequest() {
     return this.httpClient.get(this.SERVER_URL).pipe(catchError(this.handleError));
   }

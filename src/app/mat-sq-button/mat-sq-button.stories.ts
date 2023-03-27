@@ -1,4 +1,4 @@
-import {Meta, Story} from '@storybook/angular';
+import {Meta, StoryFn} from '@storybook/angular';
 import {MatSqButtonComponent} from './mat-sq-button.component';
 import {faSmile} from "@fortawesome/free-solid-svg-icons";
 
@@ -7,7 +7,7 @@ export default {
   component: MatSqButtonComponent,
 } as Meta;
 
-const Template: Story = (args) => ({
+const Template: StoryFn = (args) => ({
   props: args,
 });
 
@@ -22,21 +22,21 @@ SmileIcon.parameters = {
 };
 
 
-export const Primary: Story = () => ({
+export const Primary: StoryFn = () => ({
   props: {
     label: 'Button',
     primary: true,
   },
 });
 
-export const Secondary: Story = () => ({
+export const Secondary: StoryFn = () => ({
   props: {
     label: '😄👍😍💯',
     backgroundColor: '#ff0',
   },
 });
 
-export const Tertiary: Story = () => ({
+export const Tertiary: StoryFn = () => ({
   props: {
     label: '📚📕📈🤓',
     backgroundColor: '#ff0',
