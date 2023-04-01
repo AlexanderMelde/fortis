@@ -51,30 +51,6 @@ mat-card-content>mat-divider.divider-with-margin {
   margin-bottom: var(--min-content-wrap-margin);
 
 }
-.icon_list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.icon_list li {
-  margin-bottom: 0.1rem;
-  display: flex;
-  flex-direction: row;
-
-}
-
-.icon_list fa-icon {
-  width: 1rem;
-  text-align: center;
-  margin-right: 0.5rem;
-  flex-shrink: 0;
-}
-.icon_list b, .icon_list i {
-  display: inline-block;
-  font-style: normal;
-  padding-right: 0.5rem;
-}
 .media-player-container {
   position: fixed;
   bottom: 70px;

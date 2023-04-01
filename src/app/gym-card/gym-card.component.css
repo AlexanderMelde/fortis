@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: calc(100% - 3 * var(--min-content-wrap-margin));
+  max-width: var(--max-content-width);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+mat-card-content {
+  margin-top: var(--min-content-wrap-margin);
+}
+
+mat-card-content>mat-divider.divider-with-margin {
+  margin-top: var(--min-content-wrap-margin);
+  margin-bottom: var(--min-content-wrap-margin);
+
+}

@@ -11,6 +11,9 @@ mat-toolbar {
   vertical-align: middle;
 }
 
+.profile-image-bg:focus-visible {
+  outline: 2px solid white;
+}
 
 #page_wrapper {
   /*width: calc(100% - 2rem);*/
@@ -46,4 +49,9 @@ mat-sidenav {
   position: sticky;
   top: 0;
   z-index: 5;
+}
+.title_link {
+  color: inherit;
+  text-decoration: inherit;
+
 }

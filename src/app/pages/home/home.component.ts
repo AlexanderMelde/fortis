@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../api.service';
 import { Gym } from '../../models/gym.model';
 import {MatSnackBar } from "@angular/material/snack-bar";
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import {faAngleRight, faLightbulb} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,8 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 export class HomeComponent implements OnInit {
   gyms : Gym[] = [];
   isLoading : boolean = true;
-
+  gym_list_sorting = 'nearby';
+  gym_list_show_all: string | undefined = undefined;
   faAngleRight = faAngleRight;
 
   constructor(private apiService: ApiService, private _snackBar: MatSnackBar ) {
@@ -37,4 +38,7 @@ export class HomeComponent implements OnInit {
       duration: 3000
     });
   }
+
+  protected readonly undefined = undefined;
+  protected readonly faLightbulb = faLightbulb;
 }

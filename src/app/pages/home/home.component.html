@@ -1,59 +1,51 @@
-<mat-progress-bar
-  mode="indeterminate"
-  *ngIf="isLoading && gyms.length === 0">
+<div class="content_width_wrapper">
+  <h1>
+    <ng-container *ngIf="gym_list_show_all === undefined">Available</ng-container>
+    <ng-container *ngIf="gym_list_show_all === 'show_all'">All</ng-container>
+    Gymboxes
+  </h1>
+  <div class="list_filters">
+    <mat-form-field appearance="fill">
+      <mat-label>Select an option</mat-label>
+      <mat-select [(value)]="gym_list_sorting">
+        <mat-option value="nearby">Nearby</mat-option>
+        <mat-option value="a_to_z">A-Z</mat-option>
+        <mat-option value="price">Price</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-</mat-progress-bar>
-<div *ngIf="!isLoading && gyms.length === 0">
+    <mat-chip-listbox aria-label="Select to show all or only available gyms" [(ngModel)]="gym_list_show_all">
+      <mat-chip-option value="show_all">Show All</mat-chip-option>
+    </mat-chip-listbox>
+  </div>
 
-  <mat-card>
-    <mat-card-header>
-      <mat-card-subtitle>Connection Error</mat-card-subtitle>
-      <mat-card-title>Could not connect to GYMBOX database</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>Please view the contents of the other pages of this app.</p>
-      <mat-divider></mat-divider>
-    </mat-card-content>
-    <mat-card-actions align="end">
-      <button mat-button color="primary" (click)="loadGyms()">
-        RETRY
-      </button>
-    </mat-card-actions>
-  </mat-card>
-  <h3 style="padding-top: 12px">Offline List of nearby Gyms:</h3>
-  <mat-card *ngFor="let number of [0,1]">
-    <mat-card-header>
-      <mat-card-title><b>GYMBOX BERLIN</b> City Center</mat-card-title>
-      <mat-card-subtitle>12€</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>Great Amenities! List them here </p>
-      <img style="height:100%; width: 100%;" src="https://source.unsplash.com/1600x900/?gym" alt="gym image"/>
-    </mat-card-content>
-    <mat-card-actions align="end">
-      <a mat-button routerLink="/book_gym"> Book gym</a>
-    </mat-card-actions>
-  </mat-card>
+  <mat-progress-bar
+    mode="indeterminate"
+    *ngIf="isLoading && gyms.length === 0">
+  </mat-progress-bar>
 
+  <div *ngIf="!isLoading && gyms.length === 0">
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-subtitle>Connection Error</mat-card-subtitle>
+        <mat-card-title>Could not connect to GYMBOX database</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Please view the contents of the other pages of this app.</p>
+        <mat-divider></mat-divider>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button color="primary" (click)="loadGyms()">
+          RETRY
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    <h3 style="padding-top: 12px">Offline List of nearby Gyms:</h3>
+    <app-gym-card *ngFor="let number of [0,1]" name="GYMBOX BERLIN" description="12€"></app-gym-card>
+
+  </div>
+
+  <app-gym-card *ngFor="let gym of gyms" [name]="gym.name" description="{{gym.price}} $/ {{gym.quantity}}"></app-gym-card>
 
 </div>
-
-
-
-<mat-card *ngFor="let gym of gyms" style="margin-top:10px;">
-  <mat-card-header>
-    <mat-card-title>{{gym.name}}</mat-card-title>
-    <mat-card-subtitle>{{gym.price}} $/ {{gym.quantity}}
-    </mat-card-subtitle>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      {{gym.description}}
-    </p>
-    <img style="height:100%; width: 100%;" src="{{ gym.imageUrl }}" alt="gym image"/>
-  </mat-card-content>
-  <mat-card-actions align="end">
-    <a mat-button routerLink="/book_gym"> Book gym</a>
-  </mat-card-actions>
-</mat-card>
-

@@ -41,6 +41,11 @@ import { BookGymComponent } from './pages/book-gym/book-gym.component';
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
+import {MatChipsModule} from "@angular/material/chips";
+import { GymCardComponent } from './gym-card/gym-card.component';
+import { IconListComponent } from './icon-list/icon-list.component';
+import { IconListItemComponent } from './icon-list-item/icon-list-item.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +64,10 @@ import {MatInputModule} from "@angular/material/input";
     DoorHelpComponent,
     WorkoutToolsComponent,
     UserComponent,
-    BookGymComponent
+    BookGymComponent,
+    GymCardComponent,
+    IconListComponent,
+    IconListItemComponent
   ],
   imports: [
     BrowserModule,
@@ -87,6 +95,8 @@ import {MatInputModule} from "@angular/material/input";
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatSelectModule,
+    MatChipsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
