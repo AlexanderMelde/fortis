@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'gymbox';
   opened_start: boolean = false;
   opened_end: boolean = false;
-
+  screenWidth : number = 1024;
 
   navLinks: {
     label: string;
@@ -35,10 +35,16 @@ export class AppComponent {
 
   constructor(private router: Router) {
     // this.navLinks =
+    this.getScreenSize();
+
+  }
+  @HostListener('window:resize', ['$event'])
+  getScreenSize() {
+    this.screenWidth = window.innerWidth;
   }
 
   ngOnInit(): void {
-    this.router.events.subscribe((res) => {
+    this.router.events.subscribe(() => {
       const navLinkEntry = this.navLinks.find(tab => tab.link === '.' + this.router.url)
       if (navLinkEntry !== undefined) {
         this.activeLinkIndex = this.navLinks.indexOf(navLinkEntry);

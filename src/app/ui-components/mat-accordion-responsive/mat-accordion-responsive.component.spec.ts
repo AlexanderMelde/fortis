@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MatExpansionPanelResponsiveComponent } from './mat-expansion-panel-responsive.component';
+import { MatAccordionResponsiveComponent } from './mat-accordion-responsive.component';
 
 describe('MatExpansionPanelResponsiveComponent', () => {
-  let component: MatExpansionPanelResponsiveComponent;
-  let fixture: ComponentFixture<MatExpansionPanelResponsiveComponent>;
+  let component: MatAccordionResponsiveComponent;
+  let fixture: ComponentFixture<MatAccordionResponsiveComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MatExpansionPanelResponsiveComponent ]
+      declarations: [ MatAccordionResponsiveComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MatExpansionPanelResponsiveComponent);
+    fixture = TestBed.createComponent(MatAccordionResponsiveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,10 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 * {
   --max-content-width: 800px;
   --min-content-wrap-margin: 1rem;
   --bot-toolbar-height: 56px;
+}
+
+.content_width_wrapper {
+  width: calc(100% - 2 * var(--min-content-wrap-margin));
+  margin: 0 auto;
+}
+.content_width_wrapper:first-of-type {
+  margin-top: var(--min-content-wrap-margin);
 }

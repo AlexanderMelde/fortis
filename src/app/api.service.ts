@@ -23,7 +23,7 @@ export class ApiService {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     console.log(errorMessage);
-    return throwError(errorMessage);
+    return throwError(() => errorMessage);
   }
   public sendGetRequest() {
     return this.httpClient.get(this.SERVER_URL).pipe(catchError(this.handleError));

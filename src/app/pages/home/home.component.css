@@ -1,17 +1,11 @@
-h1 {
-  margin-top: var(--min-content-wrap-margin);
-}
+
 mat-progress-bar {
   margin: var(--min-content-wrap-margin) auto;
 }
 mat-card {
   margin-top: var(--min-content-wrap-margin);
 }
-.content_width_wrapper {
-  width: 100%;
-  max-width: var(--max-content-width);
-  margin: 0 auto;
-}
+
 .list_filters {
   display: flex;
   justify-content: space-between;
