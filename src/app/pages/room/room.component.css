@@ -46,11 +46,11 @@ mat-card-content {
   margin-top: var(--min-content-wrap-margin);
 }
 
-mat-card-content>mat-divider.divider-with-margin {
+mat-card-content > mat-divider.divider-with-margin {
   margin-top: var(--min-content-wrap-margin);
   margin-bottom: var(--min-content-wrap-margin);
-
 }
+
 .media-player-container {
   position: fixed;
   bottom: 70px;
@@ -58,9 +58,11 @@ mat-card-content>mat-divider.divider-with-margin {
   width: 100%;
   left: 0;
 }
+
 .room-container {
   padding-bottom: calc(70px + var(--min-content-wrap-margin));
 }
+
 mat-toolbar {
   display: flex;
   justify-content: space-between;
@@ -70,6 +72,7 @@ mat-toolbar {
   overflow-x: auto;
   overflow-y: hidden;
 }
+
 mat-toolbar button {
   flex-shrink: 0;
 }

@@ -14,13 +14,13 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatButtonModule} from "@angular/material/button";
-import {TaskComponent} from './task/task.component';
-import {TaskListComponent} from './task-list/task-list.component';
+import {TaskComponent} from './ui-components/task/task.component';
+import {TaskListComponent} from './ui-components/task-list/task-list.component';
 import {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';
 import {RoomComponent} from './pages/room/room.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {MatDividerModule} from "@angular/material/divider";
-import {MatSqButtonComponent} from './mat-sq-button/mat-sq-button.component';
+import {MatSqButtonComponent} from './ui-components/mat-sq-button/mat-sq-button.component';
 import {HelpComponent} from './help/help.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatTabsModule} from "@angular/material/tabs";
@@ -35,17 +35,39 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatListModule} from "@angular/material/list";
 import {WorkoutToolsComponent} from './workout-tools/workout-tools.component';
 import {UserComponent} from './pages/user/user.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
-import { BookGymComponent } from './pages/book-gym/book-gym.component';
+import {BookGymComponent} from './pages/book-gym/book-gym.component';
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {MatChipsModule} from "@angular/material/chips";
-import { GymCardComponent } from './gym-card/gym-card.component';
-import { IconListComponent } from './icon-list/icon-list.component';
-import { IconListItemComponent } from './icon-list-item/icon-list-item.component';
+import {GymCardComponent} from './ui-components/gym-card/gym-card.component';
+import {IconListComponent} from './ui-components/icon-list/icon-list.component';
+import {IconListItemComponent} from './ui-components/icon-list-item/icon-list-item.component';
+import {MatRadioModule} from "@angular/material/radio";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {
+  MAT_MOMENT_DATE_ADAPTER_OPTIONS, MAT_MOMENT_DATE_FORMATS,
+  MatMomentDateModule,
+  MomentDateAdapter
+} from "@angular/material-moment-adapter";
+import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from "@angular/material/core";
+import { MatExpansionPanelResponsiveComponent } from './mat-expansion-panel-responsive/mat-expansion-panel-responsive.component';
+
+const MODULE_DATE_FORMATS = {
+  parse: {
+    dateInput: 'DD.MM.YYYY'
+  },
+  display: {
+    dateInput: 'DD.MM.YYYY',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY'
+  }
+};
 
 @NgModule({
   declarations: [
@@ -67,7 +89,8 @@ import { IconListItemComponent } from './icon-list-item/icon-list-item.component
     BookGymComponent,
     GymCardComponent,
     IconListComponent,
-    IconListItemComponent
+    IconListItemComponent,
+    MatExpansionPanelResponsiveComponent
   ],
   imports: [
     BrowserModule,
@@ -97,8 +120,18 @@ import { IconListItemComponent } from './icon-list-item/icon-list-item.component
     MatInputModule,
     MatSelectModule,
     MatChipsModule,
+    MatRadioModule,
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatMomentDateModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}},
+    {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
+    //{provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS},
+    {provide: MAT_DATE_FORMATS, useValue: MODULE_DATE_FORMATS}
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

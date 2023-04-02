@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {faAngleRight, faCircleQuestion, IconDefinition} from "@fortawesome/free-solid-svg-icons";
 import {MatDialog} from "@angular/material/dialog";
-import {HelpComponent} from "../help/help.component";
+import {HelpComponent} from "../../help/help.component";
 
 @Component({
   selector: 'mat-sq-button',
