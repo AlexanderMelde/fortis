@@ -4,12 +4,50 @@
   height: 90px;
   width: 90px;
 }
+
 mat-card-subtitle {
   font-size: 1rem;
 }
+
 mat-card-title {
   font-size: 2.5rem;
 }
+
 mat-card {
   margin-top: var(--min-content-wrap-margin);
+}
+
+.user-settings {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: calc(var(--min-content-wrap-margin) / 2);
+}
+
+.input-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.input-row mat-form-field:nth-child(1) {
+  margin-right: var(--min-content-wrap-margin);
+}
+
+mat-divider.divider-with-margin {
+  margin-top: var(--min-content-wrap-margin);
+  margin-bottom: var(--min-content-wrap-margin);
+}
+
+.datepicker_suffix {
+  vertical-align: bottom;
 }
