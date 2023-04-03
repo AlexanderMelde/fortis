@@ -1,0 +1,8 @@
+:host {
+  padding: var(--min-content-wrap-margin);
+  display: flex;
+}
+mat-icon {
+  flex-shrink: 0;
+  margin-right: var(--min-content-wrap-margin);
+}

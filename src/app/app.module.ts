@@ -1,11 +1,7 @@
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {
-  MAT_MOMENT_DATE_ADAPTER_OPTIONS,
-  MatMomentDateModule,
-  MomentDateAdapter
-} from "@angular/material-moment-adapter";
+import {LuxonDateAdapter, MAT_LUXON_DATE_ADAPTER_OPTIONS, MatLuxonDateModule} from "@angular/material-luxon-adapter";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import {MatCheckboxModule} from "@angular/material/checkbox";
@@ -53,6 +49,7 @@ import {UserComponent} from './pages/user/user.component';
 import {GymCardComponent} from './ui-components/gym-card/gym-card.component';
 import {IconListItemComponent} from './ui-components/icon-list-item/icon-list-item.component';
 import {IconListComponent} from './ui-components/icon-list/icon-list.component';
+import {InfobannerComponent} from './ui-components/infobanner/infobanner.component';
 import {
   MatAccordionResponsiveComponent
 } from './ui-components/mat-accordion-responsive/mat-accordion-responsive.component';
@@ -63,13 +60,13 @@ import {WorkoutToolsComponent} from './workout-tools/workout-tools.component';
 
 const MODULE_DATE_FORMATS = {
   parse: {
-    dateInput: 'DD.MM.YYYY'
+    dateInput: 'dd.LL.yyyy'
   },
   display: {
-    dateInput: 'DD.MM.YYYY',
-    monthYearLabel: 'MMM YYYY',
+    dateInput: 'dd.LL.yyyy',
+    monthYearLabel: 'LLLL yyyy',
     dateA11yLabel: 'LL',
-    monthYearA11yLabel: 'MMMM YYYY'
+    monthYearA11yLabel: 'LLLL YYYY'
   }
 };
 
@@ -94,7 +91,8 @@ const MODULE_DATE_FORMATS = {
     GymCardComponent,
     IconListComponent,
     IconListItemComponent,
-    MatAccordionResponsiveComponent
+    MatAccordionResponsiveComponent,
+    InfobannerComponent
   ],
   imports: [
     BrowserModule,
@@ -127,11 +125,11 @@ const MODULE_DATE_FORMATS = {
     MatRadioModule,
     MatExpansionModule,
     MatDatepickerModule,
-    MatMomentDateModule
+    MatLuxonDateModule
   ],
   providers: [
-    {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}},
-    {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
+    {provide: MAT_LUXON_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}},
+    {provide: DateAdapter, useClass: LuxonDateAdapter, deps: [MAT_DATE_LOCALE, MAT_LUXON_DATE_ADAPTER_OPTIONS]},
     {provide: MAT_DATE_FORMATS, useValue: MODULE_DATE_FORMATS}
   ],
   bootstrap: [AppComponent]

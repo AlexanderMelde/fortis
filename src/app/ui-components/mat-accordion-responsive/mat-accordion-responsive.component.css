@@ -36,6 +36,8 @@ mat-accordion-responsive .mat-mdc-form-field-icon-suffix {
   text-align: right;
 }
 
+
+
 @media (max-width: 599.98px) {
   mat-accordion-responsive .mat-expansion-panel-header-content {
     flex-direction: column;
