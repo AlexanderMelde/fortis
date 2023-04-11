@@ -40,12 +40,11 @@ describe('TaskListComponent', () => {
   });
 
   it('should render TaskComponent for each task in tasksInOrder', () => {
-    const tasks: Task[] = [
+    component.tasks = [
       { id: '1', title: 'Task 1', state: 'TASK_INBOX' },
       { id: '2', title: 'Task 2', state: 'TASK_PINNED' },
       { id: '3', title: 'Task 3', state: 'TASK_ARCHIVED' },
     ];
-    component.tasks = tasks;
     fixture.detectChanges();
     const elements = fixture.nativeElement.querySelectorAll('app-task');
     expect(elements.length).toBe(2);

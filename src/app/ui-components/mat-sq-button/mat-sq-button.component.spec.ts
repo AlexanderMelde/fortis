@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { By } from '@angular/platform-browser';
 import { faAngleRight, faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
@@ -67,7 +67,7 @@ describe('MatSqButtonComponent', () => {
     component.onClickHandler();
     expect(console.log).toHaveBeenCalledWith('Nothing happened, either define help_topic or popup.');
   });
-  
+
 
   it('should open a dialog when [popup] input is defined', () => {
     const dialogRefSpyObj = jasmine.createSpyObj('MatDialogRef', ['afterClosed']);
