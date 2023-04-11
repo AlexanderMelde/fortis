@@ -45,7 +45,7 @@ mat-sidenav-content {
 mat-sidenav {
   width: 200px;
 }
-.main_nav {
+.nav_header {
   position: sticky;
   top: 0;
   z-index: 5;

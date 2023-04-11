@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     this.isLoading = true;
     this.apiService.sendGetRequest().subscribe({
       next: (data: any) => {
-        console.log("got gym data", data);
+        // console.log("got gym data", data);
         this.gyms = data;
         this.isLoading = false;
       },

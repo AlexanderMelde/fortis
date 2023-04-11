@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import helpDatabase from './help_database.json';
 import { HelpComponent } from './help.component';
 
 describe('HelpComponent', () => {
@@ -8,10 +9,23 @@ describe('HelpComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HelpComponent ]
+      imports: [MatDialogModule],
+      declarations: [HelpComponent],
+      providers: [
+        {
+          provide: MAT_DIALOG_DATA,
+          useValue: 'help_weights'
+        },
+        {
+          provide: MatDialogRef,
+          useValue: {}
+        }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(HelpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -19,5 +33,15 @@ describe('HelpComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should display help content for weights', () => {
+    const testContentRef = 'help_weights';
+    const helpItem = helpDatabase[testContentRef];
+    const h2Element = fixture.nativeElement.querySelector('h2');
+    const matDialogContentElement = fixture.nativeElement.querySelector('mat-dialog-content');
+
+    expect(h2Element.textContent).toEqual(helpItem.title);
+    expect(matDialogContentElement.innerHTML).toEqual(helpItem.content);
   });
 });

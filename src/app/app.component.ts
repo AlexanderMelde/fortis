@@ -7,7 +7,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'gymbox';
   opened_start: boolean = false;
   opened_end: boolean = false;
   screenWidth : number = 1024;
@@ -49,6 +48,9 @@ export class AppComponent {
       if (navLinkEntry !== undefined) {
         this.activeLinkIndex = this.navLinks.indexOf(navLinkEntry);
       }
+      // else{
+      //   this.activeLinkIndex = 3;
+      // }
     });
   }
 }

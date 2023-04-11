@@ -1,6 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { RoomComponent } from './room.component';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatDividerModule} from "@angular/material/divider";
+import {MatIconModule} from "@angular/material/icon";
+import {MatSliderModule} from "@angular/material/slider";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {IconListItemComponent} from "../../ui-components/icon-list-item/icon-list-item.component";
+import {IconListComponent} from "../../ui-components/icon-list/icon-list.component";
+import {MatSqButtonComponent} from "../../ui-components/mat-sq-button/mat-sq-button.component";
+import {RoomComponent} from './room.component';
 
 describe('RoomComponent', () => {
   let component: RoomComponent;
@@ -8,16 +17,42 @@ describe('RoomComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RoomComponent ]
+      declarations: [RoomComponent, IconListComponent, IconListItemComponent, MatSqButtonComponent],
+      imports: [MatCardModule, MatDividerModule, FontAwesomeModule, MatDialogModule, MatToolbarModule, MatIconModule, MatSliderModule]
     })
-    .compileComponents();
+      .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(RoomComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display the room title', () => {
+    const title = fixture.nativeElement.querySelector('h1');
+    expect(title.textContent).toContain('Room Control');
+  });
+
+  it('should display the booking information', () => {
+    const bookingInfo = fixture.nativeElement.querySelector('.room-details-card');
+    expect(bookingInfo).toBeTruthy();
+  });
+
+  it('should display the amenities section', () => {
+    const amenitiesSection = fixture.nativeElement.querySelector('#amenities');
+    expect(amenitiesSection).toBeTruthy();
+  });
+
+  // it('should toggle the workout tools when the "Open Workout Tools" button is clicked', () => {
+  //   const button = fixture.nativeElement.querySelector('button[color="primary"]');
+  //   button.click();
+  //   fixture.detectChanges();
+  //   const workoutTools = fixture.nativeElement.querySelector('.workout-tools');
+  //   expect(workoutTools).toBeTruthy();
+  // });
 });
