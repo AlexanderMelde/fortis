@@ -6,8 +6,8 @@
   <title>Redirecting to home page...</title>
   <meta http-equiv=refresh content="1; url=/gymbox/gymbox">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="./gymbox/favicon.ico" type="image/ico">
+  <link rel="stylesheet" href="/gymbox/style.css">
+  <link rel="icon" href="/gymbox/gymbox/favicon.ico" type="image/ico">
 </head>
 
 <body>
@@ -20,8 +20,7 @@
     </div>
   </main>
   <script>
-    const n = location.href.replace("index.php?/", "");
-    if (n !== location.href) location = n;
+    const n = location.replace("/gymbox/gymbox");
   </script>
 </body>
 
