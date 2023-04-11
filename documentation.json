@@ -267,7 +267,7 @@
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-b3cb171988bcaabc69a3758ac99ac2304e348d21f90d8674887b759ddee58b84d45a48d25307cc4f630bc1f6848e7b58da63b18f23feda959248a4f6e67e1f4c",
+            "id": "component-AppComponent-54ba8baf53e5dd9d89b7f510353fb2778a99b1f9e0a95e18fd4d0c30193419cb8fe1a86f6b151fb8aba3a15e9ef2e96c9a21d6fcd37d0405163e8d81c8865682",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -383,11 +383,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, HostListener} from '@angular/core';\r\nimport {Router} from \"@angular/router\";\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.css']\r\n})\r\nexport class AppComponent {\r\n  opened_start: boolean = false;\r\n  opened_end: boolean = false;\r\n  screenWidth : number = 1024;\r\n\r\n  navLinks: {\r\n    label: string;\r\n    link: string;\r\n    index: number;\r\n  }[] = [\r\n    {\r\n      label: 'Home',\r\n      link: '/home',\r\n      index: 0\r\n    }, {\r\n      label: 'Room',\r\n      link: '/room',\r\n      index: 1\r\n    }, {\r\n      label: 'About',\r\n      link: '/about',\r\n      index: 2\r\n    }\r\n  ];\r\n  activeLinkIndex = -1;\r\n\r\n  constructor(private router: Router) {\r\n    // this.navLinks =\r\n    this.getScreenSize();\r\n\r\n  }\r\n  @HostListener('window:resize', ['$event'])\r\n  getScreenSize() {\r\n    this.screenWidth = window.innerWidth;\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.router.events.subscribe(() => {\r\n      const navLinkEntry = this.navLinks.find(tab => tab.link === '.' + this.router.url)\r\n      if (navLinkEntry !== undefined) {\r\n        this.activeLinkIndex = this.navLinks.indexOf(navLinkEntry);\r\n      }\r\n    });\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, HostListener} from '@angular/core';\r\nimport {Router} from \"@angular/router\";\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.css']\r\n})\r\nexport class AppComponent {\r\n  opened_start: boolean = false;\r\n  opened_end: boolean = false;\r\n  screenWidth : number = 1024;\r\n\r\n  navLinks: {\r\n    label: string;\r\n    link: string;\r\n    index: number;\r\n  }[] = [\r\n    {\r\n      label: 'Home',\r\n      link: '/home',\r\n      index: 0\r\n    }, {\r\n      label: 'Room',\r\n      link: '/room',\r\n      index: 1\r\n    }, {\r\n      label: 'About',\r\n      link: '/about',\r\n      index: 2\r\n    }\r\n  ];\r\n  activeLinkIndex = -1;\r\n\r\n  constructor(private router: Router) {\r\n    // this.navLinks =\r\n    this.getScreenSize();\r\n\r\n  }\r\n  @HostListener('window:resize', ['$event'])\r\n  getScreenSize() {\r\n    this.screenWidth = window.innerWidth;\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    this.router.events.subscribe(() => {\r\n      const navLinkEntry = this.navLinks.find(tab => tab.link === '.' + this.router.url)\r\n      if (navLinkEntry !== undefined) {\r\n        this.activeLinkIndex = this.navLinks.indexOf(navLinkEntry);\r\n      }\r\n      // else{\r\n      //   this.activeLinkIndex = 3;\r\n      // }\r\n    });\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "mat-toolbar {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n  overflow: auto;\r\n\r\n}\r\n.profile-image-bg {\r\n  background-image: url(\"https://source.unsplash.com/500x500/?profile+photo+sport+portrait+adult\");\r\n  background-size: cover;\r\n  vertical-align: middle;\r\n}\r\n\r\n.profile-image-bg:focus-visible {\r\n  outline: 2px solid white;\r\n}\r\n\r\n#page_wrapper {\r\n  /*width: calc(100% - 2rem);*/\r\n  max-width: var(--max-content-width);\r\n  margin: 0 auto var(--bot-toolbar-height) auto;\r\n}\r\nnav[mat-tab-nav-bar] {\r\n  margin: 0 auto;\r\n  position: fixed;\r\n  bottom: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  background: white;\r\n  z-index: 5;\r\n}\r\n\r\n/*mat-sidenav-container {*/\r\n/*  position: absolute;*/\r\n/*  top: 0;*/\r\n/*  bottom: 0;*/\r\n/*  left: 0;*/\r\n/*  right: 0;*/\r\n/*}*/\r\nmat-sidenav-container {\r\n  height: calc(100% - var(--bot-toolbar-height));\r\n}\r\nmat-sidenav-content {\r\n}\r\nmat-sidenav {\r\n  width: 200px;\r\n}\r\n.main_nav {\r\n  position: sticky;\r\n  top: 0;\r\n  z-index: 5;\r\n}\r\n.title_link {\r\n  color: inherit;\r\n  text-decoration: inherit;\r\n\r\n}\r\n",
+                    "data": "mat-toolbar {\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: space-between;\r\n  overflow: auto;\r\n\r\n}\r\n.profile-image-bg {\r\n  background-image: url(\"https://source.unsplash.com/500x500/?profile+photo+sport+portrait+adult\");\r\n  background-size: cover;\r\n  vertical-align: middle;\r\n}\r\n\r\n.profile-image-bg:focus-visible {\r\n  outline: 2px solid white;\r\n}\r\n\r\n#page_wrapper {\r\n  /*width: calc(100% - 2rem);*/\r\n  max-width: var(--max-content-width);\r\n  margin: 0 auto var(--bot-toolbar-height) auto;\r\n}\r\nnav[mat-tab-nav-bar] {\r\n  margin: 0 auto;\r\n  position: fixed;\r\n  bottom: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  background: white;\r\n  z-index: 5;\r\n}\r\n\r\n/*mat-sidenav-container {*/\r\n/*  position: absolute;*/\r\n/*  top: 0;*/\r\n/*  bottom: 0;*/\r\n/*  left: 0;*/\r\n/*  right: 0;*/\r\n/*}*/\r\nmat-sidenav-container {\r\n  height: calc(100% - var(--bot-toolbar-height));\r\n}\r\nmat-sidenav-content {\r\n}\r\nmat-sidenav {\r\n  width: 200px;\r\n}\r\n.nav_header {\r\n  position: sticky;\r\n  top: 0;\r\n  z-index: 5;\r\n}\r\n.title_link {\r\n  color: inherit;\r\n  text-decoration: inherit;\r\n\r\n}\r\n",
                     "styleUrl": "./app.component.css"
                 }
             ],
@@ -418,7 +418,7 @@
                     }
                 ]
             },
-            "templateData": "<!--<mat-toolbar color=\"primary\">-->\r\n<!--  GYMBOX-->\r\n<!--  <button mat-button routerLink=\"/\">Home</button>-->\r\n<!--  <button mat-button routerLink=\"/about\">About</button>-->\r\n<!--  <button mat-button routerLink=\"/room\">Room</button>-->\r\n<!--</mat-toolbar>-->\r\n<mat-toolbar color=\"primary\" class=\"main_nav mat-elevation-z5\">\r\n    <span class=\"nav-start\">\r\n      <button mat-icon-button class=\"sidenavStart-icon\" aria-label=\"Example icon-button with menu icon\"\r\n              (click)=\"sidenavStart.toggle()\">\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n    </span>\r\n  <span class=\"nav-mid\">\r\n      <a routerLink=\"/home\" class=\"title_link\">GYMBOX</a>\r\n    </span>\r\n  <span class=\"nav-end\">\r\n      <a mat-icon-button class=\"example-icon face-icon profile-image-bg\" aria-label=\"Example icon-button with face icon\"\r\n         routerLink=\"/user\">\r\n<!--        <mat-icon>face</mat-icon>-->\r\n      </a>\r\n    </span>\r\n</mat-toolbar>\r\n\r\n\r\n<nav mat-tab-nav-bar [backgroundColor]=\"'primary'\" [tabPanel]=\"tabPanel\">\r\n  <a mat-tab-link\r\n     *ngFor=\"let navLinkEntry of navLinks\"\r\n     [routerLink]=\"navLinkEntry.link\"\r\n     routerLinkActive=\"routerLinkActive\"\r\n     #rla=\"routerLinkActive\"\r\n     [active]=\"rla.isActive\">{{navLinkEntry.label}}</a>\r\n</nav>\r\n\r\n<mat-sidenav-container autosize>\r\n  <mat-sidenav #sidenavStart fixedInViewport fixedTopGap=\"{{screenWidth < 600 ? 56 : 64}}\" fixedBottomGap=\"48\"\r\n               mode=\"over\" [(opened)]=\"opened_start\" role=\"navigation\">\r\n    <mat-nav-list>\r\n      <a mat-list-item disabled>All Pages:</a>\r\n\r\n      <a mat-list-item\r\n         *ngFor=\"let navLinkEntry of navLinks\"\r\n         [routerLink]=\"navLinkEntry.link\"\r\n         routerLinkActive=\"active\"\r\n      >\r\n        {{navLinkEntry.label}}\r\n      </a>\r\n      <mat-divider></mat-divider>\r\n      <a mat-list-item routerLink=\"/user\">User</a>\r\n      <a mat-list-item routerLink=\"/book_gym\">Book gym</a>\r\n      <a mat-list-item disabled>&nbsp;</a>\r\n      <a mat-list-item (click)=\"sidenavEnd.toggle()\">Open other Sidebar</a>\r\n\r\n    </mat-nav-list>\r\n  </mat-sidenav>\r\n  <mat-sidenav #sidenavEnd fixedInViewport fixedTopGap=\"{{screenWidth < 600 ? 56 : 64}}\" fixedBottomGap=\"48\"\r\n               position=\"end\" mode=\"over\" [(opened)]=\"opened_end\">\r\n    <app-workout-tools></app-workout-tools>\r\n  </mat-sidenav>\r\n  <mat-sidenav-content role=\"main\">\r\n    <div id=\"page_wrapper\">\r\n      <mat-tab-nav-panel #tabPanel>\r\n        <router-outlet></router-outlet>\r\n      </mat-tab-nav-panel>\r\n    </div>\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n\r\n\r\n"
+            "templateData": "<mat-toolbar color=\"primary\" class=\"nav_header mat-elevation-z5\">\r\n    <span class=\"nav-start\">\r\n      <button mat-icon-button class=\"toggle_nav_side_btn\" aria-label=\"Button to open the main menu.\"\r\n              (click)=\"sidenavStart.toggle()\">\r\n        <mat-icon>menu</mat-icon>\r\n      </button>\r\n    </span>\r\n  <span class=\"nav-mid\">\r\n      <a routerLink=\"/home\" class=\"title_link\">GYMBOX</a>\r\n    </span>\r\n  <span class=\"nav-end\">\r\n      <a mat-icon-button class=\"example-icon face-icon profile-image-bg\" aria-label=\"Button to open the user profile.\"\r\n         routerLink=\"/user\">\r\n      </a>\r\n    </span>\r\n</mat-toolbar>\r\n\r\n<nav mat-tab-nav-bar class=\"nav_footer\" [backgroundColor]=\"'primary'\" [tabPanel]=\"tabPanel\">\r\n  <a mat-tab-link\r\n     *ngFor=\"let navLinkEntry of navLinks\"\r\n     [routerLink]=\"navLinkEntry.link\"\r\n     routerLinkActive=\"routerLinkActive\"\r\n     #rla=\"routerLinkActive\"\r\n     [active]=\"rla.isActive\">{{navLinkEntry.label}}</a>\r\n</nav>\r\n\r\n<mat-sidenav-container autosize>\r\n  <mat-sidenav #sidenavStart fixedInViewport fixedTopGap=\"{{screenWidth < 600 ? 56 : 64}}\" fixedBottomGap=\"48\"\r\n               mode=\"over\" [(opened)]=\"opened_start\" role=\"navigation\" class=\"nav_side\">\r\n    <mat-nav-list>\r\n      <a mat-list-item disabled>All Pages:</a>\r\n\r\n      <a mat-list-item\r\n         *ngFor=\"let navLinkEntry of navLinks\"\r\n         [routerLink]=\"navLinkEntry.link\"\r\n         routerLinkActive=\"active\"\r\n      >\r\n        {{navLinkEntry.label}}\r\n      </a>\r\n      <mat-divider></mat-divider>\r\n      <a mat-list-item routerLink=\"/user\">User</a>\r\n      <a mat-list-item routerLink=\"/book_gym\">Book gym</a>\r\n      <a mat-list-item disabled>&nbsp;</a>\r\n      <a mat-list-item (click)=\"sidenavEnd.toggle()\" class=\"open_toolbox_side\">Open other Sidebar</a>\r\n\r\n    </mat-nav-list>\r\n  </mat-sidenav>\r\n  <mat-sidenav #sidenavEnd fixedInViewport fixedTopGap=\"{{screenWidth < 600 ? 56 : 64}}\" fixedBottomGap=\"48\"\r\n               position=\"end\" mode=\"over\" [(opened)]=\"opened_end\" class=\"toolbox_side\">\r\n    <app-workout-tools></app-workout-tools>\r\n  </mat-sidenav>\r\n  <mat-sidenav-content role=\"main\">\r\n    <div id=\"page_wrapper\">\r\n      <mat-tab-nav-panel #tabPanel>\r\n        <router-outlet></router-outlet>\r\n      </mat-tab-nav-panel>\r\n    </div>\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n\r\n\r\n"
         },
         {
             "name": "BlindsHelpComponent",
@@ -1101,7 +1101,7 @@
         },
         {
             "name": "HomeComponent",
-            "id": "component-HomeComponent-be62b1b4e0a0b2ce70f84b2858abbeee4dd397688036f7fe86a987da4d3b65a6d9413df1f3d4962dfb9e8916df71efbb711b6e3878ae35f9ac81e8f5cc33220a",
+            "id": "component-HomeComponent-4ddccfeb2db876ddaeaaedf026ba9557e7ebda620d2553ddfb81f435b751c9e5a15fe8cdf2d41801f475c5eabe785e380063452d1da3cba6c2465e6da1093132",
             "file": "src/app/pages/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1233,7 +1233,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, OnInit} from '@angular/core';\r\nimport {ApiService} from '../../api.service';\r\nimport {Gym} from '../../models/gym.model';\r\nimport {MatSnackBar} from \"@angular/material/snack-bar\";\r\n\r\n@Component({\r\n  selector: 'app-home',\r\n  templateUrl: './home.component.html',\r\n  styleUrls: ['./home.component.css']\r\n})\r\nexport class HomeComponent implements OnInit {\r\n  gyms: Gym[] = [];\r\n  isLoading: boolean = true;\r\n  gym_list_sorting = 'nearby';\r\n  gym_list_show_all: string | undefined = undefined;\r\n\r\n  constructor(private apiService: ApiService, private _snackBar: MatSnackBar) {\r\n  }\r\n\r\n  ngOnInit() {\r\n    this.loadGyms()\r\n  }\r\n\r\n  loadGyms() {\r\n    this.isLoading = true;\r\n    this.apiService.sendGetRequest().subscribe({\r\n      next: (data: any) => {\r\n        console.log(\"got gym data\", data);\r\n        this.gyms = data;\r\n        this.isLoading = false;\r\n      },\r\n      error: () => {\r\n        // this.openSnackBar('Connection Error', 'Dismiss');\r\n        this.isLoading = false;\r\n      }\r\n    });\r\n  }\r\n\r\n  openSnackBar(message: string, action: string) {\r\n    this._snackBar.open(message, action, {\r\n      duration: 3000\r\n    });\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import {Component, OnInit} from '@angular/core';\r\nimport {ApiService} from '../../api.service';\r\nimport {Gym} from '../../models/gym.model';\r\nimport {MatSnackBar} from \"@angular/material/snack-bar\";\r\n\r\n@Component({\r\n  selector: 'app-home',\r\n  templateUrl: './home.component.html',\r\n  styleUrls: ['./home.component.css']\r\n})\r\nexport class HomeComponent implements OnInit {\r\n  gyms: Gym[] = [];\r\n  isLoading: boolean = true;\r\n  gym_list_sorting = 'nearby';\r\n  gym_list_show_all: string | undefined = undefined;\r\n\r\n  constructor(private apiService: ApiService, private _snackBar: MatSnackBar) {\r\n  }\r\n\r\n  ngOnInit() {\r\n    this.loadGyms()\r\n  }\r\n\r\n  loadGyms() {\r\n    this.isLoading = true;\r\n    this.apiService.sendGetRequest().subscribe({\r\n      next: (data: any) => {\r\n        // console.log(\"got gym data\", data);\r\n        this.gyms = data;\r\n        this.isLoading = false;\r\n      },\r\n      error: () => {\r\n        // this.openSnackBar('Connection Error', 'Dismiss');\r\n        this.isLoading = false;\r\n      }\r\n    });\r\n  }\r\n\r\n  openSnackBar(message: string, action: string) {\r\n    this._snackBar.open(message, action, {\r\n      duration: 3000\r\n    });\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2186,7 +2186,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"list-item {{ task.state }}\">\r\n  <label\r\n    [attr.aria-label]=\"'archiveTask-' + task.id\"\r\n    for=\"checked-{{ task.id }}\"\r\n    class=\"checkbox\"\r\n  >\r\n    <input\r\n      type=\"checkbox\"\r\n      disabled=disabled\r\n      [defaultChecked]=\"task.state === 'TASK_ARCHIVED'\"\r\n      name=\"checked-{{ task.id }}\"\r\n      id=\"checked-{{ task.id }}\"\r\n    />\r\n    <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\"></span>\r\n  </label>\r\n  <label\r\n    [attr.aria-label]=\"task.title + ''\"\r\n    for=\"title-{{ task.id }}\"\r\n    class=\"title\"\r\n  >\r\n    <input\r\n      type=\"text\"\r\n      [value]=\"task.title\"\r\n      readonly=readonly\r\n      id=\"title-{{ task.id }}\"\r\n      name=\"title-{{ task.id }}\"\r\n      placeholder=\"Input title\"\r\n    />\r\n  </label>\r\n  <span *ngIf=\"task.state === 'TASK_PINNED'\">Pinned</span>\r\n\r\n\r\n  <button\r\n    *ngIf=\" task.state !==\r\n  'TASK_ARCHIVED'\"\r\n    class=\"pin-button\"\r\n    [attr.aria-label]=\"'pinTask-' + task.id\"\r\n    (click)=\"onPin(task.id)\"\r\n  >\r\n    S\r\n  </button>\r\n</div>\r\n"
+            "templateData": "<div class=\"list-item {{ task.state }}\">\r\n  <label\r\n    [attr.aria-label]=\"'archiveTask-' + task.id\"\r\n    for=\"checked-{{ task.id }}\"\r\n    class=\"checkbox\"\r\n  >\r\n    <input\r\n      type=\"checkbox\"\r\n      disabled=disabled\r\n      [defaultChecked]=\"task.state === 'TASK_ARCHIVED'\"\r\n      name=\"checked-{{ task.id }}\"\r\n      id=\"checked-{{ task.id }}\"\r\n    />\r\n    <span class=\"checkbox-custom\" (click)=\"onArchive(task.id)\"></span>\r\n  </label>\r\n  <label\r\n    [attr.aria-label]=\"task.title + ''\"\r\n    for=\"title-{{ task.id }}\"\r\n    class=\"title\"\r\n  >\r\n    <input\r\n      type=\"text\"\r\n      [value]=\"task.title\"\r\n      readonly=readonly\r\n      id=\"title-{{ task.id }}\"\r\n      name=\"title-{{ task.id }}\"\r\n      placeholder=\"Input title\"\r\n    />\r\n  </label>\r\n  <span *ngIf=\"task.state === 'TASK_PINNED'\" class=\"task_pinned\">Pinned</span>\r\n\r\n\r\n  <button\r\n    *ngIf=\" task.state !==\r\n  'TASK_ARCHIVED'\"\r\n    class=\"pin-button\"\r\n    [attr.aria-label]=\"'pinTask-' + task.id\"\r\n    (click)=\"onPin(task.id)\"\r\n  >\r\n    S\r\n  </button>\r\n</div>\r\n"
         },
         {
             "name": "TaskListComponent",
@@ -2729,16 +2729,6 @@
                 "defaultValue": "{\r\n  onPinTask: action('onPinTask'),\r\n  onArchiveTask: action('onArchiveTask'),\r\n}"
             },
             {
-                "name": "AllDefaults",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "Archived",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2747,6 +2737,26 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<StoryType>",
+                "defaultValue": "{}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/ui-components/mat-accordion-responsive/mat-accordion-responsive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<StoryType>",
+                "defaultValue": "{}"
             },
             {
                 "name": "Default",
@@ -2767,6 +2777,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Dumbbell",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<StoryType>",
+                "defaultValue": "{\r\n  args: {\r\n    icon: faDumbbell,\r\n    help_topic: 'help_dumbbells',\r\n    label: 'Dumb&shy;bells',\r\n  },\r\n}"
             },
             {
                 "name": "Empty",
@@ -2787,6 +2807,26 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Lights",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<StoryType>",
+                "defaultValue": "{\r\n  args: {\r\n    icon: faLightbulb,\r\n    popup: LightsHelpComponent,\r\n    label: 'Lights',\r\n  },\r\n}"
+            },
+            {
+                "name": "LightsDisabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<StoryType>",
+                "defaultValue": "{\r\n  args: {\r\n    icon: faLightbulb,\r\n    popup: LightsHelpComponent,\r\n    label: 'Lights',\r\n    disabled: true,\r\n  },\r\n}"
             },
             {
                 "name": "Loading",
@@ -2839,6 +2879,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "LongRows",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<StoryType>",
+                "defaultValue": "{\r\n  args: {\r\n    label: 'LongButtonDescription',\r\n  },\r\n}"
+            },
+            {
                 "name": "MODULE_DATE_FORMATS",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2847,6 +2897,26 @@
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\r\n  parse: {\r\n    dateInput: 'dd.LL.yyyy'\r\n  },\r\n  display: {\r\n    dateInput: 'dd.LL.yyyy',\r\n    monthYearLabel: 'LLLL yyyy',\r\n    dateA11yLabel: 'LL',\r\n    monthYearA11yLabel: 'LLLL YYYY'\r\n  }\r\n}"
+            },
+            {
+                "name": "MultiRows",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<StoryType>",
+                "defaultValue": "{\r\n  args: {\r\n    label: 'Long Button Description',\r\n  },\r\n}"
+            },
+            {
+                "name": "OnePanel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/ui-components/mat-accordion-responsive/mat-accordion-responsive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryObj<StoryType>",
+                "defaultValue": "{\r\n  args: {\r\n    ngContent: '<mat-expansion-panel>\\n' +\r\n      '          <mat-expansion-panel-header>\\n' +\r\n      '            <div class=\"mat-expansion-panel-header-content\">\\n' +\r\n      '              <mat-panel-title>\\n' +\r\n      '                <span>Public Profile</span>\\n' +\r\n      '              </mat-panel-title>\\n' +\r\n      '              <mat-panel-description>\\n' +\r\n      '                <span>Descripton</span>\\n' +\r\n      '              </mat-panel-description>\\n' +\r\n      '            </div>\\n' +\r\n      '          </mat-expansion-panel-header>\\n' +\r\n      '          <p>Describe how you want to be seen by other users.</p>\\n' +\r\n      '        </mat-expansion-panel>',\r\n  },\r\n}"
             },
             {
                 "name": "Pinned",
@@ -2869,16 +2939,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "StoryFn",
-                "defaultValue": "() => ({\r\n  props: {\r\n    label: 'Button',\r\n    primary: true,\r\n  },\r\n})"
-            },
-            {
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2887,32 +2947,12 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "StoryFn",
-                "defaultValue": "() => ({\r\n  props: {\r\n    label: '😄👍😍💯',\r\n    backgroundColor: '#ff0',\r\n  },\r\n})"
             },
             {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "SmileIcon",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -2952,16 +2992,6 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "StoryFn",
-                "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/ui-components/task/task.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2979,16 +3009,6 @@
                 "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    onPinTask: TaskStories.actionsData.onPinTask,\r\n    onArchiveTask: TaskStories.actionsData.onArchiveTask,\r\n  },\r\n})"
             },
             {
-                "name": "Tertiary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "StoryFn",
-                "defaultValue": "() => ({\r\n  props: {\r\n    label: '📚📕📈🤓',\r\n    backgroundColor: '#ff0',\r\n  },\r\n})"
-            },
-            {
                 "name": "WithPinnedTasks",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3000,7 +3020,30 @@
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "StoryType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 187
+            },
+            {
+                "name": "StoryType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/app/ui-components/mat-accordion-responsive/mat-accordion-responsive.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 187
+            }
+        ],
         "enumerations": [],
         "groupedVariables": {
             "src/app/ui-components/task/task.stories.ts": [
@@ -3057,64 +3100,86 @@
             ],
             "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts": [
                 {
-                    "name": "AllDefaults",
+                    "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "type": "StoryObj<StoryType>",
+                    "defaultValue": "{}"
                 },
                 {
-                    "name": "Primary",
+                    "name": "Dumbbell",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "StoryFn",
-                    "defaultValue": "() => ({\r\n  props: {\r\n    label: 'Button',\r\n    primary: true,\r\n  },\r\n})"
+                    "type": "StoryObj<StoryType>",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: faDumbbell,\r\n    help_topic: 'help_dumbbells',\r\n    label: 'Dumb&shy;bells',\r\n  },\r\n}"
                 },
                 {
-                    "name": "Secondary",
+                    "name": "Lights",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "StoryFn",
-                    "defaultValue": "() => ({\r\n  props: {\r\n    label: '😄👍😍💯',\r\n    backgroundColor: '#ff0',\r\n  },\r\n})"
+                    "type": "StoryObj<StoryType>",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: faLightbulb,\r\n    popup: LightsHelpComponent,\r\n    label: 'Lights',\r\n  },\r\n}"
                 },
                 {
-                    "name": "SmileIcon",
+                    "name": "LightsDisabled",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "type": "StoryObj<StoryType>",
+                    "defaultValue": "{\r\n  args: {\r\n    icon: faLightbulb,\r\n    popup: LightsHelpComponent,\r\n    label: 'Lights',\r\n    disabled: true,\r\n  },\r\n}"
                 },
                 {
-                    "name": "Template",
+                    "name": "LongRows",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "StoryFn",
-                    "defaultValue": "(args) => ({\r\n  props: args,\r\n})"
+                    "type": "StoryObj<StoryType>",
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'LongButtonDescription',\r\n  },\r\n}"
                 },
                 {
-                    "name": "Tertiary",
+                    "name": "MultiRows",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "StoryFn",
-                    "defaultValue": "() => ({\r\n  props: {\r\n    label: '📚📕📈🤓',\r\n    backgroundColor: '#ff0',\r\n  },\r\n})"
+                    "type": "StoryObj<StoryType>",
+                    "defaultValue": "{\r\n  args: {\r\n    label: 'Long Button Description',\r\n  },\r\n}"
+                }
+            ],
+            "src/app/ui-components/mat-accordion-responsive/mat-accordion-responsive.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/ui-components/mat-accordion-responsive/mat-accordion-responsive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<StoryType>",
+                    "defaultValue": "{}"
+                },
+                {
+                    "name": "OnePanel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/ui-components/mat-accordion-responsive/mat-accordion-responsive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryObj<StoryType>",
+                    "defaultValue": "{\r\n  args: {\r\n    ngContent: '<mat-expansion-panel>\\n' +\r\n      '          <mat-expansion-panel-header>\\n' +\r\n      '            <div class=\"mat-expansion-panel-header-content\">\\n' +\r\n      '              <mat-panel-title>\\n' +\r\n      '                <span>Public Profile</span>\\n' +\r\n      '              </mat-panel-title>\\n' +\r\n      '              <mat-panel-description>\\n' +\r\n      '                <span>Descripton</span>\\n' +\r\n      '              </mat-panel-description>\\n' +\r\n      '            </div>\\n' +\r\n      '          </mat-expansion-panel-header>\\n' +\r\n      '          <p>Describe how you want to be seen by other users.</p>\\n' +\r\n      '        </mat-expansion-panel>',\r\n  },\r\n}"
                 }
             ],
             "src/app/ui-components/task-list/task-list.stories.ts": [
@@ -3300,7 +3365,34 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts": [
+                {
+                    "name": "StoryType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/app/ui-components/mat-sq-button/mat-sq-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 187
+                }
+            ],
+            "src/app/ui-components/mat-accordion-responsive/mat-accordion-responsive.stories.ts": [
+                {
+                    "name": "StoryType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/app/ui-components/mat-accordion-responsive/mat-accordion-responsive.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 187
+                }
+            ]
+        }
     },
     "routes": {
         "name": "<root>",
@@ -3541,6 +3633,26 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/ui-components/mat-accordion-responsive/mat-accordion-responsive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/ui-components/mat-accordion-responsive/mat-accordion-responsive.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "OnePanel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/ui-components/mat-sq-button/mat-sq-button.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -3554,7 +3666,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "AllDefaults",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3564,7 +3676,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "Dumbbell",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3574,7 +3686,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Secondary",
+                "name": "Lights",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3584,7 +3696,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "SmileIcon",
+                "name": "LightsDisabled",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3594,7 +3706,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "LongRows",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3604,7 +3716,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Tertiary",
+                "name": "MultiRows",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

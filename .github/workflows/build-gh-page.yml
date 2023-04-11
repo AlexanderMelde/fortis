@@ -32,6 +32,9 @@ jobs:
       - name: Build Storybook Docs
         run: npm run build-storybook-docs
 
+      - name: Build Compodoc Docs
+        run: npm run docs:build
+
       - name: Run Tests
         run: npm run test-silent
 
