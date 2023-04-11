@@ -1,27 +1,38 @@
-# Gymbox
+# GYMBOX
+GYMBOX is a one-of-a-kind premium private gym rental solution. Book your gym, workout privately, anytime, anywhere, you decide!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
+This repository serves the clickdummy prototype for the upcoming GYMBOX app.
 
-## Development server
+## Usage
+Just open the readily built website at https://alexandermelde.github.io/gymbox/ and select "gymbox" to view the current development release of this webpage.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+To serve locally, refer to the development section below.
 
-## Code scaffolding
+## Development
+
+Run `npm run start` to start a local dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+To simulate a database server, a local json server REST API can be started using `npm run start-database-server`
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+Finally, run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. 
+Builds will automatically be created using an GitHub action on every commit. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Running unit tests
 
-## Running unit tests
+Run `npm run test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test-silent` or `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Running end-to-end tests
+An overview of the test coverage can be seen by visiting the deployed URL mentioned above and choosing the "code-coverage" link.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Storybook Components
+Run `npm run storybook` to serve storybook locally. A prebuilt version can be viewed by visiting the deployed URL listed above and selecting "storybook" or "storybook-docs".
+
 
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+Further commands for this project are listed in ``package.json``.
