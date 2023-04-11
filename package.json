@@ -7,7 +7,7 @@
     "build-gh": "ng run gymbox:build --base-href /gymbox/gymbox/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test-silent": "ng test --no-watch --no-progress",
+    "test-silent": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "ng run gymbox:storybook",
     "build-storybook": "ng run gymbox:build-storybook",
