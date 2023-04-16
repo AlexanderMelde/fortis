@@ -16,7 +16,10 @@
     "storybook-docs": "ng run gymbox:storybook-docs",
     "build-storybook-docs": "ng run gymbox:build-storybook-docs",
     "generate-fake-data": "node ./server/generate-fake-data.js > ./server/database.json",
-    "start-database-server": "json-server --watch ./server/database.json"
+    "start-database-server": "json-server --watch ./server/database.json",
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "private": true,
   "dependencies": {
@@ -48,6 +51,7 @@
     "@angular/compiler-cli": "^15.2.0",
     "@babel/core": "^7.21.0",
     "@compodoc/compodoc": "^1.1.19",
+    "@cypress/schematic": "^2.5.0",
     "@storybook/addon-a11y": "^7.0.0-rc.8",
     "@storybook/addon-actions": "^7.0.0-rc.8",
     "@storybook/addon-essentials": "^7.0.0-rc.8",
@@ -60,6 +64,7 @@
     "@types/karma": "^6.3.3",
     "@types/luxon": "^3.2.1",
     "babel-loader": "^8.3.0",
+    "cypress": "latest",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
