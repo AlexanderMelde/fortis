@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {faClock, faArrowsSpin, faCalculator} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-workout-tools',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class WorkoutToolsComponent {
 
+  protected readonly faClock = faClock;
+  protected readonly faArrowsSpin = faArrowsSpin;
+  protected readonly faCalculator = faCalculator;
 }

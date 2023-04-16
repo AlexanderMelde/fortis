@@ -1,0 +1,5 @@
+mat-sq-button, h4, mat-divider  {
+  margin: var(--min-content-wrap-margin);
+  display: block;
+  text-align: center;
+}

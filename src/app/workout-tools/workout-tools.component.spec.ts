@@ -1,4 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatDividerModule} from "@angular/material/divider";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {MatSqButtonComponent} from "../ui-components/mat-sq-button/mat-sq-button.component";
 
 import { WorkoutToolsComponent } from './workout-tools.component';
 
@@ -8,7 +12,8 @@ describe('WorkoutToolsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WorkoutToolsComponent ]
+      declarations: [ WorkoutToolsComponent, MatSqButtonComponent ],
+      imports: [MatDividerModule, FontAwesomeModule, MatDialogModule]
     })
     .compileComponents();
 
