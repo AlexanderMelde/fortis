@@ -1,0 +1,92 @@
+<mat-toolbar>
+  <mat-icon>music_note</mat-icon>
+  <span class="title">Now Playing</span>
+  <span class="example-spacer"></span>
+  <button aria-label="Example icon to open context menu" class="example-icon" mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>open_in_new</mat-icon>
+      <span>Open in Spotify</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>queue_music</mat-icon>
+      <span>Show Playlist</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>shuffle</mat-icon>
+      <span>Shuffle</span>
+    </button>
+  </mat-menu>
+
+  <button (click)="close()" aria-label="Button to close media controls" class="example-icon" mat-icon-button>
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="media-control-vertical-wrapper">
+  <div class="cover-image-wrapper">
+    <img alt="Photo of a album cover" class="cover-image" ngSrc="assets/albumcover.jpg" height="300" width="300">
+  </div>
+  <div class="media-controls">
+    <div class="title-wrapper">
+      <div>
+        <mat-card-title>Hold Me Like a Grudge</mat-card-title>
+        <mat-card-subtitle>Fall Out Boy</mat-card-subtitle>
+      </div>
+      <button aria-label="Example icon-button with heart icon" class="example-icon" mat-icon-button>
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+    </div>
+    <div class="progress-bar-wrapper">
+      <div>{{formatDuration(slider_value, 3 * 60 + 35)}}</div>
+      <mat-slider>
+        <input [(ngModel)]="slider_value" matSliderThumb>
+      </mat-slider>
+      <div>3:35</div>
+    </div>
+    <div class="media-control-buttons">
+      <button aria-label="Example icon-button with menu icon" mat-icon-button>
+        <mat-icon>skip_previous</mat-icon>
+      </button>
+      <button aria-label="Example icon-button with menu icon" class="primary" mat-icon-button>
+        <mat-icon>play_circle_filled</mat-icon>
+      </button>
+      <button aria-label="Example icon-button with menu icon" mat-icon-button>
+        <mat-icon>skip_next</mat-icon>
+      </button>
+    </div>
+    <div class="media-control-buttons">
+      <div class="media-device">
+        <mat-icon>speaker</mat-icon>
+        <span>GYMBOX-SPEAKER</span>
+      </div>
+      <button aria-label="Example icon-button with share icon" class="example-icon" mat-icon-button>
+        <mat-icon>share</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!--<p>mediacontrol works!</p>-->
+<!--<mat-nav-list>-->
+<!--  <a href="https://keep.google.com/" mat-list-item (click)="openLink($event)">-->
+<!--    <span matListItemTitle>Google Keep</span>-->
+<!--    <span matLine>Add to a note</span>-->
+<!--  </a>-->
+
+<!--  <a href="https://docs.google.com/" mat-list-item (click)="openLink($event)">-->
+<!--    <span matListItemTitle>Google Docs</span>-->
+<!--    <span matLine>Embed in a document</span>-->
+<!--  </a>-->
+
+<!--  <a href="https://plus.google.com/" mat-list-item (click)="openLink($event)">-->
+<!--    <span matListItemTitle>Google Plus</span>-->
+<!--    <span matLine>Share with your friends</span>-->
+<!--  </a>-->
+
+<!--  <a href="https://hangouts.google.com/" mat-list-item (click)="openLink($event)">-->
+<!--    <span matListItemTitle>Google Hangouts</span>-->
+<!--    <span matLine>Show to your coworkers</span>-->
+<!--  </a>-->
+<!--</mat-nav-list>-->

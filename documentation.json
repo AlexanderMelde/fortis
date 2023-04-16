@@ -1830,6 +1830,165 @@
             "templateData": "<button mat-stroked-button (click)=\"onClickHandler()\" [disabled]=\"disabled\">\r\n  <span class=\"wrapper\">\r\n    <fa-icon [icon]=\"icon\" class=\"main_icon\"></fa-icon>\r\n    <div>\r\n      <span class=\"label\"><ng-content></ng-content></span>\r\n      <fa-icon [icon]=\"faAngleRight\" class=\"caret_icon\"></fa-icon>\r\n    </div>\r\n  </span>\r\n</button>\r\n"
         },
         {
+            "name": "MediacontrolComponent",
+            "id": "component-MediacontrolComponent-d5347194c0849d626c13770a69f0573cac79d37fb3003c9e72d850dbfb1d72d255768a27319677fa65a42582ea5a73b5b83343b21d3ffb4057bbaa90030cfe05",
+            "file": "src/app/mediacontrol/mediacontrol.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-mediacontrol",
+            "styleUrls": [
+                "./mediacontrol.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./mediacontrol.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "slider_value",
+                    "defaultValue": "80",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "close",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "formatDuration",
+                    "args": [
+                        {
+                            "name": "percentComplete",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "maxDurationInSeconds",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "percentComplete",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "maxDurationInSeconds",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "openLink",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component} from '@angular/core';\nimport {MatBottomSheetRef} from \"@angular/material/bottom-sheet\";\n\n@Component({\n  selector: 'app-mediacontrol',\n  templateUrl: './mediacontrol.component.html',\n  styleUrls: ['./mediacontrol.component.css']\n})\nexport class MediacontrolComponent {\n  slider_value = 80;\n\n  constructor(private _bottomSheetRef: MatBottomSheetRef<MediacontrolComponent>) {\n  }\n\n  openLink(event: MouseEvent): void {\n    this._bottomSheetRef.dismiss();\n    event.preventDefault();\n  }\n\n  close() {\n    this._bottomSheetRef.dismiss();\n  }\n\n  formatDuration(percentComplete: number, maxDurationInSeconds: number): string {\n    const totalSecondsRemaining = maxDurationInSeconds * (percentComplete / 100);\n    const minutes = Math.floor(totalSecondsRemaining / 60);\n    const seconds = Math.floor(totalSecondsRemaining % 60);\n    return `${minutes.toString().padStart(1, '0')}:${seconds.toString().padStart(2, '0')}`;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\r\n  height: 100%;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n.media-control-vertical-wrapper {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex-grow: 1;\r\n  justify-content: space-between;\r\n  margin: 0 auto;\r\n  width: 100%;\r\n  max-width: min(300px, calc(100% - 2 * var(--min-content-wrap-margin)));\r\n  padding-bottom: var(--min-content-wrap-margin);\r\n}\r\n.example-spacer {\r\n  flex: 1 1 auto;\r\n}\r\n::ng-deep mat-bottom-sheet-container.mat-bottom-sheet-container {\r\n  padding: 0;\r\n  width: calc(332px + var(--min-content-wrap-margin) * 4);\r\n  min-width: auto;\r\n  max-height: 640px;\r\n  height: 100vh;\r\n}\r\n.cover-image-wrapper {\r\n  flex-grow: 1;\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n.cover-image {\r\n  display: block;\r\n  width: 100%;\r\n  height: 100%;\r\n  object-fit: contain;\r\n/*  TODO: allow seamless vertical sizing down */\r\n}\r\n.title {\r\n  padding-left: var(--min-content-wrap-margin);\r\n}\r\n.title-wrapper {\r\n  display: flex;\r\n}\r\n.title-wrapper div {\r\n  flex-grow: 1;\r\n}\r\n.title-wrapper button {\r\n  flex-grow: 0;\r\n}\r\n.media-controls {\r\n  max-width: min(100%, 300px);\r\n  width: 100%;\r\n}\r\n.progress-bar-wrapper, .media-control-buttons {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: var(--min-content-wrap-margin) / 4;\r\n  justify-content: space-between;\r\n}\r\nmat-slider{\r\n  flex-grow: 1;\r\n}\r\n.progress-bar-wrapper div {\r\n  flex-grow: 0;\r\n  width: 35px;\r\n}\r\n.progress-bar-wrapper div:last-of-type {\r\n  text-align: right;\r\n}\r\n.primary mat-icon {\r\n  font-size: 50px;\r\n  height: 50px ;\r\n  width: 50px;\r\n}\r\n[mat-icon-button].primary {\r\n  height: 74px ;\r\n  width: 74px;\r\n}\r\n.media-device {\r\n  display: flex;\r\n  align-items: center;\r\n  color: #673ab7; /*TODO: Variable*/\r\n}\r\n.media-device mat-icon {\r\n  flex-grow: 0;\r\n  font-size: 20px;\r\n  height: 20px;\r\n}\r\n.media-device span {\r\n  font-size: 0.78em;\r\n  font-weight: bold;\r\n}\r\n\r\n\r\n@media(max-height: 600px){\r\n  .cover-image {\r\n    max-height: 200px;\r\n  }\r\n}\r\n@media(max-height: 500px){\r\n  .cover-image {\r\n    max-height: 150px;\r\n  }\r\n}\r\n@media(max-height: 450px){\r\n  .cover-image {\r\n    max-height: 100px;\r\n  }\r\n}\r\n@media(max-width: 400px) and (max-height: 800px){\r\n  ::ng-deep mat-bottom-sheet-container.mat-bottom-sheet-container {\r\n    max-height: 100vh;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./mediacontrol.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "_bottomSheetRef",
+                        "type": "MatBottomSheetRef<MediacontrolComponent>",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 10,
+                "jsdoctags": [
+                    {
+                        "name": "_bottomSheetRef",
+                        "type": "MatBottomSheetRef<MediacontrolComponent>",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<mat-toolbar>\n  <mat-icon>music_note</mat-icon>\n  <span class=\"title\">Now Playing</span>\n  <span class=\"example-spacer\"></span>\n  <button aria-label=\"Example icon-button with heart icon\" class=\"example-icon favorite-icon\" mat-icon-button>\n    <mat-icon>more_vert</mat-icon>\n  </button>\n  <button (click)=\"close()\" aria-label=\"Button to close media controls\" class=\"example-icon\" mat-icon-button>\n    <mat-icon>close</mat-icon>\n  </button>\n</mat-toolbar>\n<div class=\"media-control-vertical-wrapper\">\n  <div class=\"cover-image-wrapper\">\n    <img alt=\"Photo of a album cover\" class=\"cover-image\" ngSrc=\"assets/albumcover.jpg\" height=\"30\" width=\"30\">\n  </div>\n  <div class=\"media-controls\">\n    <div class=\"title-wrapper\">\n      <div>\n        <mat-card-title>Hold Me Like a Grudge</mat-card-title>\n        <mat-card-subtitle>Fall Out Boy</mat-card-subtitle>\n      </div>\n      <button aria-label=\"Example icon-button with heart icon\" class=\"example-icon favorite-icon\" mat-icon-button>\n        <mat-icon>favorite</mat-icon>\n      </button>\n    </div>\n    <div class=\"progress-bar-wrapper\">\n      <div>{{formatDuration(slider_value, 3 * 60 + 35)}}</div>\n      <mat-slider>\n        <input [(ngModel)]=\"slider_value\" matSliderThumb>\n      </mat-slider>\n      <div>3:35</div>\n    </div>\n    <div class=\"media-control-buttons\">\n      <button aria-label=\"Example icon-button with menu icon\" mat-icon-button>\n        <mat-icon>skip_previous</mat-icon>\n      </button>\n      <button aria-label=\"Example icon-button with menu icon\" class=\"primary\" mat-icon-button>\n        <mat-icon>play_circle_filled</mat-icon>\n      </button>\n      <button aria-label=\"Example icon-button with menu icon\" mat-icon-button>\n        <mat-icon>skip_next</mat-icon>\n      </button>\n    </div>\n    <div class=\"media-control-buttons\">\n      <div class=\"media-device\">\n        <mat-icon>speaker</mat-icon>\n        <span>GYMBOX-SPEAKER</span>\n      </div>\n      <button aria-label=\"Example icon-button with share icon\" class=\"example-icon\" mat-icon-button>\n        <mat-icon>share</mat-icon>\n      </button>\n    </div>\n  </div>\n</div>\n\n<!--<p>mediacontrol works!</p>-->\n<!--<mat-nav-list>-->\n<!--  <a href=\"https://keep.google.com/\" mat-list-item (click)=\"openLink($event)\">-->\n<!--    <span matListItemTitle>Google Keep</span>-->\n<!--    <span matLine>Add to a note</span>-->\n<!--  </a>-->\n\n<!--  <a href=\"https://docs.google.com/\" mat-list-item (click)=\"openLink($event)\">-->\n<!--    <span matListItemTitle>Google Docs</span>-->\n<!--    <span matLine>Embed in a document</span>-->\n<!--  </a>-->\n\n<!--  <a href=\"https://plus.google.com/\" mat-list-item (click)=\"openLink($event)\">-->\n<!--    <span matListItemTitle>Google Plus</span>-->\n<!--    <span matLine>Share with your friends</span>-->\n<!--  </a>-->\n\n<!--  <a href=\"https://hangouts.google.com/\" mat-list-item (click)=\"openLink($event)\">-->\n<!--    <span matListItemTitle>Google Hangouts</span>-->\n<!--    <span matLine>Show to your coworkers</span>-->\n<!--  </a>-->\n<!--</mat-nav-list>-->\n"
+        },
+        {
             "name": "PageComponent",
             "id": "component-PageComponent-1fc7c24c98b4f0b0f413d91f5a6126f11ad55647457f5a7f372b7f83fe8ecd6dbe67b5ca4b826ed20b9bfbc04d5606b15f82a203b1311f98b18bd28ec9f4fc7c",
             "file": "src/stories/page.component.ts",
@@ -2051,7 +2210,7 @@
         },
         {
             "name": "RoomComponent",
-            "id": "component-RoomComponent-290376035c9486ace2c7850a157381dd17b48289320f8f176ca0a553c7a18487cce3bbdba027c3a6315b0278a89efbf3fd0cec70f39c81c8a5a3a8b1f80a60a8",
+            "id": "component-RoomComponent-c179aeefe39036c681a3d3bb133e4f3107cc3c6c175d3f9b761021f885b7e3d180900e6b365944ba731c61d9e98acf35f06140e2e5f305eceafa8266cfcf9188",
             "file": "src/app/pages/room/room.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2078,7 +2237,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 45
+                    "line": 47
                 },
                 {
                     "name": "ClimateHelpComponent",
@@ -2088,7 +2247,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 46
+                    "line": 48
                 },
                 {
                     "name": "DoorHelpComponent",
@@ -2098,7 +2257,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 47
+                    "line": 49
                 },
                 {
                     "name": "faAngleRight",
@@ -2108,7 +2267,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 35
+                    "line": 37
                 },
                 {
                     "name": "faBottleWater",
@@ -2118,7 +2277,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 43
+                    "line": 45
                 },
                 {
                     "name": "faClock",
@@ -2128,7 +2287,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 30
+                    "line": 32
                 },
                 {
                     "name": "faDoorOpen",
@@ -2138,7 +2297,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 34
+                    "line": 36
                 },
                 {
                     "name": "faDumbbell",
@@ -2148,7 +2307,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 36
+                    "line": 38
                 },
                 {
                     "name": "faFan",
@@ -2158,7 +2317,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 42
+                    "line": 44
                 },
                 {
                     "name": "faHotTubPerson",
@@ -2168,7 +2327,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 41
+                    "line": 43
                 },
                 {
                     "name": "faLightbulb",
@@ -2178,7 +2337,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 32
+                    "line": 34
                 },
                 {
                     "name": "faLocationPin",
@@ -2188,7 +2347,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 29
+                    "line": 31
                 },
                 {
                     "name": "faPersonBiking",
@@ -2198,7 +2357,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 38
+                    "line": 40
                 },
                 {
                     "name": "faPersonBooth",
@@ -2208,7 +2367,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 33
+                    "line": 35
                 },
                 {
                     "name": "faSheetPlastic",
@@ -2218,7 +2377,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 39
+                    "line": 41
                 },
                 {
                     "name": "faShower",
@@ -2228,7 +2387,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 40
+                    "line": 42
                 },
                 {
                     "name": "faUser",
@@ -2238,7 +2397,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 31
+                    "line": 33
                 },
                 {
                     "name": "faWeightHanging",
@@ -2248,7 +2407,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 37
+                    "line": 39
                 },
                 {
                     "name": "LightsHelpComponent",
@@ -2258,17 +2417,27 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 44
+                    "line": 46
                 }
             ],
             "methodsClass": [
+                {
+                    "name": "openBottomSheet",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 52,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
                 {
                     "name": "toggleWorkoutTools",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 49,
+                    "line": 56,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2283,7 +2452,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component} from '@angular/core';\nimport {\n  faAngleRight,\n  faBottleWater,\n  faClock,\n  faDoorOpen,\n  faDumbbell,\n  faFan,\n  faHotTubPerson,\n  faLightbulb,\n  faLocationPin,\n  faPersonBiking,\n  faPersonBooth,\n  faSheetPlastic,\n  faShower,\n  faUser,\n  faWeightHanging\n} from '@fortawesome/free-solid-svg-icons';\nimport {LightsHelpComponent} from \"../../help/lights/lights-help.component\";\nimport {BlindsHelpComponent} from \"../../help/blinds-help/blinds-help.component\";\nimport {ClimateHelpComponent} from \"../../help/climate-help/climate-help.component\";\nimport {DoorHelpComponent} from \"../../help/door-help/door-help.component\";\n@Component({\n  selector: 'app-room',\n  templateUrl: './room.component.html',\n  styleUrls: ['./room.component.css']\n})\nexport class RoomComponent {\n  faLocationPin = faLocationPin;\n  faClock = faClock;\n  faUser = faUser;\n  faLightbulb = faLightbulb;\n  faPersonBooth = faPersonBooth;\n  faDoorOpen = faDoorOpen;\n  faAngleRight = faAngleRight;\n  faDumbbell = faDumbbell;\n  faWeightHanging = faWeightHanging;\n  faPersonBiking = faPersonBiking;\n  faSheetPlastic = faSheetPlastic;\n  faShower = faShower;\n  faHotTubPerson = faHotTubPerson;\n  faFan = faFan;\n  faBottleWater = faBottleWater;\n  LightsHelpComponent = LightsHelpComponent;\n  BlindsHelpComponent = BlindsHelpComponent;\n  ClimateHelpComponent = ClimateHelpComponent;\n  DoorHelpComponent = DoorHelpComponent;\n\n  public toggleWorkoutTools() {\n    //TODO: Implement\n  }\n}\n",
+            "sourceCode": "import {Component} from '@angular/core';\nimport {MatBottomSheet} from \"@angular/material/bottom-sheet\";\nimport {\n  faAngleRight,\n  faBottleWater,\n  faClock,\n  faDoorOpen,\n  faDumbbell,\n  faFan,\n  faHotTubPerson,\n  faLightbulb,\n  faLocationPin,\n  faPersonBiking,\n  faPersonBooth,\n  faSheetPlastic,\n  faShower,\n  faUser,\n  faWeightHanging\n} from '@fortawesome/free-solid-svg-icons';\nimport {LightsHelpComponent} from \"../../help/lights/lights-help.component\";\nimport {BlindsHelpComponent} from \"../../help/blinds-help/blinds-help.component\";\nimport {ClimateHelpComponent} from \"../../help/climate-help/climate-help.component\";\nimport {DoorHelpComponent} from \"../../help/door-help/door-help.component\";\nimport {MediacontrolComponent} from \"../../mediacontrol/mediacontrol.component\";\n@Component({\n  selector: 'app-room',\n  templateUrl: './room.component.html',\n  styleUrls: ['./room.component.css']\n})\nexport class RoomComponent {\n  faLocationPin = faLocationPin;\n  faClock = faClock;\n  faUser = faUser;\n  faLightbulb = faLightbulb;\n  faPersonBooth = faPersonBooth;\n  faDoorOpen = faDoorOpen;\n  faAngleRight = faAngleRight;\n  faDumbbell = faDumbbell;\n  faWeightHanging = faWeightHanging;\n  faPersonBiking = faPersonBiking;\n  faSheetPlastic = faSheetPlastic;\n  faShower = faShower;\n  faHotTubPerson = faHotTubPerson;\n  faFan = faFan;\n  faBottleWater = faBottleWater;\n  LightsHelpComponent = LightsHelpComponent;\n  BlindsHelpComponent = BlindsHelpComponent;\n  ClimateHelpComponent = ClimateHelpComponent;\n  DoorHelpComponent = DoorHelpComponent;\n\n  constructor(private _bottomSheet: MatBottomSheet) {}\n  openBottomSheet(): void {\n    this._bottomSheet.open(MediacontrolComponent);\n  }\n\n  public toggleWorkoutTools() {\n    //TODO: Implement\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2292,7 +2461,33 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"room-container\">\r\n\r\n<div class=\"content_width_wrapper\">\r\n  <h1>Room Control</h1>\r\n  <mat-card class=\"room-details-card\">\r\n    <mat-card-header>\r\n      <mat-card-title>Your GYMBOX Booking</mat-card-title>\r\n    </mat-card-header>\r\n    <img mat-card-image src=\"https://source.unsplash.com/1000x300/?gym\" alt=\"Photo of a Gym\">\r\n    <mat-card-content>\r\n      <app-icon-list>\r\n        <app-icon-list-item [icon]=\"faLocationPin\" name=\"GYMBOX BERLIN\" description=\"City Center\"></app-icon-list-item>\r\n        <app-icon-list-item [icon]=\"faUser\" name=\"Make you sweat core workout with Jessy\"></app-icon-list-item>\r\n        <app-icon-list-item [icon]=\"faClock\" name=\"12:30 - 14:00\" description=\"(73 minutes remaining)\"></app-icon-list-item>\r\n      </app-icon-list>\r\n      <mat-divider class=\"divider-with-margin\"></mat-divider>\r\n    </mat-card-content>\r\n    <div>\r\n<!--      <div class=\"row-label\">Room Booking Options</div>-->\r\n      <div class=\"flat-button-row\">\r\n        <button mat-stroked-button color=\"primary\">Add Time\r\n          <fa-icon [icon]=\"faAngleRight\" class=\"caret_icon\"></fa-icon>\r\n        </button>\r\n        <button mat-stroked-button>Add Personal Trainer\r\n          <fa-icon [icon]=\"faAngleRight\" class=\"caret_icon\"></fa-icon>\r\n        </button>\r\n        <button mat-stroked-button>Add Friends\r\n          <fa-icon [icon]=\"faAngleRight\" class=\"caret_icon\"></fa-icon>\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </mat-card>\r\n\r\n</div>\r\n\r\n<section class=\"sq-button-row-container\">\r\n  <div class=\"row-label\">Smart Controls</div>\r\n  <div class=\"sq-button-row\">\r\n    <mat-sq-button [icon]=\"faLightbulb\" [popup]=\"LightsHelpComponent\">\r\n      Lights\r\n    </mat-sq-button>\r\n    <mat-sq-button [icon]=\"faPersonBooth\" [popup]=\"BlindsHelpComponent\">\r\n      Window Blinds\r\n    </mat-sq-button>\r\n    <mat-sq-button [icon]=\"faFan\" [popup]=\"ClimateHelpComponent\">\r\n      Climate Control\r\n    </mat-sq-button>\r\n    <mat-sq-button [icon]=\"faDoorOpen\" [popup]=\"DoorHelpComponent\">\r\n      Unlock Door\r\n    </mat-sq-button>\r\n  </div>\r\n</section>\r\n\r\n\r\n<section class=\"sq-button-row-container\">\r\n  <div class=\"row-label\">Equipment</div>\r\n  <div class=\"sq-button-row\">\r\n    <mat-sq-button [icon]=\"faDumbbell\" help_topic=\"help_dumbbells\">\r\n      Dumb&shy;bells\r\n    </mat-sq-button>\r\n    <mat-sq-button [icon]=\"faWeightHanging\" help_topic=\"help_weights\">\r\n      Weights\r\n    </mat-sq-button>\r\n    <mat-sq-button [icon]=\"faPersonBiking\" help_topic=\"help_bike\">\r\n      Bike\r\n    </mat-sq-button>\r\n    <mat-sq-button [icon]=\"faPersonBiking\" help_topic=\"help_unknown\">\r\n      Unknown\r\n    </mat-sq-button>\r\n  </div>\r\n</section>\r\n\r\n<section class=\"sq-button-row-container\" id=\"amenities\">\r\n  <div class=\"row-label\">Amenities</div>\r\n  <div class=\"sq-button-row\">\r\n    <ng-container *ngFor=\"let number of [0,1,2,3]\">\r\n      <mat-sq-button [icon]=\"faSheetPlastic\" help_topic=\"help_towels\">\r\n        Towels\r\n      </mat-sq-button>\r\n      <mat-sq-button [icon]=\"faShower\" help_topic=\"help_shower\">\r\n        Shower\r\n      </mat-sq-button>\r\n      <mat-sq-button [icon]=\"faHotTubPerson\" help_topic=\"help_sauna\">\r\n        Sauna\r\n      </mat-sq-button>\r\n      <mat-sq-button [icon]=\"faBottleWater\" help_topic=\"help_drinks\">\r\n        Drinks\r\n      </mat-sq-button>\r\n    </ng-container>\r\n  </div>\r\n</section>\r\n\r\n<button mat-stroked-button color=\"primary\" (click)=\"toggleWorkoutTools()\">\r\n  Open Workout Tools\r\n  <fa-icon [icon]=\"faAngleRight\" class=\"caret_icon\"></fa-icon>\r\n</button>\r\n\r\n\r\n</div>\r\n<div class=\"media-player-container\">\r\n  <mat-toolbar class=\"mat-elevation-z2\">\r\n    <button mat-icon-button class=\"example-icon\"  aria-label=\"Example icon-button with menu icon\">\r\n      <mat-icon>play_circle_filled</mat-icon>\r\n    </button>\r\n    <span>Current Song...</span>\r\n    <mat-slider>\r\n      <input matSliderThumb>\r\n    </mat-slider>\r\n    <button mat-icon-button class=\"example-icon favorite-icon\" aria-label=\"Example icon-button with heart icon\">\r\n      <mat-icon>favorite</mat-icon>\r\n    </button>\r\n    <button mat-icon-button class=\"example-icon\" aria-label=\"Example icon-button with share icon\">\r\n      <mat-icon>share</mat-icon>\r\n    </button>\r\n  </mat-toolbar>\r\n</div>\r\n"
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "_bottomSheet",
+                        "type": "MatBottomSheet",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 49,
+                "jsdoctags": [
+                    {
+                        "name": "_bottomSheet",
+                        "type": "MatBottomSheet",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "templateData": "<div class=\"room-container\">\r\n\r\n<div class=\"content_width_wrapper\">\r\n  <h1>Room Control</h1>\r\n  <mat-card class=\"room-details-card\">\r\n    <mat-card-header>\r\n      <mat-card-title>Your GYMBOX Booking</mat-card-title>\r\n    </mat-card-header>\r\n    <img mat-card-image src=\"https://source.unsplash.com/1000x300/?gym\" alt=\"Photo of a Gym\">\r\n    <mat-card-content>\r\n      <app-icon-list>\r\n        <app-icon-list-item [icon]=\"faLocationPin\" name=\"GYMBOX BERLIN\" description=\"City Center\"></app-icon-list-item>\r\n        <app-icon-list-item [icon]=\"faUser\" name=\"Make you sweat core workout with Jessy\"></app-icon-list-item>\r\n        <app-icon-list-item [icon]=\"faClock\" name=\"12:30 - 14:00\" description=\"(73 minutes remaining)\"></app-icon-list-item>\r\n      </app-icon-list>\r\n      <mat-divider class=\"divider-with-margin\"></mat-divider>\r\n    </mat-card-content>\r\n    <div>\r\n<!--      <div class=\"row-label\">Room Booking Options</div>-->\r\n      <div class=\"flat-button-row\">\r\n        <button mat-stroked-button color=\"primary\">Add Time\r\n          <fa-icon [icon]=\"faAngleRight\" class=\"caret_icon\"></fa-icon>\r\n        </button>\r\n        <button mat-stroked-button>Add Personal Trainer\r\n          <fa-icon [icon]=\"faAngleRight\" class=\"caret_icon\"></fa-icon>\r\n        </button>\r\n        <button mat-stroked-button>Add Friends\r\n          <fa-icon [icon]=\"faAngleRight\" class=\"caret_icon\"></fa-icon>\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </mat-card>\r\n\r\n</div>\r\n\r\n<section class=\"sq-button-row-container\">\r\n  <div class=\"row-label\">Smart Controls</div>\r\n  <div class=\"sq-button-row\">\r\n    <mat-sq-button [icon]=\"faLightbulb\" [popup]=\"LightsHelpComponent\">\r\n      Lights\r\n    </mat-sq-button>\r\n    <mat-sq-button [icon]=\"faPersonBooth\" [popup]=\"BlindsHelpComponent\">\r\n      Window Blinds\r\n    </mat-sq-button>\r\n    <mat-sq-button [icon]=\"faFan\" [popup]=\"ClimateHelpComponent\">\r\n      Climate Control\r\n    </mat-sq-button>\r\n    <mat-sq-button [icon]=\"faDoorOpen\" [popup]=\"DoorHelpComponent\">\r\n      Unlock Door\r\n    </mat-sq-button>\r\n  </div>\r\n</section>\r\n\r\n\r\n<section class=\"sq-button-row-container\">\r\n  <div class=\"row-label\">Equipment</div>\r\n  <div class=\"sq-button-row\">\r\n    <mat-sq-button [icon]=\"faDumbbell\" help_topic=\"help_dumbbells\">\r\n      Dumb&shy;bells\r\n    </mat-sq-button>\r\n    <mat-sq-button [icon]=\"faWeightHanging\" help_topic=\"help_weights\">\r\n      Weights\r\n    </mat-sq-button>\r\n    <mat-sq-button [icon]=\"faPersonBiking\" help_topic=\"help_bike\">\r\n      Bike\r\n    </mat-sq-button>\r\n    <mat-sq-button [icon]=\"faPersonBiking\" help_topic=\"help_unknown\">\r\n      Unknown\r\n    </mat-sq-button>\r\n  </div>\r\n</section>\r\n\r\n<section class=\"sq-button-row-container\" id=\"amenities\">\r\n  <div class=\"row-label\">Amenities</div>\r\n  <div class=\"sq-button-row\">\r\n    <ng-container *ngFor=\"let number of [0,1,2,3]\">\r\n      <mat-sq-button [icon]=\"faSheetPlastic\" help_topic=\"help_towels\">\r\n        Towels\r\n      </mat-sq-button>\r\n      <mat-sq-button [icon]=\"faShower\" help_topic=\"help_shower\">\r\n        Shower\r\n      </mat-sq-button>\r\n      <mat-sq-button [icon]=\"faHotTubPerson\" help_topic=\"help_sauna\">\r\n        Sauna\r\n      </mat-sq-button>\r\n      <mat-sq-button [icon]=\"faBottleWater\" help_topic=\"help_drinks\">\r\n        Drinks\r\n      </mat-sq-button>\r\n    </ng-container>\r\n  </div>\r\n</section>\r\n\r\n<button mat-stroked-button color=\"primary\" (click)=\"toggleWorkoutTools()\">\r\n  Open Workout Tools\r\n  <fa-icon [icon]=\"faAngleRight\" class=\"caret_icon\"></fa-icon>\r\n</button>\r\n\r\n\r\n</div>\r\n<div class=\"media-player-container\" (click)=\"openBottomSheet()\">\r\n  <mat-toolbar class=\"mat-elevation-z2\">\r\n    <button mat-icon-button class=\"example-icon\"  aria-label=\"Example icon-button with menu icon\">\r\n      <mat-icon>play_circle_filled</mat-icon>\r\n    </button>\r\n    <span>Current Song...</span>\r\n    <mat-slider>\r\n      <input matSliderThumb>\r\n    </mat-slider>\r\n    <button mat-icon-button class=\"example-icon favorite-icon\" aria-label=\"Example icon-button with heart icon\">\r\n      <mat-icon>favorite</mat-icon>\r\n    </button>\r\n    <button mat-icon-button class=\"example-icon\" aria-label=\"Example icon-button with share icon\">\r\n      <mat-icon>share</mat-icon>\r\n    </button>\r\n  </mat-toolbar>\r\n</div>\r\n"
         },
         {
             "name": "TaskComponent",
@@ -2920,13 +3115,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-7f74edbe1c131d405966be12f82f3e0e20e2aaf75430874f08b13016fb8b2c5c1a22f16150b5aafb55a46b2aa40a2c26f4531ead688e20bb69fd97e587b93348",
+            "id": "module-AppModule-149d71064685dd98c3b9b5c43fea2a8039403cd00f9afe811c5108aaaface35a6265757287457d5adfe8da7dec3baf69a15b412af9f2c9db10bc5d351b6547c6",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import {NgOptimizedImage} from \"@angular/common\";\r\nimport {HttpClientModule} from '@angular/common/http';\r\nimport {NgModule} from '@angular/core';\r\nimport {FormsModule, ReactiveFormsModule} from \"@angular/forms\";\r\nimport {LuxonDateAdapter, MAT_LUXON_DATE_ADAPTER_OPTIONS, MatLuxonDateModule} from \"@angular/material-luxon-adapter\";\r\nimport {MatButtonModule} from \"@angular/material/button\";\r\nimport {MatCardModule} from \"@angular/material/card\";\r\nimport {MatCheckboxModule} from \"@angular/material/checkbox\";\r\nimport {MatChipsModule} from \"@angular/material/chips\";\r\n\r\nimport {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from \"@angular/material/core\";\r\nimport {MatDatepickerModule} from \"@angular/material/datepicker\";\r\nimport {MatDialogModule} from \"@angular/material/dialog\";\r\nimport {MatDividerModule} from \"@angular/material/divider\";\r\nimport {MatExpansionModule} from \"@angular/material/expansion\";\r\nimport {MatFormFieldModule} from \"@angular/material/form-field\";\r\nimport {MatIconModule} from \"@angular/material/icon\";\r\nimport {MatInputModule} from \"@angular/material/input\";\r\nimport {MatListModule} from \"@angular/material/list\";\r\nimport {MatProgressBarModule} from \"@angular/material/progress-bar\";\r\nimport {MatProgressSpinnerModule} from \"@angular/material/progress-spinner\";\r\nimport {MatRadioModule} from \"@angular/material/radio\";\r\nimport {MatSelectModule} from \"@angular/material/select\";\r\nimport {MatSidenavModule} from \"@angular/material/sidenav\";\r\nimport {MatSlideToggleModule} from '@angular/material/slide-toggle';\r\nimport {MatSliderModule} from \"@angular/material/slider\";\r\nimport {MatSnackBarModule} from '@angular/material/snack-bar';\r\nimport {MatStepperModule} from \"@angular/material/stepper\";\r\nimport {MatTabsModule} from \"@angular/material/tabs\";\r\nimport {MatToolbarModule} from \"@angular/material/toolbar\";\r\nimport {BrowserModule} from '@angular/platform-browser';\r\nimport {BrowserAnimationsModule} from '@angular/platform-browser/animations';\r\n\r\nimport {FontAwesomeModule} from '@fortawesome/angular-fontawesome';\r\n\r\nimport {AppRoutingModule} from './app-routing.module';\r\nimport {AppComponent} from './app.component';\r\nimport {BlindsHelpComponent} from './help/blinds-help/blinds-help.component';\r\nimport {ClimateHelpComponent} from './help/climate-help/climate-help.component';\r\nimport {DoorHelpComponent} from './help/door-help/door-help.component';\r\nimport {HelpComponent} from './help/help.component';\r\nimport {LightsHelpComponent} from './help/lights/lights-help.component';\r\nimport {AboutComponent} from './pages/about/about.component';\r\nimport {BookGymComponent} from './pages/book-gym/book-gym.component';\r\nimport {HomeComponent} from './pages/home/home.component';\r\nimport {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';\r\nimport {RoomComponent} from './pages/room/room.component';\r\nimport {UserComponent} from './pages/user/user.component';\r\n\r\nimport {GymCardComponent} from './ui-components/gym-card/gym-card.component';\r\nimport {IconListItemComponent} from './ui-components/icon-list-item/icon-list-item.component';\r\nimport {IconListComponent} from './ui-components/icon-list/icon-list.component';\r\nimport {InfobannerComponent} from './ui-components/infobanner/infobanner.component';\r\nimport {\r\n  MatAccordionResponsiveComponent\r\n} from './ui-components/mat-accordion-responsive/mat-accordion-responsive.component';\r\nimport {MatSqButtonComponent} from './ui-components/mat-sq-button/mat-sq-button.component';\r\nimport {TaskListComponent} from './ui-components/task-list/task-list.component';\r\nimport {TaskComponent} from './ui-components/task/task.component';\r\nimport {WorkoutToolsComponent} from './workout-tools/workout-tools.component';\r\nimport { WelcomeComponent } from './pages/welcome/welcome.component';\r\nimport { LoginComponent } from './pages/login/login.component';\r\nimport { RegisterComponent } from './pages/register/register.component';\r\n\r\nconst MODULE_DATE_FORMATS = {\r\n  parse: {\r\n    dateInput: 'dd.LL.yyyy'\r\n  },\r\n  display: {\r\n    dateInput: 'dd.LL.yyyy',\r\n    monthYearLabel: 'LLLL yyyy',\r\n    dateA11yLabel: 'LL',\r\n    monthYearA11yLabel: 'LLLL YYYY'\r\n  }\r\n};\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    HomeComponent,\r\n    AboutComponent,\r\n    TaskComponent,\r\n    TaskListComponent,\r\n    PageNotFoundComponent,\r\n    RoomComponent,\r\n    MatSqButtonComponent,\r\n    HelpComponent,\r\n    LightsHelpComponent,\r\n    BlindsHelpComponent,\r\n    ClimateHelpComponent,\r\n    DoorHelpComponent,\r\n    WorkoutToolsComponent,\r\n    UserComponent,\r\n    BookGymComponent,\r\n    GymCardComponent,\r\n    IconListComponent,\r\n    IconListItemComponent,\r\n    MatAccordionResponsiveComponent,\r\n    InfobannerComponent,\r\n    WelcomeComponent,\r\n    LoginComponent,\r\n    RegisterComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    HttpClientModule,\r\n    FormsModule,\r\n    ReactiveFormsModule,\r\n    BrowserAnimationsModule,\r\n    FontAwesomeModule,\r\n    MatSlideToggleModule,\r\n    MatToolbarModule,\r\n    MatIconModule,\r\n    MatButtonModule,\r\n    MatCardModule,\r\n    MatProgressSpinnerModule,\r\n    MatDividerModule,\r\n    MatDialogModule,\r\n    MatTabsModule,\r\n    MatSliderModule,\r\n    MatSidenavModule,\r\n    MatCheckboxModule,\r\n    MatListModule,\r\n    MatSnackBarModule,\r\n    MatProgressBarModule,\r\n    MatStepperModule,\r\n    MatFormFieldModule,\r\n    MatInputModule,\r\n    MatSelectModule,\r\n    MatChipsModule,\r\n    MatRadioModule,\r\n    MatExpansionModule,\r\n    MatDatepickerModule,\r\n    MatLuxonDateModule,\r\n    NgOptimizedImage\r\n  ],\r\n  providers: [\r\n    {provide: MAT_LUXON_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}},\r\n    {provide: DateAdapter, useClass: LuxonDateAdapter, deps: [MAT_DATE_LOCALE, MAT_LUXON_DATE_ADAPTER_OPTIONS]},\r\n    {provide: MAT_DATE_FORMATS, useValue: MODULE_DATE_FORMATS}\r\n  ],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule {\r\n}\r\n",
+            "sourceCode": "import {NgOptimizedImage} from \"@angular/common\";\r\nimport {HttpClientModule} from '@angular/common/http';\r\nimport {NgModule} from '@angular/core';\r\nimport {FormsModule, ReactiveFormsModule} from \"@angular/forms\";\r\nimport {LuxonDateAdapter, MAT_LUXON_DATE_ADAPTER_OPTIONS, MatLuxonDateModule} from \"@angular/material-luxon-adapter\";\r\nimport {MatBottomSheetModule} from \"@angular/material/bottom-sheet\";\r\nimport {MatButtonModule} from \"@angular/material/button\";\r\nimport {MatCardModule} from \"@angular/material/card\";\r\nimport {MatCheckboxModule} from \"@angular/material/checkbox\";\r\nimport {MatChipsModule} from \"@angular/material/chips\";\r\n\r\nimport {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from \"@angular/material/core\";\r\nimport {MatDatepickerModule} from \"@angular/material/datepicker\";\r\nimport {MatDialogModule} from \"@angular/material/dialog\";\r\nimport {MatDividerModule} from \"@angular/material/divider\";\r\nimport {MatExpansionModule} from \"@angular/material/expansion\";\r\nimport {MatFormFieldModule} from \"@angular/material/form-field\";\r\nimport {MatIconModule} from \"@angular/material/icon\";\r\nimport {MatInputModule} from \"@angular/material/input\";\r\nimport {MatListModule} from \"@angular/material/list\";\r\nimport {MatProgressBarModule} from \"@angular/material/progress-bar\";\r\nimport {MatProgressSpinnerModule} from \"@angular/material/progress-spinner\";\r\nimport {MatRadioModule} from \"@angular/material/radio\";\r\nimport {MatSelectModule} from \"@angular/material/select\";\r\nimport {MatSidenavModule} from \"@angular/material/sidenav\";\r\nimport {MatSlideToggleModule} from '@angular/material/slide-toggle';\r\nimport {MatSliderModule} from \"@angular/material/slider\";\r\nimport {MatSnackBarModule} from '@angular/material/snack-bar';\r\nimport {MatStepperModule} from \"@angular/material/stepper\";\r\nimport {MatTabsModule} from \"@angular/material/tabs\";\r\nimport {MatToolbarModule} from \"@angular/material/toolbar\";\r\nimport {BrowserModule} from '@angular/platform-browser';\r\nimport {BrowserAnimationsModule} from '@angular/platform-browser/animations';\r\n\r\nimport {FontAwesomeModule} from '@fortawesome/angular-fontawesome';\r\n\r\nimport {AppRoutingModule} from './app-routing.module';\r\nimport {AppComponent} from './app.component';\r\nimport {BlindsHelpComponent} from './help/blinds-help/blinds-help.component';\r\nimport {ClimateHelpComponent} from './help/climate-help/climate-help.component';\r\nimport {DoorHelpComponent} from './help/door-help/door-help.component';\r\nimport {HelpComponent} from './help/help.component';\r\nimport {LightsHelpComponent} from './help/lights/lights-help.component';\r\nimport {AboutComponent} from './pages/about/about.component';\r\nimport {BookGymComponent} from './pages/book-gym/book-gym.component';\r\nimport {HomeComponent} from './pages/home/home.component';\r\nimport {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';\r\nimport {RoomComponent} from './pages/room/room.component';\r\nimport {UserComponent} from './pages/user/user.component';\r\n\r\nimport {GymCardComponent} from './ui-components/gym-card/gym-card.component';\r\nimport {IconListItemComponent} from './ui-components/icon-list-item/icon-list-item.component';\r\nimport {IconListComponent} from './ui-components/icon-list/icon-list.component';\r\nimport {InfobannerComponent} from './ui-components/infobanner/infobanner.component';\r\nimport {\r\n  MatAccordionResponsiveComponent\r\n} from './ui-components/mat-accordion-responsive/mat-accordion-responsive.component';\r\nimport {MatSqButtonComponent} from './ui-components/mat-sq-button/mat-sq-button.component';\r\nimport {TaskListComponent} from './ui-components/task-list/task-list.component';\r\nimport {TaskComponent} from './ui-components/task/task.component';\r\nimport {WorkoutToolsComponent} from './workout-tools/workout-tools.component';\r\nimport { WelcomeComponent } from './pages/welcome/welcome.component';\r\nimport { LoginComponent } from './pages/login/login.component';\r\nimport { RegisterComponent } from './pages/register/register.component';\r\nimport { MediacontrolComponent } from './mediacontrol/mediacontrol.component';\r\n\r\nconst MODULE_DATE_FORMATS = {\r\n  parse: {\r\n    dateInput: 'dd.LL.yyyy'\r\n  },\r\n  display: {\r\n    dateInput: 'dd.LL.yyyy',\r\n    monthYearLabel: 'LLLL yyyy',\r\n    dateA11yLabel: 'LL',\r\n    monthYearA11yLabel: 'LLLL YYYY'\r\n  }\r\n};\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    HomeComponent,\r\n    AboutComponent,\r\n    TaskComponent,\r\n    TaskListComponent,\r\n    PageNotFoundComponent,\r\n    RoomComponent,\r\n    MatSqButtonComponent,\r\n    HelpComponent,\r\n    LightsHelpComponent,\r\n    BlindsHelpComponent,\r\n    ClimateHelpComponent,\r\n    DoorHelpComponent,\r\n    WorkoutToolsComponent,\r\n    UserComponent,\r\n    BookGymComponent,\r\n    GymCardComponent,\r\n    IconListComponent,\r\n    IconListItemComponent,\r\n    MatAccordionResponsiveComponent,\r\n    InfobannerComponent,\r\n    WelcomeComponent,\r\n    LoginComponent,\r\n    RegisterComponent,\r\n    MediacontrolComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    HttpClientModule,\r\n    FormsModule,\r\n    ReactiveFormsModule,\r\n    BrowserAnimationsModule,\r\n    FontAwesomeModule,\r\n    MatSlideToggleModule,\r\n    MatToolbarModule,\r\n    MatIconModule,\r\n    MatButtonModule,\r\n    MatCardModule,\r\n    MatProgressSpinnerModule,\r\n    MatDividerModule,\r\n    MatDialogModule,\r\n    MatTabsModule,\r\n    MatSliderModule,\r\n    MatSidenavModule,\r\n    MatCheckboxModule,\r\n    MatListModule,\r\n    MatSnackBarModule,\r\n    MatProgressBarModule,\r\n    MatStepperModule,\r\n    MatFormFieldModule,\r\n    MatInputModule,\r\n    MatSelectModule,\r\n    MatChipsModule,\r\n    MatRadioModule,\r\n    MatExpansionModule,\r\n    MatDatepickerModule,\r\n    MatLuxonDateModule,\r\n    NgOptimizedImage,\r\n    MatBottomSheetModule\r\n  ],\r\n  providers: [\r\n    {provide: MAT_LUXON_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}},\r\n    {provide: DateAdapter, useClass: LuxonDateAdapter, deps: [MAT_DATE_LOCALE, MAT_LUXON_DATE_ADAPTER_OPTIONS]},\r\n    {provide: MAT_DATE_FORMATS, useValue: MODULE_DATE_FORMATS}\r\n  ],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2982,6 +3177,9 @@
                         },
                         {
                             "name": "MatSqButtonComponent"
+                        },
+                        {
+                            "name": "MediacontrolComponent"
                         },
                         {
                             "name": "PageNotFoundComponent"
@@ -3896,6 +4094,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/mediacontrol/mediacontrol.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MediacontrolComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/models/gym.model.ts",
                 "type": "interface",
                 "linktype": "interface",
@@ -3973,7 +4180,7 @@
                 "linktype": "component",
                 "name": "RoomComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/21",
+                "coverageCount": "0/23",
                 "status": "low"
             },
             {

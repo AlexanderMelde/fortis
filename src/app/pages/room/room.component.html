@@ -1,116 +1,119 @@
 <div class="room-container">
 
-<div class="content_width_wrapper">
-  <h1>Room Control</h1>
-  <mat-card class="room-details-card">
-    <mat-card-header>
-      <mat-card-title>Your GYMBOX Booking</mat-card-title>
-    </mat-card-header>
-    <img mat-card-image src="https://source.unsplash.com/1000x300/?gym" alt="Photo of a Gym">
-    <mat-card-content>
-      <app-icon-list>
-        <app-icon-list-item [icon]="faLocationPin" name="GYMBOX BERLIN" description="City Center"></app-icon-list-item>
-        <app-icon-list-item [icon]="faUser" name="Make you sweat core workout with Jessy"></app-icon-list-item>
-        <app-icon-list-item [icon]="faClock" name="12:30 - 14:00" description="(73 minutes remaining)"></app-icon-list-item>
-      </app-icon-list>
-      <mat-divider class="divider-with-margin"></mat-divider>
-    </mat-card-content>
-    <div>
-<!--      <div class="row-label">Room Booking Options</div>-->
-      <div class="flat-button-row">
-        <button mat-stroked-button color="primary">Add Time
-          <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
-        </button>
-        <button mat-stroked-button>Add Personal Trainer
-          <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
-        </button>
-        <button mat-stroked-button>Add Friends
-          <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
-        </button>
+  <div class="content_width_wrapper">
+    <h1>Room Control</h1>
+    <mat-card class="room-details-card">
+      <mat-card-header>
+        <mat-card-title>Your GYMBOX Booking</mat-card-title>
+      </mat-card-header>
+      <img alt="Photo of a Gym" mat-card-image src="https://source.unsplash.com/1000x300/?gym">
+      <mat-card-content>
+        <app-icon-list>
+          <app-icon-list-item [icon]="faLocationPin" description="City Center"
+                              name="GYMBOX BERLIN"></app-icon-list-item>
+          <app-icon-list-item [icon]="faUser" name="Make you sweat core workout with Jessy"></app-icon-list-item>
+          <app-icon-list-item [icon]="faClock" description="(73 minutes remaining)"
+                              name="12:30 - 14:00"></app-icon-list-item>
+        </app-icon-list>
+        <mat-divider class="divider-with-margin"></mat-divider>
+      </mat-card-content>
+      <div>
+        <!--      <div class="row-label">Room Booking Options</div>-->
+        <div class="flat-button-row">
+          <button color="primary" mat-stroked-button>Add Time
+            <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
+          </button>
+          <button mat-stroked-button>Add Personal Trainer
+            <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
+          </button>
+          <button mat-stroked-button>Add Friends
+            <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
+          </button>
+        </div>
       </div>
+    </mat-card>
+
+  </div>
+
+  <section class="sq-button-row-container">
+    <div class="row-label">Smart Controls</div>
+    <div class="sq-button-row">
+      <mat-sq-button [icon]="faLightbulb" [popup]="LightsHelpComponent">
+        Lights
+      </mat-sq-button>
+      <mat-sq-button [icon]="faPersonBooth" [popup]="BlindsHelpComponent">
+        Window Blinds
+      </mat-sq-button>
+      <mat-sq-button [icon]="faFan" [popup]="ClimateHelpComponent">
+        Climate Control
+      </mat-sq-button>
+      <mat-sq-button [icon]="faDoorOpen" [popup]="DoorHelpComponent">
+        Unlock Door
+      </mat-sq-button>
     </div>
-  </mat-card>
-
-</div>
-
-<section class="sq-button-row-container">
-  <div class="row-label">Smart Controls</div>
-  <div class="sq-button-row">
-    <mat-sq-button [icon]="faLightbulb" [popup]="LightsHelpComponent">
-      Lights
-    </mat-sq-button>
-    <mat-sq-button [icon]="faPersonBooth" [popup]="BlindsHelpComponent">
-      Window Blinds
-    </mat-sq-button>
-    <mat-sq-button [icon]="faFan" [popup]="ClimateHelpComponent">
-      Climate Control
-    </mat-sq-button>
-    <mat-sq-button [icon]="faDoorOpen" [popup]="DoorHelpComponent">
-      Unlock Door
-    </mat-sq-button>
-  </div>
-</section>
+  </section>
 
 
-<section class="sq-button-row-container">
-  <div class="row-label">Equipment</div>
-  <div class="sq-button-row">
-    <mat-sq-button [icon]="faDumbbell" help_topic="help_dumbbells">
-      Dumb&shy;bells
-    </mat-sq-button>
-    <mat-sq-button [icon]="faWeightHanging" help_topic="help_weights">
-      Weights
-    </mat-sq-button>
-    <mat-sq-button [icon]="faPersonBiking" help_topic="help_bike">
-      Bike
-    </mat-sq-button>
-    <mat-sq-button [icon]="faPersonBiking" help_topic="help_unknown">
-      Unknown
-    </mat-sq-button>
-  </div>
-</section>
-
-<section class="sq-button-row-container" id="amenities">
-  <div class="row-label">Amenities</div>
-  <div class="sq-button-row">
-    <ng-container *ngFor="let number of [0,1,2,3]">
-      <mat-sq-button [icon]="faSheetPlastic" help_topic="help_towels">
-        Towels
+  <section class="sq-button-row-container">
+    <div class="row-label">Equipment</div>
+    <div class="sq-button-row">
+      <mat-sq-button [icon]="faDumbbell" help_topic="help_dumbbells">
+        Dumb&shy;bells
       </mat-sq-button>
-      <mat-sq-button [icon]="faShower" help_topic="help_shower">
-        Shower
+      <mat-sq-button [icon]="faWeightHanging" help_topic="help_weights">
+        Weights
       </mat-sq-button>
-      <mat-sq-button [icon]="faHotTubPerson" help_topic="help_sauna">
-        Sauna
+      <mat-sq-button [icon]="faPersonBiking" help_topic="help_bike">
+        Bike
       </mat-sq-button>
-      <mat-sq-button [icon]="faBottleWater" help_topic="help_drinks">
-        Drinks
+      <mat-sq-button [icon]="faPersonBiking" help_topic="help_unknown">
+        Unknown
       </mat-sq-button>
-    </ng-container>
-  </div>
-</section>
+    </div>
+  </section>
 
-<button mat-stroked-button color="primary" (click)="toggleWorkoutTools()">
-  Open Workout Tools
-  <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
-</button>
+  <section class="sq-button-row-container" id="amenities">
+    <div class="row-label">Amenities</div>
+    <div class="sq-button-row">
+      <ng-container *ngFor="let number of [0,1,2,3]">
+        <mat-sq-button [icon]="faSheetPlastic" help_topic="help_towels">
+          Towels
+        </mat-sq-button>
+        <mat-sq-button [icon]="faShower" help_topic="help_shower">
+          Shower
+        </mat-sq-button>
+        <mat-sq-button [icon]="faHotTubPerson" help_topic="help_sauna">
+          Sauna
+        </mat-sq-button>
+        <mat-sq-button [icon]="faBottleWater" help_topic="help_drinks">
+          Drinks
+        </mat-sq-button>
+      </ng-container>
+    </div>
+  </section>
+
+  <button (click)="toggleWorkoutTools()" color="primary" mat-stroked-button>
+    Open Workout Tools
+    <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
+  </button>
 
 
 </div>
 <div class="media-player-container">
-  <mat-toolbar class="mat-elevation-z2">
-    <button mat-icon-button class="example-icon"  aria-label="Example icon-button with menu icon">
-      <mat-icon>play_circle_filled</mat-icon>
-    </button>
-    <span>Current Song...</span>
-    <mat-slider>
-      <input matSliderThumb>
-    </mat-slider>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-toolbar>
+  <div matRipple  class="media-player-wrapper mat-elevation-z2" (click)="openBottomSheet()">
+    <div class="media-player-row">
+      <img height="300" ngSrc="assets/albumcover.jpg" width="300"/>
+      <div class="title-wrapper">
+        <mat-card-title>Hold Me Like a Grudge</mat-card-title>
+        <mat-card-subtitle>Fall Out Boy</mat-card-subtitle>
+      </div>
+      <button aria-label="Example icon-button with heart icon" class="example-icon favorite-icon" mat-icon-button>
+        <mat-icon>favorite_border</mat-icon>
+      </button>
+      <button aria-label="Example icon-button with menu icon" class="example-icon" mat-icon-button>
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+    </div>
+    <mat-progress-bar mode="determinate" value="80"></mat-progress-bar>
+  </div>
 </div>

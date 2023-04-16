@@ -3,12 +3,13 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {LuxonDateAdapter, MAT_LUXON_DATE_ADAPTER_OPTIONS, MatLuxonDateModule} from "@angular/material-luxon-adapter";
+import {MatBottomSheetModule} from "@angular/material/bottom-sheet";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatChipsModule} from "@angular/material/chips";
 
-import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from "@angular/material/core";
+import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatRippleModule} from "@angular/material/core";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatDividerModule} from "@angular/material/divider";
@@ -17,6 +18,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {MatListModule} from "@angular/material/list";
+import {MatMenuModule} from "@angular/material/menu";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatRadioModule} from "@angular/material/radio";
@@ -61,6 +63,7 @@ import {WorkoutToolsComponent} from './workout-tools/workout-tools.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { MediacontrolComponent } from './mediacontrol/mediacontrol.component';
 
 const MODULE_DATE_FORMATS = {
   parse: {
@@ -99,7 +102,8 @@ const MODULE_DATE_FORMATS = {
     InfobannerComponent,
     WelcomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MediacontrolComponent
   ],
   imports: [
     BrowserModule,
@@ -133,7 +137,10 @@ const MODULE_DATE_FORMATS = {
     MatExpansionModule,
     MatDatepickerModule,
     MatLuxonDateModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    MatBottomSheetModule,
+    MatRippleModule,
+    MatMenuModule
   ],
   providers: [
     {provide: MAT_LUXON_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}},

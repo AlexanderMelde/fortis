@@ -58,17 +58,44 @@ mat-card-content > mat-divider.divider-with-margin {
 .room-container {
   padding-bottom: calc(70px + var(--min-content-wrap-margin));
 }
-
-mat-toolbar {
-  display: flex;
-  justify-content: space-between;
+.media-player-wrapper {
   margin: 0 auto;
   width: calc(100% - 3 * var(--min-content-wrap-margin));
   max-width: var(--max-content-width);
-  overflow-x: auto;
-  overflow-y: hidden;
+  background: #f5f5f5;
+  color: rgba(0,0,0,.87);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.media-player-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--min-content-wrap-margin);
 }
 
-mat-toolbar button {
+.media-player-row button {
   flex-shrink: 0;
+}
+
+.media-player-row img {
+  height: var(--top-toolbar-height);
+  width: auto;
+}
+
+mat-progress-bar {
+  width: 100%;
+}
+.title-wrapper {
+  flex-grow: 1;
+  overflow: hidden;
+}
+.title-wrapper mat-card-title, .title-wrapper mat-card-subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

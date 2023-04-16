@@ -26,6 +26,10 @@ body {
 .content_width_wrapper.small {
   max-width: 500px;
 }
+.cdk-global-scrollblock {
+  overflow: auto;
+}
+
 @media(max-width: 599.98px) {
   * {
     --top-toolbar-height: 56px;
