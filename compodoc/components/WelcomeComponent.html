@@ -1,0 +1,404 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>gymbox documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">gymbox documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  WelcomeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/welcome/welcome.component.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-welcome</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./welcome.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./welcome.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-welcome&#x27;,
+  templateUrl: &#x27;./welcome.component.html&#x27;,
+  styleUrls: [&#x27;./welcome.component.css&#x27;]
+})
+export class WelcomeComponent {
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content_width_wrapper&quot;&gt;
+  &lt;mat-card&gt;
+    &lt;mat-card-header&gt;
+      &lt;mat-card-title&gt;Welcome to GYMBOX!&lt;/mat-card-title&gt;
+      &lt;mat-card-subtitle&gt;Explore what&#x27;s waiting for you:&lt;/mat-card-subtitle&gt;
+    &lt;/mat-card-header&gt;
+    &lt;mat-stepper class&#x3D;&quot;minimal_stepper&quot; orientation&#x3D;&quot;vertical&quot;&gt;
+      &lt;mat-step completed&#x3D;&quot;false&quot; label&#x3D;&quot;Private and Comfortable Workouts&quot;&gt;
+        &lt;mat-card-content&gt;
+          &lt;div class&#x3D;&quot;cartoon_characters&quot;&gt;
+            &lt;div&gt;
+              &lt;p&gt;Welcome to GYMBOX, the ultimate solution for those who want to workout in a private and comfortable
+                environment.
+              &lt;p&gt;
+              &lt;p&gt;With our premium gym rental service, you can book your own private gym and workout anytime, anywhere -
+                you decide.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;img height&#x3D;&quot;835&quot; ngSrc&#x3D;&quot;assets/female.jpg&quot; width&#x3D;&quot;448&quot;/&gt;
+          &lt;/div&gt;
+          &lt;mat-divider&gt;&lt;/mat-divider&gt;
+        &lt;/mat-card-content&gt;
+        &lt;mat-card-actions align&#x3D;&quot;end&quot;&gt;
+          &lt;button color&#x3D;&quot;primary&quot; mat-button matStepperNext&gt;Next&lt;/button&gt;
+        &lt;/mat-card-actions&gt;
+      &lt;/mat-step&gt;
+      &lt;mat-step completed&#x3D;&quot;false&quot; label&#x3D;&quot;Personalized Workout Experience&quot;&gt;
+        &lt;mat-card-content&gt;
+          &lt;div class&#x3D;&quot;cartoon_characters&quot;&gt;
+            &lt;img height&#x3D;&quot;822&quot; ngSrc&#x3D;&quot;assets/male.jpg&quot; width&#x3D;&quot;561&quot;/&gt;
+            &lt;div&gt;
+              &lt;p&gt;Say goodbye to crowded public gyms and long waiting times for equipment. At GYMBOX, you have access to
+                state-of-the-art equipment, exclusive amenities, and a fully personalized workout experience. &lt;/p&gt;
+              &lt;p&gt;Whether you&#x27;re a fitness enthusiast, a professional athlete, or just looking to stay healthy and fit,
+                GYMBOX has everything you need to achieve your goals.&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;mat-divider&gt;&lt;/mat-divider&gt;
+        &lt;/mat-card-content&gt;
+        &lt;mat-card-actions align&#x3D;&quot;end&quot;&gt;
+          &lt;button mat-button matStepperPrevious&gt;Back&lt;/button&gt;
+          &lt;button color&#x3D;&quot;primary&quot; mat-button matStepperNext&gt;Next&lt;/button&gt;
+        &lt;/mat-card-actions&gt;
+      &lt;/mat-step&gt;
+      &lt;mat-step completed&#x3D;&quot;false&quot; label&#x3D;&quot;Join the GYMBOX Community&quot;&gt;
+        &lt;mat-card-content&gt;
+          &lt;div class&#x3D;&quot;cartoon_characters&quot;&gt;
+            &lt;div&gt;
+              &lt;p&gt;Browse local gyms, choose the one that suits your needs, and book instantly.
+                Customize your workout with your own equipment, favorite music, and friends.&lt;/p&gt;
+              &lt;p&gt;Join the GYMBOX community today and experience the ultimate in privacy, convenience, and quality.
+                Start your fitness journey on your own terms and become the best version of yourself with GYMBOX.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;img height&#x3D;&quot;774&quot; ngSrc&#x3D;&quot;assets/equipment.jpg&quot; width&#x3D;&quot;1024&quot;/&gt;
+          &lt;/div&gt;
+          &lt;mat-divider&gt;&lt;/mat-divider&gt;
+        &lt;/mat-card-content&gt;
+        &lt;mat-card-actions align&#x3D;&quot;end&quot;&gt;
+          &lt;button mat-button matStepperPrevious&gt;Back&lt;/button&gt;
+          &lt;button color&#x3D;&quot;primary&quot; mat-button routerLink&#x3D;&quot;/register&quot;&gt;Get Started&lt;/button&gt;
+        &lt;/mat-card-actions&gt;
+      &lt;/mat-step&gt;
+    &lt;/mat-stepper&gt;
+  &lt;/mat-card&gt;
+
+  &lt;mat-card-actions align&#x3D;&quot;end&quot;&gt;
+    &lt;button mat-button routerLink&#x3D;&quot;/register&quot;&gt;Skip&lt;/button&gt;
+  &lt;/mat-card-actions&gt;
+  &lt;!--  &lt;mat-card&gt;--&gt;
+  &lt;!--    &lt;mat-card-content&gt;--&gt;
+  &lt;!--      &lt;div class&#x3D;&quot;cartoon_characters&quot;&gt;--&gt;
+  &lt;!--        &lt;div&gt;--&gt;
+  &lt;!--          &lt;p&gt;Welcome to GYMBOX, the ultimate solution for those who want to workout in a private and comfortable--&gt;
+  &lt;!--            environment.--&gt;
+  &lt;!--          &lt;p&gt;--&gt;
+  &lt;!--          &lt;p&gt;With our premium gym rental service, you can book your own private gym and workout anytime, anywhere - you--&gt;
+  &lt;!--            decide.&lt;/p&gt;--&gt;
+  &lt;!--        &lt;/div&gt;--&gt;
+  &lt;!--        &lt;img ngSrc&#x3D;&quot;assets/female.jpg&quot; height&#x3D;&quot;835&quot; width&#x3D;&quot;448&quot;/&gt;--&gt;
+  &lt;!--      &lt;/div&gt;--&gt;
+
+  &lt;!--      &lt;mat-divider&gt;&lt;/mat-divider&gt;--&gt;
+  &lt;!--    &lt;/mat-card-content&gt;--&gt;
+  &lt;!--    &lt;mat-card-actions align&#x3D;&quot;end&quot;&gt;--&gt;
+  &lt;!--      &lt;button mat-button color&#x3D;&quot;primary&quot;&gt;--&gt;
+  &lt;!--        Next--&gt;
+  &lt;!--      &lt;/button&gt;--&gt;
+  &lt;!--    &lt;/mat-card-actions&gt;--&gt;
+  &lt;!--  &lt;/mat-card&gt;--&gt;
+
+
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./welcome.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">mat-divider {
+  margin: var(--min-content-wrap-margin) 0;
+}
+
+.cartoon_characters {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--min-content-wrap-margin);
+}
+
+.cartoon_characters img {
+  width: fit-content;
+  height: fit-content;
+  max-height: 190px;
+  max-width: 190px;
+  transition: 0.1s;
+}
+
+mat-card-header {
+  justify-content: center;
+  margin-bottom: var(--min-content-wrap-margin);
+}
+mat-card-title {
+  font-size: 22px;
+}
+
+mat-card-subtitle {
+  text-align: center;
+}
+
+
+@media(max-width: 800px) {
+  ::ng-deep .minimal_stepper .mat-vertical-content {
+    padding: 0;
+  }
+
+  .cartoon_characters img {
+    max-width: 120px;
+  }
+}
+@media(max-width: 500px) {
+  ::ng-deep .minimal_stepper .mat-vertical-content-container {
+    margin-left: 0;
+  }
+
+  ::ng-deep .minimal_stepper .mat-vertical-content-container::before {
+    border: none;
+  }
+  .cartoon_characters img {
+    max-width: 80px;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="content_width_wrapper">  <mat-card>    <mat-card-header>      <mat-card-title>Welcome to GYMBOX!</mat-card-title>      <mat-card-subtitle>Explore what\'s waiting for you:</mat-card-subtitle>    </mat-card-header>    <mat-stepper class="minimal_stepper" orientation="vertical">      <mat-step completed="false" label="Private and Comfortable Workouts">        <mat-card-content>          <div class="cartoon_characters">            <div>              <p>Welcome to GYMBOX, the ultimate solution for those who want to workout in a private and comfortable                environment.              <p>              <p>With our premium gym rental service, you can book your own private gym and workout anytime, anywhere -                you decide.</p>            </div>            <img height="835" ngSrc="assets/female.jpg" width="448"/>          </div>          <mat-divider></mat-divider>        </mat-card-content>        <mat-card-actions align="end">          <button color="primary" mat-button matStepperNext>Next</button>        </mat-card-actions>      </mat-step>      <mat-step completed="false" label="Personalized Workout Experience">        <mat-card-content>          <div class="cartoon_characters">            <img height="822" ngSrc="assets/male.jpg" width="561"/>            <div>              <p>Say goodbye to crowded public gyms and long waiting times for equipment. At GYMBOX, you have access to                state-of-the-art equipment, exclusive amenities, and a fully personalized workout experience. </p>              <p>Whether you\'re a fitness enthusiast, a professional athlete, or just looking to stay healthy and fit,                GYMBOX has everything you need to achieve your goals.</p>            </div>          </div>          <mat-divider></mat-divider>        </mat-card-content>        <mat-card-actions align="end">          <button mat-button matStepperPrevious>Back</button>          <button color="primary" mat-button matStepperNext>Next</button>        </mat-card-actions>      </mat-step>      <mat-step completed="false" label="Join the GYMBOX Community">        <mat-card-content>          <div class="cartoon_characters">            <div>              <p>Browse local gyms, choose the one that suits your needs, and book instantly.                Customize your workout with your own equipment, favorite music, and friends.</p>              <p>Join the GYMBOX community today and experience the ultimate in privacy, convenience, and quality.                Start your fitness journey on your own terms and become the best version of yourself with GYMBOX.</p>            </div>            <img height="774" ngSrc="assets/equipment.jpg" width="1024"/>          </div>          <mat-divider></mat-divider>        </mat-card-content>        <mat-card-actions align="end">          <button mat-button matStepperPrevious>Back</button>          <button color="primary" mat-button routerLink="/register">Get Started</button>        </mat-card-actions>      </mat-step>    </mat-stepper>  </mat-card>  <mat-card-actions align="end">    <button mat-button routerLink="/register">Skip</button>  </mat-card-actions>  <!--  <mat-card>-->  <!--    <mat-card-content>-->  <!--      <div class="cartoon_characters">-->  <!--        <div>-->  <!--          <p>Welcome to GYMBOX, the ultimate solution for those who want to workout in a private and comfortable-->  <!--            environment.-->  <!--          <p>-->  <!--          <p>With our premium gym rental service, you can book your own private gym and workout anytime, anywhere - you-->  <!--            decide.</p>-->  <!--        </div>-->  <!--        <img ngSrc="assets/female.jpg" height="835" width="448"/>-->  <!--      </div>-->  <!--      <mat-divider></mat-divider>-->  <!--    </mat-card-content>-->  <!--    <mat-card-actions align="end">-->  <!--      <button mat-button color="primary">-->  <!--        Next-->  <!--      </button>-->  <!--    </mat-card-actions>-->  <!--  </mat-card>--></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BlindsHelpComponent', 'selector': 'app-blinds-help'},{'name': 'BookGymComponent', 'selector': 'app-book-gym'},{'name': 'ButtonComponent', 'selector': 'storybook-button'},{'name': 'ClimateHelpComponent', 'selector': 'app-climate-help'},{'name': 'DoorHelpComponent', 'selector': 'app-door-help'},{'name': 'GymCardComponent', 'selector': 'app-gym-card'},{'name': 'HeaderComponent', 'selector': 'storybook-header'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconListComponent', 'selector': 'app-icon-list'},{'name': 'IconListItemComponent', 'selector': 'app-icon-list-item'},{'name': 'InfobannerComponent', 'selector': 'app-infobanner'},{'name': 'LightsHelpComponent', 'selector': 'app-lights'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MatAccordionResponsiveComponent', 'selector': 'mat-accordion-responsive'},{'name': 'MatSqButtonComponent', 'selector': 'mat-sq-button'},{'name': 'PageComponent', 'selector': 'storybook-page'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RoomComponent', 'selector': 'app-room'},{'name': 'TaskComponent', 'selector': 'app-task'},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'},{'name': 'WorkoutToolsComponent', 'selector': 'app-workout-tools'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'WelcomeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'WelcomeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

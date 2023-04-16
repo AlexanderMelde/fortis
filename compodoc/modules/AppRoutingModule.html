@@ -74,22 +74,28 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {NgModule} from &#x27;@angular/core&#x27;;
-import {Routes, RouterModule} from &#x27;@angular/router&#x27;;
-import {HomeComponent} from &#x27;./pages/home/home.component&#x27;;
+import {RouterModule, Routes} from &#x27;@angular/router&#x27;;
 import {AboutComponent} from &#x27;./pages/about/about.component&#x27;;
+import {BookGymComponent} from &quot;./pages/book-gym/book-gym.component&quot;;
+import {HomeComponent} from &#x27;./pages/home/home.component&#x27;;
+import {LoginComponent} from &quot;./pages/login/login.component&quot;;
 import {PageNotFoundComponent} from &quot;./pages/page-not-found/page-not-found.component&quot;;
+import {RegisterComponent} from &quot;./pages/register/register.component&quot;;
 import {RoomComponent} from &quot;./pages/room/room.component&quot;;
 import {UserComponent} from &quot;./pages/user/user.component&quot;;
-import {BookGymComponent} from &quot;./pages/book-gym/book-gym.component&quot;;
+import {WelcomeComponent} from &quot;./pages/welcome/welcome.component&quot;;
 
 const routes: Routes &#x3D; [
-  { path: &#x27;about&#x27;, component: AboutComponent },
-  { path: &#x27;room&#x27;, component: RoomComponent },
-  { path: &#x27;user&#x27;, component: UserComponent },
-  { path: &#x27;book_gym&#x27;, component: BookGymComponent },
-  { path: &#x27;home&#x27;,        component: HomeComponent },
-  { path: &#x27;&#x27;,   redirectTo: &#x27;/home&#x27;, pathMatch: &#x27;full&#x27; },
-  { path: &#x27;**&#x27;, component: PageNotFoundComponent }
+  {path: &#x27;about&#x27;, component: AboutComponent},
+  {path: &#x27;room&#x27;, component: RoomComponent},
+  {path: &#x27;user&#x27;, component: UserComponent},
+  {path: &#x27;book_gym&#x27;, component: BookGymComponent},
+  {path: &#x27;home&#x27;, component: HomeComponent},
+  {path: &#x27;welcome&#x27;, component: WelcomeComponent},
+  {path: &#x27;login&#x27;, component: LoginComponent},
+  {path: &#x27;register&#x27;, component: RegisterComponent},
+  {path: &#x27;&#x27;, redirectTo: &#x27;/welcome&#x27;, pathMatch: &#x27;full&#x27;},
+  {path: &#x27;**&#x27;, component: PageNotFoundComponent}
 
 ];
 
