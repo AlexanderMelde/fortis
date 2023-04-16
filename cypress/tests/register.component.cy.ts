@@ -1,4 +1,4 @@
-import { RegisterComponent } from './register.component'
+import { RegisterComponent } from '../../src/app/pages/register/register.component'
 
 describe('RegisterComponent', () => {
   it('should mount', () => {

@@ -1,4 +1,4 @@
-import { LoginComponent } from './login.component'
+import { LoginComponent } from '../../src/app/pages/login/login.component'
 
 describe('LoginComponent', () => {
   it('should mount', () => {
