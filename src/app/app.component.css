@@ -18,7 +18,9 @@ mat-toolbar {
 #page_wrapper {
   /*width: calc(100% - 2rem);*/
   max-width: var(--max-content-width);
-  margin: 0 auto var(--bot-toolbar-height) auto;
+  margin: 0 auto;
+  /*padding-bottom: var(--min-content-wrap-margin);*/
+  /*height: calc(100% - var(--min-content-wrap-margin));*/
 }
 nav[mat-tab-nav-bar] {
   margin: 0 auto;
@@ -38,11 +40,11 @@ nav[mat-tab-nav-bar] {
 /*  right: 0;*/
 /*}*/
 mat-sidenav-container {
-  height: calc(100% - var(--bot-toolbar-height));
+  height: calc(100% - var(--top-toolbar-height) - var(--bot-toolbar-height));
 }
 mat-sidenav-content {
 }
-mat-sidenav {
+mat-sidenav.nav_side {
   width: 200px;
 }
 .nav_header {

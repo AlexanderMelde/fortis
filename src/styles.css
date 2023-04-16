@@ -12,7 +12,8 @@ body {
 * {
   --max-content-width: 800px;
   --min-content-wrap-margin: 1rem;
-  --bot-toolbar-height: 56px;
+  --top-toolbar-height: 64px;
+  --bot-toolbar-height: 48px;
 }
 
 .content_width_wrapper {
@@ -21,4 +22,12 @@ body {
 }
 .content_width_wrapper:first-of-type {
   margin-top: var(--min-content-wrap-margin);
+}
+.content_width_wrapper.small {
+  max-width: 500px;
+}
+@media(max-width: 599.98px) {
+  * {
+    --top-toolbar-height: 56px;
+  }
 }

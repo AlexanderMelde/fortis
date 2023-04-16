@@ -40,8 +40,12 @@
       <mat-divider></mat-divider>
       <a mat-list-item routerLink="/user">User</a>
       <a mat-list-item routerLink="/book_gym">Book gym</a>
-      <a mat-list-item disabled>&nbsp;</a>
-      <a mat-list-item (click)="sidenavEnd.toggle()" class="open_toolbox_side">Open other Sidebar</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="/welcome">Welcome</a>
+      <a mat-list-item routerLink="/login">Login</a>
+      <a mat-list-item routerLink="/register">Register</a>
+      <a mat-list-item disabled></a>
+      <a mat-list-item (click)="sidenavEnd.toggle()" class="open_toolbox_side">Workout Tools</a>
 
     </mat-nav-list>
   </mat-sidenav>

@@ -1,3 +1,4 @@
+import {NgOptimizedImage} from "@angular/common";
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -57,6 +58,9 @@ import {MatSqButtonComponent} from './ui-components/mat-sq-button/mat-sq-button.
 import {TaskListComponent} from './ui-components/task-list/task-list.component';
 import {TaskComponent} from './ui-components/task/task.component';
 import {WorkoutToolsComponent} from './workout-tools/workout-tools.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 const MODULE_DATE_FORMATS = {
   parse: {
@@ -92,7 +96,10 @@ const MODULE_DATE_FORMATS = {
     IconListComponent,
     IconListItemComponent,
     MatAccordionResponsiveComponent,
-    InfobannerComponent
+    InfobannerComponent,
+    WelcomeComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -125,7 +132,8 @@ const MODULE_DATE_FORMATS = {
     MatRadioModule,
     MatExpansionModule,
     MatDatepickerModule,
-    MatLuxonDateModule
+    MatLuxonDateModule,
+    NgOptimizedImage
   ],
   providers: [
     {provide: MAT_LUXON_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}},

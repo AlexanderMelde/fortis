@@ -1,0 +1,52 @@
+mat-divider {
+  margin: var(--min-content-wrap-margin) 0;
+}
+
+.cartoon_characters {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--min-content-wrap-margin);
+}
+
+.cartoon_characters img {
+  width: fit-content;
+  height: fit-content;
+  max-height: 190px;
+  max-width: 190px;
+  transition: 0.1s;
+}
+
+mat-card-header {
+  justify-content: center;
+  margin-bottom: var(--min-content-wrap-margin);
+}
+mat-card-title {
+  font-size: 22px;
+}
+
+mat-card-subtitle {
+  text-align: center;
+}
+
+
+@media(max-width: 800px) {
+  ::ng-deep .minimal_stepper .mat-vertical-content {
+    padding: 0;
+  }
+
+  .cartoon_characters img {
+    max-width: 120px;
+  }
+}
+@media(max-width: 500px) {
+  ::ng-deep .minimal_stepper .mat-vertical-content-container {
+    margin-left: 0;
+  }
+
+  ::ng-deep .minimal_stepper .mat-vertical-content-container::before {
+    border: none;
+  }
+  .cartoon_characters img {
+    max-width: 80px;
+  }
+}

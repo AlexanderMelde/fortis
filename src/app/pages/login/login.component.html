@@ -1,0 +1,38 @@
+<div class="content_width_wrapper small">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-subtitle>Sign in to your account</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="login-form">
+        <mat-form-field appearance="outline" class="full-width-form-input">
+          <mat-label>Email</mat-label>
+          <input [formControl]="loginForm.controls.email" matInput type="email"> <!--placeholder="pat@example.com"-->
+          <mat-error
+            *ngIf="loginForm.controls.email.hasError('email') && !loginForm.controls.email.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="loginForm.controls.email.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width-form-input">
+          <mat-label>Password</mat-label>
+          <input [formControl]="loginForm.controls.password" matInput name="password" type="password">
+          <mat-error *ngIf="loginForm.controls.password.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <div class="spreaded_buttons">
+          <button [disabled]="!loginForm.valid" color="primary" mat-raised-button type="submit">Login</button>
+          <div>
+            <a mat-button routerLink="/login">Forgot Password</a>
+            |
+            <a mat-button routerLink="/register">Create Account</a>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

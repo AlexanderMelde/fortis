@@ -1,0 +1,19 @@
+.full-width-form-input {
+  width: 100%;
+  margin-top: calc(var(--min-content-wrap-margin) / 2);
+}
+.login-form {
+  margin: var(--min-content-wrap-margin),
+}
+.spreaded_buttons {
+  margin-top: calc(var(--min-content-wrap-margin) / 2);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+@media(max-width: 599.98px) {
+  .spreaded_buttons {
+    flex-direction: column;
+    gap: var(--min-content-wrap-margin);
+  }
+}

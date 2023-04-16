@@ -1,5 +1,6 @@
 import {DebugElement} from '@angular/core';
 import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
+import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -9,7 +10,9 @@ import {By} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {Router} from "@angular/router";
 import {RouterTestingModule} from '@angular/router/testing';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {AppComponent} from './app.component';
+import {MatSqButtonComponent} from "./ui-components/mat-sq-button/mat-sq-button.component";
 import {WorkoutToolsComponent} from "./workout-tools/workout-tools.component";
 
 describe('AppComponent', () => {
@@ -19,7 +22,7 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent, WorkoutToolsComponent],
+      declarations: [AppComponent, WorkoutToolsComponent, MatSqButtonComponent],
       imports: [
         RouterTestingModule,
         MatToolbarModule,
@@ -27,7 +30,9 @@ describe('AppComponent', () => {
         MatIconModule,
         MatListModule,
         MatTabsModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MatDialogModule,
+        FontAwesomeModule
       ],
     }).compileComponents();
   });
