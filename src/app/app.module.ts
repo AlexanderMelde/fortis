@@ -103,7 +103,7 @@ const MODULE_DATE_FORMATS = {
     WelcomeComponent,
     LoginComponent,
     RegisterComponent,
-    MediacontrolComponent
+    MediacontrolComponent,
   ],
   imports: [
     BrowserModule,

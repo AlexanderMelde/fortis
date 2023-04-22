@@ -100,20 +100,21 @@
 
 </div>
 <div class="media-player-container">
-  <div matRipple  class="media-player-wrapper mat-elevation-z2" (click)="openBottomSheet()">
+  <div class="media-player-wrapper mat-elevation-z2" (click)="openBottomSheet()">
     <div class="media-player-row">
+      <div matRipple  class="mat-ripple-dummy"></div>
       <img height="300" ngSrc="assets/albumcover.jpg" width="300"/>
       <div class="title-wrapper">
         <mat-card-title>Hold Me Like a Grudge</mat-card-title>
         <mat-card-subtitle>Fall Out Boy</mat-card-subtitle>
       </div>
-      <button aria-label="Example icon-button with heart icon" class="example-icon favorite-icon" mat-icon-button>
-        <mat-icon>favorite_border</mat-icon>
+      <button aria-label="Example icon-button with heart icon" class="example-icon favorite-icon small" mat-icon-button (click)="toggleMusicFav($event)">
+        <mat-icon>{{musicIsFav ? "favorite": "favorite_border"}}</mat-icon>
       </button>
-      <button aria-label="Example icon-button with menu icon" class="example-icon" mat-icon-button>
-        <mat-icon>play_arrow</mat-icon>
+      <button aria-label="Example icon-button with menu icon" class="example-icon small" mat-icon-button (click)="toggleMusicPause($event)">
+        <mat-icon>{{musicIsPaused ? "play_arrow": "pause"}}</mat-icon>
       </button>
     </div>
-    <mat-progress-bar mode="determinate" value="80"></mat-progress-bar>
+    <mat-progress-bar mode="determinate" [value]="musicProgress"></mat-progress-bar>
   </div>
 </div>

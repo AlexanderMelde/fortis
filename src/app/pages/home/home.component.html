@@ -1,9 +1,15 @@
 <div class="content_width_wrapper">
-  <h1>
+  <p><mat-card-title>Good Morning {{get_firstname()}}!</mat-card-title></p>
+<!--  <p><mat-card-subtitle>Your upcoming bookings:</mat-card-subtitle></p>-->
+<!--  <p><b>TODO</b>: Horizontally Scrolling Cards for currently ongoing and upcoming bookings</p>-->
+<!--  <mat-card-actions align="end">-->
+<!--    <button mat-button routerLink="/room">View Current Booking</button>-->
+<!--  </mat-card-actions>-->
+  <p><mat-card-title>
     <ng-container *ngIf="gym_list_show_all === undefined">Available</ng-container>
     <ng-container *ngIf="gym_list_show_all === 'show_all'">All</ng-container>
     Gymboxes
-  </h1>
+  </mat-card-title></p>
   <div class="list_filters">
     <mat-form-field appearance="fill">
       <mat-label>Sort list</mat-label>

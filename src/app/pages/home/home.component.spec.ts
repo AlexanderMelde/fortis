@@ -10,7 +10,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {of} from "rxjs";
-import {ApiService} from '../../api.service';
+import {ApiService} from '../../services/api.service';
 import {Gym} from "../../models/gym.model";
 import {GymCardComponent} from "../../ui-components/gym-card/gym-card.component";
 import {IconListItemComponent} from "../../ui-components/icon-list-item/icon-list-item.component";

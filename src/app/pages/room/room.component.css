@@ -75,7 +75,8 @@ mat-card-content > mat-divider.divider-with-margin {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: var(--min-content-wrap-margin);
+  gap: calc(var(--min-content-wrap-margin)/2);
+  position: relative;
 }
 
 .media-player-row button {
@@ -83,7 +84,9 @@ mat-card-content > mat-divider.divider-with-margin {
 }
 
 .media-player-row img {
-  height: var(--top-toolbar-height);
+  height: 36px;
+  margin-left: 7px;
+  border-radius: 2px;
   width: auto;
 }
 
@@ -98,4 +101,30 @@ mat-progress-bar {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.title-wrapper mat-card-title {
+  font-size: 1rem;
+  line-height: 1.2rem;
+}
+.title-wrapper mat-card-subtitle {
+  font-size: 0.8rem;
+  line-height: 0.9rem;
+}
+.mat-ripple-dummy {
+  position: absolute ;
+  top: 0 ;
+  bottom: 0 ;
+  left: 0 ;
+  right: 0 ;
+}
+button[mat-icon-button].small {
+  height: 35px;
+  width: 35px;
+  padding: 6px;
+  margin: 5px;
+}
+button[mat-icon-button].small mat-icon {
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
 }

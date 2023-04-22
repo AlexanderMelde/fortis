@@ -34,7 +34,7 @@
           <div class="user-settings">
             <mat-form-field>
               <mat-label>Name</mat-label>
-              <input matInput [(ngModel)]="username">
+              <input matInput [(ngModel)]="username" (ngModelChange)="setUsername()">
               <mat-icon matSuffix>public</mat-icon>
             </mat-form-field>
             <mat-form-field>

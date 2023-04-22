@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { ApiService } from './api.service';
-import { Gym } from './models/gym.model';
+import { Gym } from '../models/gym.model';
 
 describe('ApiService', () => {
   let service: ApiService;

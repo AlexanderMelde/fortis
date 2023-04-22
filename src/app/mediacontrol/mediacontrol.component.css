@@ -77,18 +77,20 @@ mat-slider{
   width: 74px;
 }
 .media-device {
-  display: flex;
-  align-items: center;
+  margin-left: -8px;
   color: #673ab7; /*TODO: Variable*/
 }
 .media-device mat-icon {
   flex-grow: 0;
   font-size: 20px;
   height: 20px;
+  overflow: visible;
 }
+
 .media-device span {
   font-size: 0.78em;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 

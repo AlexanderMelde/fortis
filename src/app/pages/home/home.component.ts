@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {ApiService} from '../../api.service';
+import {Subscription} from "rxjs";
+import {ApiService} from '../../services/api.service';
 import {Gym} from '../../models/gym.model';
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {DataService} from "../../services/data.service";
 
 @Component({
   selector: 'app-home',
@@ -13,14 +15,23 @@ export class HomeComponent implements OnInit {
   isLoading: boolean = true;
   gym_list_sorting = 'nearby';
   gym_list_show_all: string | undefined = undefined;
+  username: string | undefined;
 
-  constructor(private apiService: ApiService, private _snackBar: MatSnackBar) {
+  usernameSubscription: Subscription | undefined;
+
+  constructor(private apiService: ApiService, private _snackBar: MatSnackBar, private data: DataService) {
   }
 
   ngOnInit() {
     this.loadGyms()
-  }
+    this.usernameSubscription = this.data.currentUsername.subscribe(d => this.username = d)
 
+  }
+  ngOnDestroy() {
+    if (this.usernameSubscription !== undefined) {
+      this.usernameSubscription.unsubscribe();
+    }
+  }
   loadGyms() {
     this.isLoading = true;
     this.apiService.sendGetRequest().subscribe({
@@ -42,4 +53,13 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  get_firstname() {
+    let s;
+    if (this.username !== undefined) {
+      s = this.username.split(" ")
+      return s[0]
+    }else{
+      return ""
+    }
+  }
 }

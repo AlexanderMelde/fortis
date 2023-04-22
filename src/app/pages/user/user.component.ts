@@ -1,6 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {DateTime} from "luxon";
+import {Subscription} from 'rxjs';
+import {BaseComponent} from "../../base/base.component";
+import {DataService} from "../../services/data.service";
 
 @Component({
   selector: 'app-user',
@@ -8,7 +11,7 @@ import {DateTime} from "luxon";
   styleUrls: ['./user.component.css']
 })
 
-export class UserComponent {
+export class UserComponent extends BaseComponent implements OnInit, OnDestroy {
   training_goals = new FormControl('');
   training_goals_list: string[] = ['Weight loss', 'Strength', 'Rehabilitation', 'Other'];
   username: string | undefined;
@@ -24,7 +27,6 @@ export class UserComponent {
   title = 0;
   height = 180;
   weight = 80;
-  myModel = false;
 
   getAge() {
     let age = this.birthday.value?.diffNow('years')?.years;
@@ -34,11 +36,21 @@ export class UserComponent {
     return age
   }
 
-  ngOnInit() {
-    this.username = "Kim Steele";
-    this.user_description = "I like to party!"
+  constructor(private data: DataService) {
+    super()
   }
 
-  protected readonly parseInt = parseInt;
+  ngOnInit() {
+    this.user_description = "I like to party!"
+    this.data.currentUsername.dieWith(this).subscribe(d => this.username = d)
+
+  }
+
+  setUsername() {
+    if (this.username !== undefined) {
+      this.data.changeUsername(this.username)
+    }
+  }
+
 }
 
