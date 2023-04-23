@@ -1,7 +1,7 @@
 <div class="content_width_wrapper">
   <div class="welcome">
     <div>
-      <p><mat-card-title>Good Morning {{get_firstname()}}!</mat-card-title></p>
+      <p><mat-card-title>{{get_greeting()}} {{get_firstname()}}!</mat-card-title></p>
       <p><mat-card-subtitle>Your upcoming bookings:</mat-card-subtitle></p>
     </div>
     <button aria-label="Example icon-button with a bell icon" mat-icon-button class="notification-button"  (click)="openNotifications()" matTooltip="Notifications">

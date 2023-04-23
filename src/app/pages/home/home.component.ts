@@ -74,4 +74,17 @@ export class HomeComponent implements OnInit {
   protected readonly DateTime = DateTime;
   protected readonly Duration = Duration;
   protected readonly faAngleRight = faAngleRight;
+
+  get_greeting() {
+    const h = DateTime.now().toObject().hour;
+    if ( h < 5 || h > 22) {
+      return "Good Night"
+    }else if(h < 12) {
+      return "Good Morning"
+    }else if(h < 18) {
+      return "Good Afternoon"
+    }else {
+      return "Good Evening"
+    }
+  }
 }

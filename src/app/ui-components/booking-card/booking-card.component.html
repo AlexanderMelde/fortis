@@ -1,7 +1,7 @@
 <mat-card>
   <div class="header">
   <div>
-      <mat-card-title>{{date?.toRelativeCalendar()?.toUpperCase() | titlecase}}</mat-card-title>
+      <mat-card-title>{{date?.toRelativeCalendar({locale: "en"})?.toUpperCase() | titlecase}}</mat-card-title>
       <mat-card-subtitle>{{date?.toFormat('HH:mm')}} – {{date?.plus({minutes: 90})?.toFormat('HH:mm')}}</mat-card-subtitle>
   </div>
 
