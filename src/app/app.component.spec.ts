@@ -1,6 +1,5 @@
-import {DebugElement} from '@angular/core';
-import {ComponentFixture, fakeAsync, TestBed, tick} from '@angular/core/testing';
-import {MatDialogModule, MatDialogRef} from "@angular/material/dialog";
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {MatDialogModule} from "@angular/material/dialog";
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';

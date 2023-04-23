@@ -1,6 +1,6 @@
 // taken from https://stackoverflow.com/a/71866336/
 import {Component, OnDestroy} from "@angular/core";
-import {Observable, Subject, Subscribable, takeUntil} from "rxjs";
+import {Observable, Subject, takeUntil} from "rxjs";
 
 @Component({ template: '' })
 export abstract class BaseComponent implements OnDestroy{

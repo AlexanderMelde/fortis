@@ -1,5 +1,5 @@
-import {Injectable, OnDestroy, OnInit} from '@angular/core';
-import {interval, Observable, Subject, Subscription, takeUntil, takeWhile,} from 'rxjs';
+import {Injectable} from '@angular/core';
+import {interval, Observable, Subject, Subscription, takeUntil} from 'rxjs';
 import {BaseComponent} from "../helpers/base/base.component";
 import {DataService} from "./data.service";
 

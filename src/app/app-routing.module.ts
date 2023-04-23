@@ -8,7 +8,6 @@ import {LoginComponent} from "./pages/login/login.component";
 import {PageNotFoundComponent} from "./pages/page-not-found/page-not-found.component";
 import {RegisterComponent} from "./pages/register/register.component";
 import {RoomComponent} from "./pages/room/room.component";
-import {SocialComponent} from "./modals/social/social.component";
 import {UserComponent} from "./pages/user/user.component";
 import {WelcomeComponent} from "./pages/welcome/welcome.component";
 

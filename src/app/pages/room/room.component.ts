@@ -17,7 +17,6 @@ import {
   faUser, faVault,
   faWeightHanging, faWheatAwn
 } from '@fortawesome/free-solid-svg-icons';
-import {Subscription} from "rxjs";
 import {BaseComponent} from "../../helpers/base/base.component";
 import {LightsHelpComponent} from "../../modals/help/lights/lights-help.component";
 import {BlindsHelpComponent} from "../../modals/help/blinds-help/blinds-help.component";
