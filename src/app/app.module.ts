@@ -3,6 +3,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {LuxonDateAdapter, MAT_LUXON_DATE_ADAPTER_OPTIONS, MatLuxonDateModule} from "@angular/material-luxon-adapter";
+import {MatBadgeModule} from "@angular/material/badge";
 import {MatBottomSheetModule} from "@angular/material/bottom-sheet";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
@@ -30,6 +31,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatTooltipModule} from "@angular/material/tooltip";
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -37,11 +39,11 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {BlindsHelpComponent} from './help/blinds-help/blinds-help.component';
-import {ClimateHelpComponent} from './help/climate-help/climate-help.component';
-import {DoorHelpComponent} from './help/door-help/door-help.component';
-import {HelpComponent} from './help/help.component';
-import {LightsHelpComponent} from './help/lights/lights-help.component';
+import {BlindsHelpComponent} from './modals/help/blinds-help/blinds-help.component';
+import {ClimateHelpComponent} from './modals/help/climate-help/climate-help.component';
+import {DoorHelpComponent} from './modals/help/door-help/door-help.component';
+import {HelpComponent} from './modals/help/help.component';
+import {LightsHelpComponent} from './modals/help/lights/lights-help.component';
 import {AboutComponent} from './pages/about/about.component';
 import {BookGymComponent} from './pages/book-gym/book-gym.component';
 import {HomeComponent} from './pages/home/home.component';
@@ -59,11 +61,14 @@ import {
 import {MatSqButtonComponent} from './ui-components/mat-sq-button/mat-sq-button.component';
 import {TaskListComponent} from './ui-components/task-list/task-list.component';
 import {TaskComponent} from './ui-components/task/task.component';
-import {WorkoutToolsComponent} from './workout-tools/workout-tools.component';
+import {WorkoutToolsComponent} from './modals/workout-tools/workout-tools.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { MediacontrolComponent } from './mediacontrol/mediacontrol.component';
+import { MediacontrolComponent } from './modals/mediacontrol/mediacontrol.component';
+import { BookingCardComponent } from './ui-components/booking-card/booking-card.component';
+import { BookTrainerComponent } from './pages/book-trainer/book-trainer.component';
+import { SocialComponent } from './modals/social/social.component';
 
 const MODULE_DATE_FORMATS = {
   parse: {
@@ -104,6 +109,9 @@ const MODULE_DATE_FORMATS = {
     LoginComponent,
     RegisterComponent,
     MediacontrolComponent,
+    BookingCardComponent,
+    BookTrainerComponent,
+    SocialComponent,
   ],
   imports: [
     BrowserModule,
@@ -140,7 +148,9 @@ const MODULE_DATE_FORMATS = {
     NgOptimizedImage,
     MatBottomSheetModule,
     MatRippleModule,
-    MatMenuModule
+    MatMenuModule,
+    MatBadgeModule,
+    MatTooltipModule
   ],
   providers: [
     {provide: MAT_LUXON_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}},

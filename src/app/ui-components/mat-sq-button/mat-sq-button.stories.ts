@@ -4,8 +4,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {faCircleQuestion, faDumbbell, faLightbulb} from "@fortawesome/free-solid-svg-icons";
 import {Meta, moduleMetadata, Story, StoryObj} from '@storybook/angular';
-import {HelpComponent} from '../../help/help.component';
-import {LightsHelpComponent} from "../../help/lights/lights-help.component";
+import {HelpComponent} from '../../modals/help/help.component';
+import {LightsHelpComponent} from "../../modals/help/lights/lights-help.component";
 import {MatSqButtonComponent} from './mat-sq-button.component';
 
 type StoryType = MatSqButtonComponent & { label?: string };

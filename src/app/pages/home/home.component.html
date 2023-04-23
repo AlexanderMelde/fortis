@@ -1,10 +1,28 @@
 <div class="content_width_wrapper">
-  <p><mat-card-title>Good Morning {{get_firstname()}}!</mat-card-title></p>
-<!--  <p><mat-card-subtitle>Your upcoming bookings:</mat-card-subtitle></p>-->
-<!--  <p><b>TODO</b>: Horizontally Scrolling Cards for currently ongoing and upcoming bookings</p>-->
-<!--  <mat-card-actions align="end">-->
-<!--    <button mat-button routerLink="/room">View Current Booking</button>-->
-<!--  </mat-card-actions>-->
+  <div class="welcome">
+    <div>
+      <p><mat-card-title>Good Morning {{get_firstname()}}!</mat-card-title></p>
+      <p><mat-card-subtitle>Your upcoming bookings:</mat-card-subtitle></p>
+    </div>
+    <button aria-label="Example icon-button with a bell icon" mat-icon-button class="notification-button"  (click)="openNotifications()" matTooltip="Notifications">
+      <mat-icon matBadge="1" matBadgeColor="accent"  >notifications</mat-icon>
+    </button>
+  </div>
+</div>
+  <div class="bookings">
+    <app-booking-card name="GYMBOX Berlin" description="City Center" [ongoing]="true" [date]="DateTime.now().minus({ minutes: 32 })"
+                      [duration]="Duration.fromObject({minutes: 90})" course="Make you sweat core workout" coach="Jessy"></app-booking-card>
+    <app-booking-card  *ngFor="let number of [1,2,3]" [date]="DateTime.now().plus({ days: number, hours: number*2 })" name="GYMBOX Berlin"
+                       description="City Center" course="Relaxmax Yoga" coach="José"></app-booking-card>
+  </div>
+<div class="content_width_wrapper">
+  <mat-card-actions class="workout-from-home">
+    <mat-card-subtitle>Want to start right away?</mat-card-subtitle>
+    <button mat-button mat-stroked-button routerLink="/room">
+      Workout from Home
+      <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
+    </button>
+  </mat-card-actions>
   <p><mat-card-title>
     <ng-container *ngIf="gym_list_show_all === undefined">Available</ng-container>
     <ng-container *ngIf="gym_list_show_all === 'show_all'">All</ng-container>

@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+
+mat-card {
+  width: 250px;
+}
+
+.course-details {
+  display: flex;
+  gap: calc(var(--min-content-wrap-margin) / 2 );
+  white-space: normal;
+}
+.course-image {
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: calc(var(--min-content-wrap-margin) / 2 );
+}
+
+.course-title, .course-coach {
+  font-weight: 600;
+
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: calc(var(--min-content-wrap-margin) / 2 );
+}
+.header button[mat-icon-button] {
+  flex-shrink: 0;
+  color: #c5c5c5;
+}
+.header button[mat-stroked-button] {
+  align-self: center;
+  margin-right: calc(var(--min-content-wrap-margin) / 2 );
+}
+.header > div {
+  padding-left: calc(var(--min-content-wrap-margin) / 4 );
+
+}

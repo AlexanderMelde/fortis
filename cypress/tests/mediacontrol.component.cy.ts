@@ -1,4 +1,4 @@
-import { MediacontrolComponent } from '../../src/app/mediacontrol/mediacontrol.component'
+import { MediacontrolComponent } from '../../src/app/modals/mediacontrol/mediacontrol.component'
 
 describe('MediacontrolComponent', () => {
   it('should mount', () => {

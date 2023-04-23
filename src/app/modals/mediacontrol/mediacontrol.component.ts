@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MatBottomSheetRef} from "@angular/material/bottom-sheet";
-import {BaseComponent} from "../base/base.component";
-import {DataService} from "../services/data.service";
-import {TimerService} from "../services/timer.service";
+import {BaseComponent} from "../../helpers/base/base.component";
+import {DataService} from "../../services/data.service";
+import {TimerService} from "../../services/timer.service";
 
 @Component({
   selector: 'app-mediacontrol',

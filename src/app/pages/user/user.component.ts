@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {DateTime} from "luxon";
 import {Subscription} from 'rxjs';
-import {BaseComponent} from "../../base/base.component";
+import {BaseComponent} from "../../helpers/base/base.component";
 import {DataService} from "../../services/data.service";
 
 @Component({

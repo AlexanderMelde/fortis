@@ -1,4 +1,11 @@
-
+.welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.welcome button {
+  flex-shrink: 0;
+}
 mat-progress-bar {
   margin: var(--min-content-wrap-margin) auto;
 }
@@ -13,4 +20,23 @@ mat-card {
 
 app-gym-card {
   margin-top: var(--min-content-wrap-margin);
+}
+.bookings {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  width: 100%;
+  padding-bottom: var(--min-content-wrap-margin);
+  gap:  var(--min-content-wrap-margin);
+  margin-bottom: var(--min-content-wrap-margin);
+}
+.bookings app-booking-card:first-of-type {
+  margin-inline-start: var(--min-content-wrap-margin);
+}
+.bookings app-booking-card:last-of-type {
+  margin-inline-end: var(--min-content-wrap-margin);
+}
+.workout-from-home {
+  flex-direction: column;
 }

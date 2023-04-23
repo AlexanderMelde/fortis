@@ -5,7 +5,7 @@ import { faAngleRight, faCircleQuestion } from '@fortawesome/free-solid-svg-icon
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {of} from "rxjs";
 
-import { HelpComponent } from '../../help/help.component';
+import { HelpComponent } from '../../modals/help/help.component';
 import { MatSqButtonComponent } from './mat-sq-button.component';
 
 describe('MatSqButtonComponent', () => {

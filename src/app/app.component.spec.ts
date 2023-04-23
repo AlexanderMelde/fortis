@@ -13,7 +13,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {AppComponent} from './app.component';
 import {MatSqButtonComponent} from "./ui-components/mat-sq-button/mat-sq-button.component";
-import {WorkoutToolsComponent} from "./workout-tools/workout-tools.component";
+import {WorkoutToolsComponent} from "./modals/workout-tools/workout-tools.component";
 
 describe('AppComponent', () => {
   let component: AppComponent;

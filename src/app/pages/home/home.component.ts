@@ -1,9 +1,13 @@
 import {Component, OnInit} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
+import {DateTime, Duration} from "luxon";
 import {Subscription} from "rxjs";
 import {ApiService} from '../../services/api.service';
 import {Gym} from '../../models/gym.model';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {DataService} from "../../services/data.service";
+import {SocialComponent} from "../../modals/social/social.component";
 
 @Component({
   selector: 'app-home',
@@ -19,7 +23,7 @@ export class HomeComponent implements OnInit {
 
   usernameSubscription: Subscription | undefined;
 
-  constructor(private apiService: ApiService, private _snackBar: MatSnackBar, private data: DataService) {
+  constructor(private apiService: ApiService, private _snackBar: MatSnackBar, private data: DataService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -62,4 +66,12 @@ export class HomeComponent implements OnInit {
       return ""
     }
   }
+  openNotifications(): void {
+    const dialogRef = this.dialog.open(SocialComponent, {
+      // data: {name: this.name, animal: this.animal},
+    });
+  }
+  protected readonly DateTime = DateTime;
+  protected readonly Duration = Duration;
+  protected readonly faAngleRight = faAngleRight;
 }
