@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./climate-help.component.css']
 })
 export class ClimateHelpComponent {
+  coolingOn: boolean = true;
+  value: number = 22;
 
 }

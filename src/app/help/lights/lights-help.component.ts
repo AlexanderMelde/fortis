@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import {faHandSparkles, faLightbulb, faMoon, faSun} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-lights',
@@ -8,5 +8,9 @@ import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
 })
 export class LightsHelpComponent {
   faLightbulb = faLightbulb;
+  lightCardio = true;
 
+  protected readonly faSun = faSun;
+  protected readonly faMoon = faMoon;
+  protected readonly faHandSparkles = faHandSparkles;
 }

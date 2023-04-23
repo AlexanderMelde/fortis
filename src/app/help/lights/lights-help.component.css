@@ -1,0 +1,10 @@
+mat-slide-toggle {
+  display: block;
+  margin-bottom: var(--min-content-wrap-margin);
+}
+.scene-grid {
+  display: grid;
+  gap: var(--min-content-wrap-margin);
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}

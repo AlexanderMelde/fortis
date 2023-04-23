@@ -1,12 +1,23 @@
 <h2 mat-dialog-title>Climate</h2>
 <mat-dialog-content class="mat-typography">
-  This room is equipped with an A/C cooling. You can use the control panel located next to the main door.
-  <div><mat-slide-toggle>Cooling On/Off!</mat-slide-toggle></div>
+  <p>This room is equipped with a smart A/C cooling system.</p>
+  <p>Please choose a desired temperature:</p>
+  <div class="example-label-container">
+    <label class="example-name-label" id="example-name-label">Temperature</label>
+    <label class="example-value-label">{{value}} °C</label>
+  </div>
+  <mat-slider [max]=30 [min]=15 [step]=0.5>
+    <input [(ngModel)]="value" matSliderThumb>
+  </mat-slider>
 
-  <mat-slide-toggle>Heating On/Off!</mat-slide-toggle>
+  <mat-slide-toggle [ngModel]="coolingOn">Enable Turbo Mode for cooling!</mat-slide-toggle>
+  <mat-slide-toggle>Enable additional Heating</mat-slide-toggle>
+
+  <p>Alternatively, you can also use the in-room control panel located in the entrance area.</p>
+
 
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <!--  <button mat-button mat-dialog-close="mat-dialog-close">Cancel</button>-->
-  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>OK</button>
+  <button [mat-dialog-close]="true" cdkFocusInitial mat-button>OK</button>
 </mat-dialog-actions>

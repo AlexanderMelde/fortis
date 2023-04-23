@@ -33,7 +33,10 @@
 .sq-button-row-container {
   margin-bottom: var(--min-content-wrap-margin);
 }
+mat-sq-button {
+  margin-right: var(--min-content-wrap-margin);
 
+}
 mat-sq-button:first-of-type {
   margin-left: var(--min-content-wrap-margin);
 }

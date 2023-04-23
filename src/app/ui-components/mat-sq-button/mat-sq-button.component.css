@@ -1,6 +1,4 @@
-:host {
-  margin-right: var(--min-content-wrap-margin);
-}
+
 button[mat-stroked-button], .wrapper {
   height: 6rem;
   width: 6rem;

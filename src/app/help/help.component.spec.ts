@@ -14,7 +14,7 @@ describe('HelpComponent', () => {
       providers: [
         {
           provide: MAT_DIALOG_DATA,
-          useValue: 'help_weights'
+          useValue: 'help_hairdryer'
         },
         {
           provide: MatDialogRef,
@@ -35,8 +35,8 @@ describe('HelpComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display help content for weights', () => {
-    const testContentRef = 'help_weights';
+  it('should display help content for hair dryer', () => {
+    const testContentRef = 'help_hairdryer';
     const helpItem = helpDatabase[testContentRef];
     const h2Element = fixture.nativeElement.querySelector('h2');
     const matDialogContentElement = fixture.nativeElement.querySelector('mat-dialog-content');

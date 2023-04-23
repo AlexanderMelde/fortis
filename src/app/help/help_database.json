@@ -1,30 +1,66 @@
 {
   "help_dumbbells": {
     "title": "Dumbbells",
-    "content": "Dumbbells are located at ..."
+    "content": "Dumbbells are used for strength training exercises. <br/><br/>They can be found in the weight lifting area of the gym."
   },
   "help_weights": {
     "title": "Weights",
-    "content": "Weights are located at..."
+    "content": "Weights are used for strength training exercises. <br/><br/>They can be found in the weight lifting area of the gym"
   },
   "help_bike": {
     "title": "Bike",
-    "content": "To start cycling, please ensure the bike is unlocked."
+    "content": "Bikes are used for cardiovascular exercise. <br/><br/>They can be found in the cardio area of the gym. <br/><br/>To start cycling, please ensure the bike is unlocked."
   },
   "help_towels": {
     "title": "Towels",
-    "content": "Free Towel Service, please place any used towel in the green bin."
+    "content": "We provide a free towel service so you can wipe off sweat and water during and after the exercise. <br/><br/>Please place any used towel in the green bin.<br/><br/>Fresh Towels can be found at the towel dispensers next to the shower."
   },
   "help_shower": {
     "title": "Shower",
-    "content": "Showers can be used free of charge."
+    "content": "Our Showers can be used free of charge to rinse off sweat after your workout. <br/><br/>They are located in the changing area."
   },
   "help_sauna": {
     "title": "Sauna",
-    "content": "Sauna is operated between 10:00 and 19:00, for other times please contact us at: +49 176 99556677."
+    "content": "Sauna is operated between 10:00 and 19:00, for other times please contact us at: <br/><br/>+49 176 99556677. <br/><br/>Saunas are used to relax muscles and promote sweating. <br/><br/>The sauna can be found next to the changing area."
   },
   "help_drinks": {
     "title": "Drinks",
-    "content": "A great selection of non-alcoholic drinks can be found at the fridge next to the changing rooms."
+    "content": "A great selection of non-alcoholic drinks can be found at the fridge next to the changing rooms. <br/><br/>Drinks such as water or sports drinks are used to stay hydrated during exercise. <br/><br/>They can be found at the gym's water fountains or vending machines."
+  },
+  "help_changing": {
+    "title": "Changing Room",
+    "content": "To change into your workout clothes, feel free to use the changing room located near the entrance of the gym."
+  },
+  "help_hairdryer": {
+    "title": "Hair Dryer",
+    "content": "To dry your hair after a shower, a free-of-charge hair dryer is located in the changing room."
+  },
+  "help_lockers": {
+    "title": "Lockers",
+    "content": "GYMBOXes are designed for exclusive use! Besides you and friends you invite, nobody will use the gym during your session. <br/><br/>To store personal belongings during a workout, you won't need a locker, just place them anywhere in the gym. <br/><br/>It's safe!"
+  },
+  "help_toiletries": {
+    "title": "Toiletries",
+    "content": "We provide a range of complimentary toiletries such as soap, shampoo, and conditioner to clean your body after the workout. <br/><br/>They are located next to the shower."
+  },
+  "help_nutrition": {
+    "title": "Nutrition",
+    "content": "We offer a wide variety of snacks for you to stay nurtured. <br/><br/>A vending machine is located right next to the changing room."
+  },
+  "help_treadmill": {
+    "title": "Treadmill",
+    "content": "Treadmills are used for cardiovascular exercise. <br/><br/>They can be found in the cardio area of the gym."
+  },
+  "help_ellipctical": {
+    "title": "Elliptical",
+    "content": "Ellipticals are used for cardiovascular exercise. <br/><br/>They can be found in the cardio area of the gym."
+  },
+  "help_yoga": {
+    "title": "Yoga Mat",
+    "content": "Yoga mats are used for yoga and stretching exercises. <br/><br/>They can be found in the stretching area of the gym."
+  },
+  "help_bands": {
+    "title": "Resistance Bands",
+    "content": "Resistance bands are used for strength training and stretching exercises. <br/><br/>They can be found in the stretching area of the gym."
   }
 }

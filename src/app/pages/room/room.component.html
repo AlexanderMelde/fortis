@@ -1,10 +1,10 @@
 <div class="room-container">
 
   <div class="content_width_wrapper">
-    <h1>Room Control</h1>
+    <h1>Current Workout</h1>
     <mat-card class="room-details-card">
       <mat-card-header>
-        <mat-card-title>Your GYMBOX Booking</mat-card-title>
+        <mat-card-title>Your Reservation</mat-card-title>
       </mat-card-header>
       <img alt="Photo of a Gym" mat-card-image src="https://source.unsplash.com/1000x300/?gym">
       <mat-card-content>
@@ -36,19 +36,19 @@
   </div>
 
   <section class="sq-button-row-container">
-    <div class="row-label">Smart Controls</div>
+    <div class="row-label">Smart Room Controls</div>
     <div class="sq-button-row">
       <mat-sq-button [icon]="faLightbulb" [popup]="LightsHelpComponent">
         Lights
-      </mat-sq-button>
-      <mat-sq-button [icon]="faPersonBooth" [popup]="BlindsHelpComponent">
-        Window Blinds
       </mat-sq-button>
       <mat-sq-button [icon]="faFan" [popup]="ClimateHelpComponent">
         Climate Control
       </mat-sq-button>
       <mat-sq-button [icon]="faDoorOpen" [popup]="DoorHelpComponent">
         Unlock Door
+      </mat-sq-button>
+      <mat-sq-button [icon]="faPersonBooth" [popup]="BlindsHelpComponent">
+        Window Blinds
       </mat-sq-button>
     </div>
   </section>
@@ -66,16 +66,28 @@
       <mat-sq-button [icon]="faPersonBiking" help_topic="help_bike">
         Bike
       </mat-sq-button>
-      <mat-sq-button [icon]="faPersonBiking" help_topic="help_unknown">
-        Unknown
+      <mat-sq-button [icon]="faTarp" help_topic="help_yoga">
+        Yoga Mat
       </mat-sq-button>
+      <mat-sq-button [icon]="faRing" help_topic="help_bands">
+        Resist&shy;ance Bands
+      </mat-sq-button>
+      <mat-sq-button [icon]="faPersonBiking" help_topic="help_treadmill">
+        Treadmill
+      </mat-sq-button>
+      <mat-sq-button [icon]="faPersonBiking" help_topic="help_ellipctical">
+        Elliptical
+      </mat-sq-button>
+<!--      <mat-sq-button [icon]="faPersonBiking" help_topic="help_unknown">-->
+<!--        Unknown-->
+<!--      </mat-sq-button>-->
     </div>
   </section>
 
   <section class="sq-button-row-container" id="amenities">
     <div class="row-label">Amenities</div>
     <div class="sq-button-row">
-      <ng-container *ngFor="let number of [0,1,2,3]">
+<!--      <ng-container *ngFor="let number of [0,1,2,3]">-->
         <mat-sq-button [icon]="faSheetPlastic" help_topic="help_towels">
           Towels
         </mat-sq-button>
@@ -88,14 +100,29 @@
         <mat-sq-button [icon]="faBottleWater" help_topic="help_drinks">
           Drinks
         </mat-sq-button>
-      </ng-container>
+        <mat-sq-button [icon]="faVault" help_topic="help_lockers">
+          Lockers
+        </mat-sq-button>
+        <mat-sq-button [icon]="faPersonBooth" help_topic="help_changing">
+          Changing Room
+        </mat-sq-button>
+        <mat-sq-button [icon]="faFan" help_topic="help_hairdryer">
+          Hair Dryer
+        </mat-sq-button>
+        <mat-sq-button [icon]="faPumpSoap" help_topic="help_toiletries">
+          Toiletries
+        </mat-sq-button>
+        <mat-sq-button [icon]="faWheatAwn" help_topic="help_nutrition">
+          Nutrition
+        </mat-sq-button>
+<!--      </ng-container>-->
     </div>
   </section>
 
-  <button (click)="toggleWorkoutTools()" color="primary" mat-stroked-button>
-    Open Workout Tools
-    <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
-  </button>
+<!--  <button (click)="toggleWorkoutTools()" color="primary" mat-stroked-button>-->
+<!--    Open Workout Tools-->
+<!--    <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>-->
+<!--  </button>-->
 
 
 </div>

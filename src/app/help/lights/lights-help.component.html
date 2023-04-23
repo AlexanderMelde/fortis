@@ -1,9 +1,18 @@
 <h2 mat-dialog-title>Lights</h2>
 <mat-dialog-content class="mat-typography">
-  <div>Lights in this Gym can be controlled using the following switches:</div>
-  <mat-sq-button [icon]="faLightbulb" [disabled]="true">Turn Light On</mat-sq-button>
-  <mat-sq-button [icon]="faLightbulb">Turn Light Off</mat-sq-button>
-
+  <p>This Gym is equipped with smart lights.</p>
+  <p>Use the following buttons to control them:</p>
+  <h2>Scenes</h2>
+  <div class="scene-grid">
+    <mat-sq-button [icon]="faSun">Bright Workout</mat-sq-button>
+    <mat-sq-button [icon]="faMoon">Moody Chillout</mat-sq-button>
+    <mat-sq-button [icon]="faHandSparkles">Photo Lights</mat-sq-button>
+  </div>
+  <h2>Zones</h2>
+  <mat-slide-toggle [ngModel]="lightCardio">Cardio Area</mat-slide-toggle>
+  <mat-slide-toggle>Stretching Area</mat-slide-toggle>
+  <mat-slide-toggle>Weight Lifting Area</mat-slide-toggle>
+  <p>Please note that emergency lighting and motion-activated lights can not be controlled via the app.</p>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <!--  <button mat-button mat-dialog-close="mat-dialog-close">Cancel</button>-->

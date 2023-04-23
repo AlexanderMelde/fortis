@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {MatBottomSheet} from "@angular/material/bottom-sheet";
 import {
-  faAngleRight,
+  faAngleRight, faBottleDroplet,
   faBottleWater,
   faClock,
   faDoorOpen,
@@ -11,11 +11,11 @@ import {
   faLightbulb,
   faLocationPin,
   faPersonBiking,
-  faPersonBooth,
+  faPersonBooth, faPumpSoap, faRing,
   faSheetPlastic,
-  faShower,
-  faUser,
-  faWeightHanging
+  faShower, faSoap, faTarp,
+  faUser, faVault,
+  faWeightHanging, faWheatAwn
 } from '@fortawesome/free-solid-svg-icons';
 import {Subscription} from "rxjs";
 import {BaseComponent} from "../../base/base.component";
@@ -91,4 +91,11 @@ export class RoomComponent extends BaseComponent implements OnInit, OnDestroy {
     event.stopPropagation();
   }
   protected readonly event = event;
+  protected readonly faBottleDroplet = faBottleDroplet;
+  protected readonly faSoap = faSoap;
+  protected readonly faPumpSoap = faPumpSoap;
+  protected readonly faWheatAwn = faWheatAwn;
+  protected readonly faVault = faVault;
+  protected readonly faTarp = faTarp;
+  protected readonly faRing = faRing;
 }

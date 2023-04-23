@@ -38,7 +38,7 @@ describe('RoomComponent', () => {
 
   it('should display the room title', () => {
     const title = fixture.nativeElement.querySelector('h1');
-    expect(title.textContent).toContain('Room Control');
+    expect(title.textContent).toContain('Current Workout');
   });
 
   it('should display the booking information', () => {
