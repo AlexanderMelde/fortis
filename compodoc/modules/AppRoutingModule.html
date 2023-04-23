@@ -77,11 +77,13 @@
 import {RouterModule, Routes} from &#x27;@angular/router&#x27;;
 import {AboutComponent} from &#x27;./pages/about/about.component&#x27;;
 import {BookGymComponent} from &quot;./pages/book-gym/book-gym.component&quot;;
+import {BookTrainerComponent} from &quot;./pages/book-trainer/book-trainer.component&quot;;
 import {HomeComponent} from &#x27;./pages/home/home.component&#x27;;
 import {LoginComponent} from &quot;./pages/login/login.component&quot;;
 import {PageNotFoundComponent} from &quot;./pages/page-not-found/page-not-found.component&quot;;
 import {RegisterComponent} from &quot;./pages/register/register.component&quot;;
 import {RoomComponent} from &quot;./pages/room/room.component&quot;;
+import {SocialComponent} from &quot;./modals/social/social.component&quot;;
 import {UserComponent} from &quot;./pages/user/user.component&quot;;
 import {WelcomeComponent} from &quot;./pages/welcome/welcome.component&quot;;
 
@@ -94,6 +96,7 @@ const routes: Routes &#x3D; [
   {path: &#x27;welcome&#x27;, component: WelcomeComponent},
   {path: &#x27;login&#x27;, component: LoginComponent},
   {path: &#x27;register&#x27;, component: RegisterComponent},
+  {path: &#x27;book_trainer&#x27;, component: BookTrainerComponent},
   {path: &#x27;&#x27;, redirectTo: &#x27;/welcome&#x27;, pathMatch: &#x27;full&#x27;},
   {path: &#x27;**&#x27;, component: PageNotFoundComponent}
 
