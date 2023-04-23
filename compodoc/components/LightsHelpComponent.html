@@ -129,7 +129,25 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#faHandSparkles" >faHandSparkles</a>
+                            </li>
+                            <li>
                                 <a href="#faLightbulb" >faLightbulb</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#faMoon" >faMoon</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#faSun" >faSun</a>
+                            </li>
+                            <li>
+                                <a href="#lightCardio" >lightCardio</a>
                             </li>
                         </ul>
                     </td>
@@ -159,6 +177,33 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="faHandSparkles"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>faHandSparkles</b></span>
+                        <a href="#faHandSparkles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>faHandSparkles</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/help/lights/lights-help.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="faLightbulb"></a>
                     <span class="name">
                         <span ><b>faLightbulb</b></span>
@@ -180,6 +225,85 @@
 
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="faMoon"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>faMoon</b></span>
+                        <a href="#faMoon"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>faMoon</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/help/lights/lights-help.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="faSun"></a>
+                    <span class="name">
+                            <span class="modifier">Protected</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>faSun</b></span>
+                        <a href="#faSun"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>faSun</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/help/lights/lights-help.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lightCardio"></a>
+                    <span class="name">
+                        <span ><b>lightCardio</b></span>
+                        <a href="#lightCardio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/help/lights/lights-help.component.ts:11</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
 </section>
 
 </div>
@@ -187,7 +311,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { faLightbulb } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
+import {faHandSparkles, faLightbulb, faMoon, faSun} from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
 
 @Component({
   selector: &#x27;app-lights&#x27;,
@@ -196,7 +320,11 @@ import { faLightbulb } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
 })
 export class LightsHelpComponent {
   faLightbulb &#x3D; faLightbulb;
+  lightCardio &#x3D; true;
 
+  protected readonly faSun &#x3D; faSun;
+  protected readonly faMoon &#x3D; faMoon;
+  protected readonly faHandSparkles &#x3D; faHandSparkles;
 }
 </code></pre>
     </div>
@@ -204,10 +332,19 @@ export class LightsHelpComponent {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;h2 mat-dialog-title&gt;Lights&lt;/h2&gt;
 &lt;mat-dialog-content class&#x3D;&quot;mat-typography&quot;&gt;
-  &lt;div&gt;Lights in this Gym can be controlled using the following switches:&lt;/div&gt;
-  &lt;mat-sq-button [icon]&#x3D;&quot;faLightbulb&quot; [disabled]&#x3D;&quot;true&quot;&gt;Turn Light On&lt;/mat-sq-button&gt;
-  &lt;mat-sq-button [icon]&#x3D;&quot;faLightbulb&quot;&gt;Turn Light Off&lt;/mat-sq-button&gt;
-
+  &lt;p&gt;This Gym is equipped with smart lights.&lt;/p&gt;
+  &lt;p&gt;Use the following buttons to control them:&lt;/p&gt;
+  &lt;h2&gt;Scenes&lt;/h2&gt;
+  &lt;div class&#x3D;&quot;scene-grid&quot;&gt;
+    &lt;mat-sq-button [icon]&#x3D;&quot;faSun&quot;&gt;Bright Workout&lt;/mat-sq-button&gt;
+    &lt;mat-sq-button [icon]&#x3D;&quot;faMoon&quot;&gt;Moody Chillout&lt;/mat-sq-button&gt;
+    &lt;mat-sq-button [icon]&#x3D;&quot;faHandSparkles&quot;&gt;Photo Lights&lt;/mat-sq-button&gt;
+  &lt;/div&gt;
+  &lt;h2&gt;Zones&lt;/h2&gt;
+  &lt;mat-slide-toggle [ngModel]&#x3D;&quot;lightCardio&quot;&gt;Cardio Area&lt;/mat-slide-toggle&gt;
+  &lt;mat-slide-toggle&gt;Stretching Area&lt;/mat-slide-toggle&gt;
+  &lt;mat-slide-toggle&gt;Weight Lifting Area&lt;/mat-slide-toggle&gt;
+  &lt;p&gt;Please note that emergency lighting and motion-activated lights can not be controlled via the app.&lt;/p&gt;
 &lt;/mat-dialog-content&gt;
 &lt;mat-dialog-actions align&#x3D;&quot;end&quot;&gt;
   &lt;!--  &lt;button mat-button mat-dialog-close&#x3D;&quot;mat-dialog-close&quot;&gt;Cancel&lt;/button&gt;--&gt;
@@ -220,7 +357,17 @@ export class LightsHelpComponent {
                 <p class="comment">
                     <code>./lights-help.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">mat-slide-toggle {
+  display: block;
+  margin-bottom: var(--min-content-wrap-margin);
+}
+.scene-grid {
+  display: grid;
+  gap: var(--min-content-wrap-margin);
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -248,7 +395,7 @@ export class LightsHelpComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h2 mat-dialog-title>Lights</h2><mat-dialog-content class="mat-typography">  <div>Lights in this Gym can be controlled using the following switches:</div>  <mat-sq-button [icon]="faLightbulb" [disabled]="true">Turn Light On</mat-sq-button>  <mat-sq-button [icon]="faLightbulb">Turn Light Off</mat-sq-button></mat-dialog-content><mat-dialog-actions align="end">  <!--  <button mat-button mat-dialog-close="mat-dialog-close">Cancel</button>-->  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>OK</button></mat-dialog-actions></div>'
+        var COMPONENT_TEMPLATE = '<div><h2 mat-dialog-title>Lights</h2><mat-dialog-content class="mat-typography">  <p>This Gym is equipped with smart lights.</p>  <p>Use the following buttons to control them:</p>  <h2>Scenes</h2>  <div class="scene-grid">    <mat-sq-button [icon]="faSun">Bright Workout</mat-sq-button>    <mat-sq-button [icon]="faMoon">Moody Chillout</mat-sq-button>    <mat-sq-button [icon]="faHandSparkles">Photo Lights</mat-sq-button>  </div>  <h2>Zones</h2>  <mat-slide-toggle [ngModel]="lightCardio">Cardio Area</mat-slide-toggle>  <mat-slide-toggle>Stretching Area</mat-slide-toggle>  <mat-slide-toggle>Weight Lifting Area</mat-slide-toggle>  <p>Please note that emergency lighting and motion-activated lights can not be controlled via the app.</p></mat-dialog-content><mat-dialog-actions align="end">  <!--  <button mat-button mat-dialog-close="mat-dialog-close">Cancel</button>-->  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>OK</button></mat-dialog-actions></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BaseComponent', 'selector': ''},{'name': 'BlindsHelpComponent', 'selector': 'app-blinds-help'},{'name': 'BookGymComponent', 'selector': 'app-book-gym'},{'name': 'ButtonComponent', 'selector': 'storybook-button'},{'name': 'ClimateHelpComponent', 'selector': 'app-climate-help'},{'name': 'DoorHelpComponent', 'selector': 'app-door-help'},{'name': 'GymCardComponent', 'selector': 'app-gym-card'},{'name': 'HeaderComponent', 'selector': 'storybook-header'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconListComponent', 'selector': 'app-icon-list'},{'name': 'IconListItemComponent', 'selector': 'app-icon-list-item'},{'name': 'InfobannerComponent', 'selector': 'app-infobanner'},{'name': 'LightsHelpComponent', 'selector': 'app-lights'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MatAccordionResponsiveComponent', 'selector': 'mat-accordion-responsive'},{'name': 'MatSqButtonComponent', 'selector': 'mat-sq-button'},{'name': 'MediacontrolComponent', 'selector': 'app-mediacontrol'},{'name': 'PageComponent', 'selector': 'storybook-page'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RoomComponent', 'selector': 'app-room'},{'name': 'TaskComponent', 'selector': 'app-task'},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'},{'name': 'WorkoutToolsComponent', 'selector': 'app-workout-tools'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'LightsHelpComponent'};
