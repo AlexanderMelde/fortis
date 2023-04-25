@@ -4,7 +4,23 @@
   height: 90px;
   width: 90px;
 }
+mat-card {
+  margin-top: var(--min-content-wrap-margin);
+}
+mat-card-header {
+  gap: var(--min-content-wrap-margin);
+}
+mat-card-header mat-card-title-group {
+  flex-grow: 1;
 
+}
+mat-card-header .exp_progress {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--min-content-wrap-margin) / 2);
+  margin-right: calc(var(--min-content-wrap-margin) / 2);
+  white-space: nowrap;
+}
 mat-card-subtitle {
   font-size: 1rem;
 }
@@ -12,10 +28,13 @@ mat-card-subtitle {
 mat-card-title {
   font-size: 2.5rem;
 }
-
-mat-card {
-  margin-top: var(--min-content-wrap-margin);
+.user_description{
+  font-style: italic;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 2.1rem;
 }
+
 
 .user-settings {
   display: flex;

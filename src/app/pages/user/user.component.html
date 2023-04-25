@@ -2,18 +2,22 @@
   <mat-card>
     <mat-card-header>
       <div mat-card-avatar class="example-profile-image"></div>
-      <mat-card-subtitle>{{titles[title]}}</mat-card-subtitle>
-      <mat-card-title>{{username ? username : 'Anonymous'}}</mat-card-title>
-      <mat-card-subtitle>
-        <!--        <mat-icon color="primary">public</mat-icon>-->
-        <!--        <mat-icon>face</mat-icon>-->
-        <span *ngIf="show_age"><mat-icon>cake</mat-icon>
-          {{getAge()}} years old. </span>
-
-      </mat-card-subtitle>
+      <mat-card-title-group>
+        <mat-card-subtitle>{{titles[title]}}</mat-card-subtitle>
+        <mat-card-title>{{username ? username : 'Anonymous'}}</mat-card-title>
+        <mat-card-subtitle>
+          <span *ngIf="show_age"><mat-icon>cake</mat-icon> {{getAge()}} years old. </span>
+        </mat-card-subtitle>
+      </mat-card-title-group>
+      <div class="exp_progress">
+        <mat-icon>star</mat-icon>
+        <div>
+          Level 34 <mat-progress-bar mode="determinate" value="51"></mat-progress-bar> 512/1000 EXP
+        </div>
+      </div>
     </mat-card-header>
     <mat-card-content>
-      <p>{{user_description}}</p>
+      <p class="user_description">{{user_description}}</p>
       <mat-divider class="divider-with-margin"></mat-divider>
       <h2>Settings</h2>
       <p>Manage your profile here..</p>
