@@ -1,3 +1,47 @@
+.getting-started-card {
+  margin-bottom: calc(2 * var(--min-content-wrap-margin));
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+
+}
+.getting-started-card .header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 16px 0;
+}
+.getting-started-card fa-icon {
+  padding: 0 4px 3px;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  gap: var(--min-content-wrap-margin);
+}
+/*.step p {*/
+/*  margin-bottom: 0;*/
+/*}*/
+.step mat-card-title {
+  margin-bottom: 6px;
+}
+.step img {
+  width: calc(100% - 2 * var(--min-content-wrap-margin));
+  margin: var(--min-content-wrap-margin) auto 0;
+  display: block;
+  height: 90px;
+  border-radius: 10px;
+}
+.step .user {
+  margin: var(--min-content-wrap-margin) 0;
+  font-size: 1.3em;
+  text-align: center;
+
+}
+.getting-started-card code {
+  font-size: 3rem;
+  display: block;
+  line-height: initial;
+  padding: var(--min-content-wrap-margin) 0;
+  text-align: center;
+}
 
 .room-details-card {
   margin-bottom: var(--min-content-wrap-margin);

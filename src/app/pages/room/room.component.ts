@@ -9,7 +9,7 @@ import {
   faFan,
   faHotTubPerson,
   faLightbulb,
-  faLocationPin,
+  faLocationPin, faLockOpen,
   faPersonBiking,
   faPersonBooth, faPumpSoap, faRing,
   faSheetPlastic,
@@ -31,6 +31,14 @@ import {TimerService} from "../../services/timer.service";
   styleUrls: ['./room.component.css']
 })
 export class RoomComponent extends BaseComponent implements OnInit, OnDestroy {
+  protected readonly event = event;
+  protected readonly faBottleDroplet = faBottleDroplet;
+  protected readonly faSoap = faSoap;
+  protected readonly faPumpSoap = faPumpSoap;
+  protected readonly faWheatAwn = faWheatAwn;
+  protected readonly faVault = faVault;
+  protected readonly faTarp = faTarp;
+  protected readonly faRing = faRing;
   faLocationPin = faLocationPin;
   faClock = faClock;
   faUser = faUser;
@@ -53,7 +61,7 @@ export class RoomComponent extends BaseComponent implements OnInit, OnDestroy {
   musicProgress: number | undefined;
   musicIsPaused: boolean | undefined;
   musicIsFav: boolean | undefined;
-
+  showGettingStarted: boolean = true;
   constructor(private _bottomSheet: MatBottomSheet, private data: DataService, private timer: TimerService) {
     super()
   }
@@ -89,12 +97,6 @@ export class RoomComponent extends BaseComponent implements OnInit, OnDestroy {
     }
     event.stopPropagation();
   }
-  protected readonly event = event;
-  protected readonly faBottleDroplet = faBottleDroplet;
-  protected readonly faSoap = faSoap;
-  protected readonly faPumpSoap = faPumpSoap;
-  protected readonly faWheatAwn = faWheatAwn;
-  protected readonly faVault = faVault;
-  protected readonly faTarp = faTarp;
-  protected readonly faRing = faRing;
+
+  protected readonly faLockOpen = faLockOpen;
 }
