@@ -1,0 +1,4 @@
+.trainer-cards-container {
+  display: flex;
+  gap: var(--min-content-wrap-margin)
+}

@@ -1,4 +1,36 @@
 <div class="content_width_wrapper">
   <mat-card-title>Book a personal trainer</mat-card-title>
-  <p>This site is under construction!</p>
+<!--  <p>This site is under construction!</p>-->
+  <mat-stepper
+    #stepper
+    class="example-stepper"
+    [orientation]="(stepperOrientation | async)!">
+
+    <mat-step [stepControl]="secondFormGroup" label="Personal Trainer">
+      <p>The following personal trainers are available:</p>
+      <div class="trainer-cards-container">
+        <app-trainer-card name="Jessy" [stepper]="stepper"></app-trainer-card>
+        <app-trainer-card name="José" [stepper]="stepper"></app-trainer-card>
+      </div>
+
+      <div class="trainer-buttons">
+        <a mat-button routerLink="/room" >Continue without a Trainer</a>
+      </div>
+      <!--        </form>-->
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Review</ng-template>
+      <p>You are about to invite personal trainer <b>Jessy</b> to your
+        booking Gymbox <b>BERLIN CITY CENTER</b> on {{DateTime.now().setLocale('en').toLocaleString(DateTime.DATE_MED)}} from 14:15 - 15:45.</p>
+      <p>Your payment method (**** **** **** *324) will
+        be charged an additional <b>32.45€</b>.</p>
+
+      <div class="extras-buttons">
+        <button mat-button matStepperPrevious>Back</button>
+        <a mat-button routerLink="/home">Confirm Booking</a>
+        <!--          TODO: Great Confirmation / Success Page once confirmed -->
+        <!--          TODO: Show cancellation policy -->
+      </div>
+    </mat-step>
+  </mat-stepper>
 </div>

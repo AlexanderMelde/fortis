@@ -14,10 +14,10 @@
             <mat-card class="demo-inline-calendar-card">
               <mat-calendar [(selected)]="selected_date"></mat-calendar>
             </mat-card>
-            <p>Selected date: {{selected_date?.setLocale('en')?.toLocaleString(DateTime.DATE_MED)}}
+            <p>Selected date: {{selected_date.setLocale('en').toLocaleString(DateTime.DATE_MED)}}
           </div>
           <div class="time-picker">
-            The following slots are available {{selected_date?.toRelativeCalendar({locale: "en"})}}:
+            The following slots are available {{selected_date.toRelativeCalendar({locale: "en"})}}:
             <mat-nav-list>
               <a mat-list-item (click)="stepper.next()">
                 <span matListItemTitle>12:30 - 14:00</span>
@@ -53,7 +53,7 @@
 <!--        </form>-->
       </mat-step>
       <mat-step [stepControl]="secondFormGroup" label="Personal Trainer">
-        <p>On {{selected_date?.setLocale('en')?.toLocaleString(DateTime.DATE_MED)}} from 14:15 - 15:45, the following personal trainers are available:</p>
+        <p>On {{selected_date.setLocale('en').toLocaleString(DateTime.DATE_MED)}} from 14:15 - 15:45, the following personal trainers are available:</p>
         <div class="trainer-cards-container">
           <app-trainer-card name="Jessy" [stepper]="stepper"></app-trainer-card>
           <app-trainer-card name="José" [stepper]="stepper"></app-trainer-card>
@@ -88,12 +88,15 @@
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Review</ng-template>
-        <p>You are about to book the Gymbox <b>BERLIN CITY CENTER</b> on {{selected_date?.setLocale('en')?.toLocaleString(DateTime.DATE_MED)}} from 14:15 - 15:45.</p>
+        <p>You are about to book the Gymbox <b>BERLIN CITY CENTER</b> on {{selected_date.setLocale('en').toLocaleString(DateTime.DATE_MED)}} from 14:15 - 15:45.</p>
         <p>You will be joined by our personal trainer <b>Jessy</b> and your friend <b>Mark</b></p>
+        <p>Your payment method (**** **** **** *324) will be charged a total of <b>32.45€</b>.</p>
+
         <div class="extras-buttons">
           <button mat-button matStepperPrevious>Back</button>
           <a mat-button routerLink="/home">Confirm Booking</a>
 <!--          TODO: Great Confirmation / Success Page once confirmed -->
+<!--          TODO: Show cancellation policy -->
         </div>
       </mat-step>
     </mat-stepper>
