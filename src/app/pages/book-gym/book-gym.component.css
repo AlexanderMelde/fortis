@@ -4,3 +4,27 @@
 mat-card {
   overflow: hidden;
 }
+.side-by-side-time-date-picker {
+  display: flex;
+  flex-direction: row;
+  /*margin-top: var(--min-content-wrap-margin);*/
+  gap: var(--min-content-wrap-margin);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.date-picker{
+  width: min(350px, 100%);
+  flex-grow: 0;
+}
+.time-picker {
+  min-width: min(200px, 100%);
+  flex-grow: 1;
+}
+.trainer-cards-container {
+  display: flex;
+  gap: var(--min-content-wrap-margin)
+}
+.trainer-buttons, .extras-buttons {
+  display: flex;
+  justify-content: space-between;
+}

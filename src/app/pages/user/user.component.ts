@@ -17,6 +17,7 @@ export class UserComponent extends BaseComponent implements OnInit, OnDestroy {
   user_description: string | undefined;
   birthday = new FormControl(DateTime.fromISO("1998-05-25T09:24"));
   show_age = false;
+  show_location = true;
   fitness_levels = ["No Experience", "Beginner", "Intermediate", "Professional", "Expert"]
   fitness_level = 0;
   body_types = ["Male", "Female", "Other"]
@@ -26,7 +27,13 @@ export class UserComponent extends BaseComponent implements OnInit, OnDestroy {
   title = 0;
   height = 180;
   weight = 80;
-
+  card_number: string = "4485 2346 1044 3070";
+  card_expires: string = "12/24";
+  card_cvc: string = "334";
+  location: string = "Karlsruhe";
+  full_name: string = "Kim Steele"
+  email: string = "k.steele@gmail.com"
+  phone_nr: string = "+49 15569 709824"
   getAge() {
     let age = this.birthday.value?.diffNow('years')?.years;
     if (age !== undefined) {
@@ -51,5 +58,13 @@ export class UserComponent extends BaseComponent implements OnInit, OnDestroy {
     }
   }
 
+  censorString(s: string|undefined, show_last: number = 3, show_first: number = 0): string {
+    if (s != undefined) {
+      let stars = "*".repeat(s.length);
+      return s.slice(0, show_first) + stars.slice(show_first, -show_last) + s.slice(-show_last);
+    }else{
+      return ""
+    }
+  }
 }
 

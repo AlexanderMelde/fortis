@@ -10,7 +10,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatChipsModule} from "@angular/material/chips";
 
-import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatRippleModule} from "@angular/material/core";
+import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MatLineModule, MatRippleModule} from "@angular/material/core";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatDividerModule} from "@angular/material/divider";
@@ -69,6 +69,7 @@ import { MediacontrolComponent } from './modals/mediacontrol/mediacontrol.compon
 import { BookingCardComponent } from './ui-components/booking-card/booking-card.component';
 import { BookTrainerComponent } from './pages/book-trainer/book-trainer.component';
 import { SocialComponent } from './modals/social/social.component';
+import { TrainerCardComponent } from './ui-components/trainer-card/trainer-card.component';
 
 const MODULE_DATE_FORMATS = {
   parse: {
@@ -112,46 +113,48 @@ const MODULE_DATE_FORMATS = {
     BookingCardComponent,
     BookTrainerComponent,
     SocialComponent,
+    TrainerCardComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    FontAwesomeModule,
-    MatSlideToggleModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    MatProgressSpinnerModule,
-    MatDividerModule,
-    MatDialogModule,
-    MatTabsModule,
-    MatSliderModule,
-    MatSidenavModule,
-    MatCheckboxModule,
-    MatListModule,
-    MatSnackBarModule,
-    MatProgressBarModule,
-    MatStepperModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatChipsModule,
-    MatRadioModule,
-    MatExpansionModule,
-    MatDatepickerModule,
-    MatLuxonDateModule,
-    NgOptimizedImage,
-    MatBottomSheetModule,
-    MatRippleModule,
-    MatMenuModule,
-    MatBadgeModule,
-    MatTooltipModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        FontAwesomeModule,
+        MatSlideToggleModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatCardModule,
+        MatProgressSpinnerModule,
+        MatDividerModule,
+        MatDialogModule,
+        MatTabsModule,
+        MatSliderModule,
+        MatSidenavModule,
+        MatCheckboxModule,
+        MatListModule,
+        MatSnackBarModule,
+        MatProgressBarModule,
+        MatStepperModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatChipsModule,
+        MatRadioModule,
+        MatExpansionModule,
+        MatDatepickerModule,
+        MatLuxonDateModule,
+        NgOptimizedImage,
+        MatBottomSheetModule,
+        MatRippleModule,
+        MatMenuModule,
+        MatBadgeModule,
+        MatTooltipModule,
+        MatLineModule
+    ],
   providers: [
     {provide: MAT_LUXON_DATE_ADAPTER_OPTIONS, useValue: {useUtc: true}},
     {provide: DateAdapter, useClass: LuxonDateAdapter, deps: [MAT_DATE_LOCALE, MAT_LUXON_DATE_ADAPTER_OPTIONS]},

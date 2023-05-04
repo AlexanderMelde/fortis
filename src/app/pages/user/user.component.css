@@ -82,3 +82,7 @@ mat-divider.divider-with-margin {
   width: 24px;
   padding: 12px;
 }
+.update-pw-button {
+  margin-left: auto;
+  display: block;
+}

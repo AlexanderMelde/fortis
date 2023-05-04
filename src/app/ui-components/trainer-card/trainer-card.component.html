@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-content>
+    <img class="trainer-image" ngSrc="https://source.unsplash.com/100x100/?sports+coach" alt="Photo of a Trainer" height="100" width="100">
+
+    <div class="name">{{name}}</div>
+
+    Specializations:
+    <ul>
+      <li>Yoga</li>
+      <li>Core Strength</li>
+    </ul>
+
+    <mat-divider class="divider-with-margin"></mat-divider>
+    <mat-card-actions align="end">
+      <a mat-button (click)="stepper?.next()"> Book Trainer</a>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

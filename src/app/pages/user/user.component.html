@@ -7,6 +7,7 @@
         <mat-card-title>{{username ? username : 'Anonymous'}}</mat-card-title>
         <mat-card-subtitle>
           <span *ngIf="show_age"><mat-icon>cake</mat-icon> {{getAge()}} years old. </span>
+          <span *ngIf="show_location"><mat-icon>place</mat-icon> {{location}} </span>
         </mat-card-subtitle>
       </mat-card-title-group>
       <div class="exp_progress">
@@ -37,7 +38,7 @@
           <p>Describe how you want to be seen by other users.</p>
           <div class="user-settings">
             <mat-form-field>
-              <mat-label>Name</mat-label>
+              <mat-label>Username</mat-label>
               <input matInput [(ngModel)]="username" (ngModelChange)="setUsername()">
               <mat-icon matSuffix>public</mat-icon>
             </mat-form-field>
@@ -62,6 +63,11 @@
 
             <div class="form-field-layout">
               <mat-checkbox class="ml-3" [(ngModel)]="show_age">Show my age ({{getAge()}}) on my public profile.</mat-checkbox>
+              <mat-icon matSuffix>public</mat-icon>
+            </div>
+
+            <div class="form-field-layout">
+              <mat-checkbox class="ml-3" [(ngModel)]="show_location">Show my location ({{location}}) on my public profile.</mat-checkbox>
               <mat-icon matSuffix>public</mat-icon>
             </div>
 
@@ -123,7 +129,7 @@
               </mat-panel-description>
             </div>
           </mat-expansion-panel-header>
-          <p>This health data will never been shown to other users</p>
+          <p>This health data will never be shown to other users</p>
           <div class="user-settings">
             <mat-form-field>
               <mat-label>Body type</mat-label>
@@ -155,6 +161,96 @@
               </mat-form-field>
             </div>
           </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <div class="mat-expansion-panel-header-content">
+              <mat-panel-title>
+                <span>Payment Profile</span>
+              </mat-panel-title>
+              <mat-panel-description>
+                <span>{{full_name}}, {{location}}, {{censorString(card_number, 3)}}</span>
+              </mat-panel-description>
+            </div>
+          </mat-expansion-panel-header>
+          <p>Your payment information will never be shown to other users</p>
+          <div class="user-settings">
+            <mat-form-field>
+              <mat-label>Full Name</mat-label>
+              <input matInput [(ngModel)]="full_name">
+              <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Location</mat-label>
+              <input matInput [(ngModel)]="location">
+              <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Card Number</mat-label>
+              <input matInput [(ngModel)]="card_number">
+              <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+            <div class="input-row">
+              <mat-form-field>
+                <mat-label>Expires</mat-label>
+                <input matInput [(ngModel)]="card_expires">
+                <mat-icon matSuffix>lock</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>CVC</mat-label>
+                <input matInput [(ngModel)]="card_cvc" maxlength="4">
+                <mat-icon matSuffix>lock</mat-icon>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <div class="mat-expansion-panel-header-content">
+              <mat-panel-title>
+                <span>Security</span>
+              </mat-panel-title>
+              <mat-panel-description>
+                <span>{{censorString(email, 7, 3)}}, {{censorString(phone_nr, 3, 3)}}</span>
+              </mat-panel-description>
+            </div>
+          </mat-expansion-panel-header>
+          <p>Your account information will never be shown to other users</p>
+          <div class="user-settings">
+            <mat-form-field>
+              <mat-label>E-Mail</mat-label>
+              <input matInput type="email" [(ngModel)]="email" disabled>
+              <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+            <button mat-stroked-button class="update-pw-button">Update E-Mail Address</button>
+            <mat-form-field>
+              <mat-label>Phone Number</mat-label>
+              <input matInput type="phone" [(ngModel)]="phone_nr" disabled>
+              <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+            <button mat-stroked-button class="update-pw-button">Update Phone Number</button>
+
+            <p>Change Password</p>
+            <mat-form-field>
+              <mat-label>Old Password</mat-label>
+              <input matInput type="password" [(ngModel)]="location">
+              <mat-icon matSuffix>lock</mat-icon>
+            </mat-form-field>
+            <div class="input-row">
+              <mat-form-field>
+                <mat-label>New Password</mat-label>
+                <input matInput type="password">
+                <mat-icon matSuffix>lock</mat-icon>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Repeat New Password</mat-label>
+                <input matInput type="password">
+                <mat-icon matSuffix>lock</mat-icon>
+              </mat-form-field>
+            </div>
+          </div>
+          <button mat-stroked-button class="update-pw-button">Update Password</button>
+
         </mat-expansion-panel>
       </mat-accordion-responsive>
 

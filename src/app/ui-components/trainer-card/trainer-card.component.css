@@ -1,0 +1,10 @@
+.trainer-image {
+  margin: 0 auto;
+  border-radius: 50%;
+  display: block;
+}
+.name {
+  margin: calc(var(--min-content-wrap-margin) / 2) 0;
+  text-align: center;
+  font-weight: bold;
+}
