@@ -39,7 +39,7 @@
   <li>Components</li>
   <li
   >
-  WorkoutToolsComponent</li>
+  TrainerCardComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -65,7 +65,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/modals/workout-tools/workout-tools.component.ts</code>
+    <code>src/app/ui-components/trainer-card/trainer-card.component.ts</code>
 </p>
 
 
@@ -90,19 +90,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-workout-tools</code></td>
+                <td class="col-md-9"><code>app-trainer-card</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./workout-tools.component.css</code></td>
+                <td class="col-md-9"><code>./trainer-card.component.css</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./workout-tools.component.html</code></td>
+                <td class="col-md-9"><code>./trainer-card.component.html</code></td>
             </tr>
 
 
@@ -120,28 +120,21 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+
+
                 <tr>
                     <td class="col-md-4">
-                        <h6><b>Properties</b></h6>
+                        <h6><b>Inputs</b></h6>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Protected</span>
-                                    <span class="modifier">Readonly</span>
-                                <a href="#faArrowsSpin" >faArrowsSpin</a>
+                                <a href="#name" >name</a>
                             </li>
                             <li>
-                                    <span class="modifier">Protected</span>
-                                    <span class="modifier">Readonly</span>
-                                <a href="#faCalculator" >faCalculator</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Protected</span>
-                                    <span class="modifier">Readonly</span>
-                                <a href="#faClock" >faClock</a>
+                                <a href="#stepper" >stepper</a>
                             </li>
                         </ul>
                     </td>
@@ -150,144 +143,115 @@
 
 
 
-
-
         </tbody>
     </table>
 </section>
-
-
-
-
-
 
 
     <section>
-    
-    <h3 id="inputs">
-        Properties
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="faArrowsSpin"></a>
-                    <span class="name">
-                            <span class="modifier">Protected</span>
-                            <span class="modifier">Readonly</span>
-                        <span ><b>faArrowsSpin</b></span>
-                        <a href="#faArrowsSpin"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>faArrowsSpin</code>
+                        <a name="name"></a>
+                        <b>name</b>
                     </td>
                 </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/modals/workout-tools/workout-tools.component.ts:12</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="faCalculator"></a>
-                    <span class="name">
-                            <span class="modifier">Protected</span>
-                            <span class="modifier">Readonly</span>
-                        <span ><b>faCalculator</b></span>
-                        <a href="#faCalculator"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>faCalculator</code>
+                        <i>Type : </i>    <code>string | undefined</code>
+
                     </td>
                 </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/modals/workout-tools/workout-tools.component.ts:13</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="faClock"></a>
-                    <span class="name">
-                            <span class="modifier">Protected</span>
-                            <span class="modifier">Readonly</span>
-                        <span ><b>faClock</b></span>
-                        <a href="#faClock"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/ui-components/trainer-card/trainer-card.component.ts:10</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>faClock</code>
+                        <a name="stepper"></a>
+                        <b>stepper</b>
                     </td>
                 </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/modals/workout-tools/workout-tools.component.ts:11</a></div>
-                        </td>
-                    </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatStepper | undefined</code>
 
-
-        </tbody>
-    </table>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/ui-components/trainer-card/trainer-card.component.ts:11</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
 </section>
+
+
+
+
 
 </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import {faClock, faArrowsSpin, faCalculator} from &quot;@fortawesome/free-solid-svg-icons&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Component, Input} from &#x27;@angular/core&#x27;;
+import {MatStepper} from &quot;@angular/material/stepper&quot;;
 
 @Component({
-  selector: &#x27;app-workout-tools&#x27;,
-  templateUrl: &#x27;./workout-tools.component.html&#x27;,
-  styleUrls: [&#x27;./workout-tools.component.css&#x27;]
+  selector: &#x27;app-trainer-card&#x27;,
+  templateUrl: &#x27;./trainer-card.component.html&#x27;,
+  styleUrls: [&#x27;./trainer-card.component.css&#x27;]
 })
-export class WorkoutToolsComponent {
-
-  protected readonly faClock &#x3D; faClock;
-  protected readonly faArrowsSpin &#x3D; faArrowsSpin;
-  protected readonly faCalculator &#x3D; faCalculator;
+export class TrainerCardComponent {
+  @Input() name: string | undefined;
+  @Input() stepper: MatStepper | undefined;
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;h4&gt;Workout&lt;br/&gt;Tools&lt;/h4&gt;
-&lt;mat-divider&gt;&lt;/mat-divider&gt;
-&lt;mat-sq-button [icon]&#x3D;&quot;faClock&quot;&gt;Interval Timer&lt;/mat-sq-button&gt;
-&lt;mat-sq-button [icon]&#x3D;&quot;faArrowsSpin&quot;&gt;Rep Counter&lt;/mat-sq-button&gt;
-&lt;mat-sq-button [icon]&#x3D;&quot;faCalculator&quot;&gt;Calorie Calc&lt;/mat-sq-button&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;mat-card&gt;
+  &lt;mat-card-content&gt;
+    &lt;img class&#x3D;&quot;trainer-image&quot; ngSrc&#x3D;&quot;https://source.unsplash.com/100x100/?sports+coach&quot; alt&#x3D;&quot;Photo of a Trainer&quot; height&#x3D;&quot;100&quot; width&#x3D;&quot;100&quot;&gt;
+
+    &lt;div class&#x3D;&quot;name&quot;&gt;{{name}}&lt;/div&gt;
+
+    Specializations:
+    &lt;ul&gt;
+      &lt;li&gt;Yoga&lt;/li&gt;
+      &lt;li&gt;Core Strength&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;mat-divider class&#x3D;&quot;divider-with-margin&quot;&gt;&lt;/mat-divider&gt;
+    &lt;mat-card-actions align&#x3D;&quot;end&quot;&gt;
+      &lt;a mat-button (click)&#x3D;&quot;stepper?.next()&quot;&gt; Book Trainer&lt;/a&gt;
+    &lt;/mat-card-actions&gt;
+  &lt;/mat-card-content&gt;
+&lt;/mat-card&gt;
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
-                    <code>./workout-tools.component.css</code>
+                    <code>./trainer-card.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">mat-sq-button, h4, mat-divider  {
-  margin: var(--min-content-wrap-margin);
+                <pre class="line-numbers"><code class="language-scss">.trainer-image {
+  margin: 0 auto;
+  border-radius: 50%;
   display: block;
+}
+.name {
+  margin: calc(var(--min-content-wrap-margin) / 2) 0;
   text-align: center;
+  font-weight: bold;
 }
 </code></pre>
     </div>
@@ -317,10 +281,10 @@ export class WorkoutToolsComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h4>Workout<br/>Tools</h4><mat-divider></mat-divider><mat-sq-button [icon]="faClock">Interval Timer</mat-sq-button><mat-sq-button [icon]="faArrowsSpin">Rep Counter</mat-sq-button><mat-sq-button [icon]="faCalculator">Calorie Calc</mat-sq-button></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-card>  <mat-card-content>    <img class="trainer-image" ngSrc="https://source.unsplash.com/100x100/?sports+coach" alt="Photo of a Trainer" height="100" width="100">    <div class="name">{{name}}</div>    Specializations:    <ul>      <li>Yoga</li>      <li>Core Strength</li>    </ul>    <mat-divider class="divider-with-margin"></mat-divider>    <mat-card-actions align="end">      <a mat-button (click)="stepper?.next()"> Book Trainer</a>    </mat-card-actions>  </mat-card-content></mat-card></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BaseComponent', 'selector': ''},{'name': 'BlindsHelpComponent', 'selector': 'app-blinds-help'},{'name': 'BookGymComponent', 'selector': 'app-book-gym'},{'name': 'BookingCardComponent', 'selector': 'app-booking-card'},{'name': 'BookTrainerComponent', 'selector': 'app-book-trainer'},{'name': 'ButtonComponent', 'selector': 'storybook-button'},{'name': 'ClimateHelpComponent', 'selector': 'app-climate-help'},{'name': 'DoorHelpComponent', 'selector': 'app-door-help'},{'name': 'GymCardComponent', 'selector': 'app-gym-card'},{'name': 'HeaderComponent', 'selector': 'storybook-header'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconListComponent', 'selector': 'app-icon-list'},{'name': 'IconListItemComponent', 'selector': 'app-icon-list-item'},{'name': 'InfobannerComponent', 'selector': 'app-infobanner'},{'name': 'LightsHelpComponent', 'selector': 'app-lights'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MatAccordionResponsiveComponent', 'selector': 'mat-accordion-responsive'},{'name': 'MatSqButtonComponent', 'selector': 'mat-sq-button'},{'name': 'MediacontrolComponent', 'selector': 'app-mediacontrol'},{'name': 'PageComponent', 'selector': 'storybook-page'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RoomComponent', 'selector': 'app-room'},{'name': 'SocialComponent', 'selector': 'app-social'},{'name': 'TaskComponent', 'selector': 'app-task'},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'TrainerCardComponent', 'selector': 'app-trainer-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'},{'name': 'WorkoutToolsComponent', 'selector': 'app-workout-tools'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'WorkoutToolsComponent'};
+    var ACTUAL_COMPONENT = {'name': 'TrainerCardComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -366,7 +330,7 @@ export class WorkoutToolsComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'WorkoutToolsComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'TrainerCardComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
