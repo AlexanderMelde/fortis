@@ -1,5 +1,7 @@
 import {Component, HostListener} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
 import {Router} from "@angular/router";
+import {SocialComponent} from "./modals/social/social.component";
 
 @Component({
   selector: 'app-root',
@@ -32,7 +34,7 @@ export class AppComponent {
   ];
   activeLinkIndex = -1;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public dialog: MatDialog) {
     // this.navLinks =
     this.getScreenSize();
 
@@ -51,6 +53,12 @@ export class AppComponent {
       // else{
       //   this.activeLinkIndex = 3;
       // }
+    });
+  }
+
+  openNotifications(): void {
+    const dialogRef = this.dialog.open(SocialComponent, {
+      // data: {name: this.name, animal: this.animal},
     });
   }
 }

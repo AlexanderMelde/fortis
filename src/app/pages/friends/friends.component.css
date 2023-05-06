@@ -1,0 +1,23 @@
+code {
+  font-size: 3rem;
+  display: block;
+  line-height: initial;
+  padding: var(--min-content-wrap-margin) 0;
+  text-align: center;
+}
+h1 {
+  margin-top: calc(2*var(--min-content-wrap-margin));
+}
+.title-with-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.friends_code .buttons {
+  margin-bottom: var(--min-content-wrap-margin);
+  display: flex;
+  justify-content: center;
+  gap: var(--min-content-wrap-margin);
+
+
+}

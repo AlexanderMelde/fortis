@@ -57,3 +57,7 @@ mat-sidenav.nav_side {
   text-decoration: inherit;
 
 }
+.nav-end, .nav-start {
+  display: flex;
+  gap: var(--min-content-wrap-margin);
+}

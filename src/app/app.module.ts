@@ -70,6 +70,7 @@ import { BookingCardComponent } from './ui-components/booking-card/booking-card.
 import { BookTrainerComponent } from './pages/book-trainer/book-trainer.component';
 import { SocialComponent } from './modals/social/social.component';
 import { TrainerCardComponent } from './ui-components/trainer-card/trainer-card.component';
+import { FriendsComponent } from './pages/friends/friends.component';
 
 const MODULE_DATE_FORMATS = {
   parse: {
@@ -114,6 +115,7 @@ const MODULE_DATE_FORMATS = {
     BookTrainerComponent,
     SocialComponent,
     TrainerCardComponent,
+    FriendsComponent,
   ],
     imports: [
         BrowserModule,

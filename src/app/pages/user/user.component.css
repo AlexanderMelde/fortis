@@ -9,10 +9,12 @@ mat-card {
 }
 mat-card-header {
   gap: var(--min-content-wrap-margin);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 mat-card-header mat-card-title-group {
   flex-grow: 1;
-
+  width: auto;
 }
 mat-card-header .exp_progress {
   display: flex;

@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {AboutComponent} from './pages/about/about.component';
 import {BookGymComponent} from "./pages/book-gym/book-gym.component";
 import {BookTrainerComponent} from "./pages/book-trainer/book-trainer.component";
+import {FriendsComponent} from "./pages/friends/friends.component";
 import {HomeComponent} from './pages/home/home.component';
 import {LoginComponent} from "./pages/login/login.component";
 import {PageNotFoundComponent} from "./pages/page-not-found/page-not-found.component";
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'friends', component: FriendsComponent},
   {path: 'book_trainer', component: BookTrainerComponent},
   {path: '', redirectTo: '/welcome', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}

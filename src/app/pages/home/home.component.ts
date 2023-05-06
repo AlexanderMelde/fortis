@@ -23,7 +23,8 @@ export class HomeComponent implements OnInit {
 
   usernameSubscription: Subscription | undefined;
 
-  constructor(private apiService: ApiService, private _snackBar: MatSnackBar, private data: DataService, public dialog: MatDialog) {
+  constructor(private apiService: ApiService, private _snackBar: MatSnackBar,
+              private data: DataService, public dialog: MatDialog) {
   }
 
   ngOnInit() {

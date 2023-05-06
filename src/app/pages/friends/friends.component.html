@@ -1,0 +1,26 @@
+<div class="content_width_wrapper">
+
+<mat-card>
+  <mat-card-content class="friends_code">
+    <mat-card-title>Your Friends Code</mat-card-title>
+    <code>4379-8348-1524</code>
+    <div class="buttons">
+      <button mat-stroked-button><mat-icon>assignment</mat-icon> Copy</button>
+      <button mat-stroked-button (click)='share_friend_code()'><mat-icon>share</mat-icon> Share</button>
+    </div>
+    Share this with your friends to add them.
+  </mat-card-content>
+</mat-card>
+  <div class="title-with-btn">
+    <h1>Friends</h1>
+    <button mat-stroked-button><mat-icon>person_add</mat-icon> Add Friend</button>
+  </div>
+  <mat-list>
+    <mat-list-item *ngFor="let number of [1,2,3]">
+      <img matListItemAvatar src="https://source.unsplash.com/100x100/?portrait" alt="Profile Picture">
+      <h3 matListItemTitle>David Wheaton</h3>
+      <p matListItemLine>Last Training 3 days ago.</p>
+    </mat-list-item>
+
+  </mat-list>
+</div>

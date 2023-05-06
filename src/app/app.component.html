@@ -4,11 +4,19 @@
               (click)="sidenavStart.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
+          <a aria-label="Example icon-button with a bell icon" mat-icon-button class="notification-button"  (click)="openNotifications()" matTooltip="Notifications">
+      <mat-icon matBadge="1" matBadgeColor="accent"  >notifications</mat-icon>
+    </a>
+
     </span>
   <span class="nav-mid">
       <a routerLink="/home" class="title_link">GYMBOX</a>
     </span>
   <span class="nav-end">
+    <a mat-icon-button class="example-icon" aria-label="Button to open the user profile."
+       routerLink="/friends">
+      <mat-icon>group</mat-icon>
+      </a>
       <a mat-icon-button class="example-icon face-icon profile-image-bg" aria-label="Button to open the user profile."
          routerLink="/user">
       </a>
@@ -39,7 +47,9 @@
       </a>
       <mat-divider></mat-divider>
       <a mat-list-item routerLink="/user">User</a>
-      <a mat-list-item routerLink="/book_gym">Book gym</a>
+      <a mat-list-item routerLink="/book_gym">Book Gym</a>
+      <a mat-list-item routerLink="/book_trainer">Book Trainer</a>
+      <a mat-list-item routerLink="/friends">Friends</a>
       <mat-divider></mat-divider>
       <a mat-list-item routerLink="/welcome">Welcome</a>
       <a mat-list-item routerLink="/login">Login</a>
