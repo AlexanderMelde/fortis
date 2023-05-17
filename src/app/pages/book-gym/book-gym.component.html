@@ -7,7 +7,7 @@
       [orientation]="(stepperOrientation | async)!">
       <mat-step [stepControl]="firstFormGroup" label="Time & Date">
         You have selected the following gym:
-        <app-gym-card name="GYMBOX BERLIN" description="12€"></app-gym-card>
+        <app-gym-card name="FORTIS BERLIN" description="12€"></app-gym-card>
         <p>This gym can be booked in the following time slots:</p>
         <div class="side-by-side-time-date-picker">
           <div class="date-picker">
@@ -88,7 +88,7 @@
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Review</ng-template>
-        <p>You are about to book the Gymbox <b>BERLIN CITY CENTER</b> on {{selected_date.setLocale('en').toLocaleString(DateTime.DATE_MED)}} from 14:15 - 15:45.</p>
+        <p>You are about to book the Fortis <b>BERLIN CITY CENTER</b> on {{selected_date.setLocale('en').toLocaleString(DateTime.DATE_MED)}} from 14:15 - 15:45.</p>
         <p>You will be joined by our personal trainer <b>Jessy</b> and your friend <b>Mark</b></p>
         <p>Your payment method (**** **** **** *324) will be charged a total of <b>32.45€</b>.</p>
 

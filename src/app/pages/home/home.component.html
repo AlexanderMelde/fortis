@@ -10,9 +10,9 @@
   </div>
 </div>
   <div class="bookings">
-    <app-booking-card name="GYMBOX Berlin" description="City Center" [ongoing]="true" [date]="DateTime.now().minus({ minutes: 32 })"
+    <app-booking-card name="FORTIS Berlin" description="City Center" [ongoing]="true" [date]="DateTime.now().minus({ minutes: 32 })"
                       [duration]="Duration.fromObject({minutes: 90})" course="Make you sweat core workout" coach="Jessy"></app-booking-card>
-    <app-booking-card  *ngFor="let number of [1,2,3]" [date]="DateTime.now().plus({ days: number, hours: number*2 })" name="GYMBOX Berlin"
+    <app-booking-card  *ngFor="let number of [1,2,3]" [date]="DateTime.now().plus({ days: number, hours: number*2 })" name="FORTIS Berlin"
                        description="City Center" course="Relaxmax Yoga" coach="José"></app-booking-card>
   </div>
 <div class="content_width_wrapper">
@@ -26,7 +26,7 @@
   <p><mat-card-title>
     <ng-container *ngIf="gym_list_show_all === undefined">Available</ng-container>
     <ng-container *ngIf="gym_list_show_all === 'show_all'">All</ng-container>
-    Gymboxes
+    Gyms
   </mat-card-title></p>
   <div class="list_filters">
     <mat-form-field appearance="fill">
@@ -53,7 +53,7 @@
     <mat-card>
       <mat-card-header>
         <mat-card-subtitle>Connection Error</mat-card-subtitle>
-        <mat-card-title>Could not connect to GYMBOX database</mat-card-title>
+        <mat-card-title>Could not connect to FORTIS database</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <p>Please view the contents of the other pages of this app.</p>
@@ -66,7 +66,7 @@
       </mat-card-actions>
     </mat-card>
     <h3 style="padding-top: 12px">Offline List of nearby Gyms:</h3>
-    <app-gym-card *ngFor="let number of [0,1]" name="GYMBOX BERLIN" description="12€"></app-gym-card>
+    <app-gym-card *ngFor="let number of [0,1]" name="FORTIS BERLIN" description="12€"></app-gym-card>
 
   </div>
 

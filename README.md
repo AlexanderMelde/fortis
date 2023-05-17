@@ -1,13 +1,13 @@
-# GYMBOX
+# FORTIS
 
-GYMBOX is a one-of-a-kind premium private gym rental solution. Book your gym, workout privately, anytime, anywhere, you
+FORTIS is a one-of-a-kind premium private gym rental solution. Book your gym, workout privately, anytime, anywhere, you
 decide!
 
-This repository serves the clickdummy prototype for the upcoming GYMBOX app.
+This repository serves the clickdummy prototype for the upcoming FORTIS app.
 
 ## Usage
 
-Just open the readily built website at https://alexandermelde.github.io/gymbox/ and select "gymbox" to view the current
+Just open the readily built website at https://alexandermelde.github.io/fortis/ and select "fortis" to view the current
 development release of this webpage.
 
 To serve locally, refer to the development section below.

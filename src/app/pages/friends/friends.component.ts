@@ -21,7 +21,7 @@ export class FriendsComponent {
     }
 
     this.ngNavigatorShareService.share({
-      title: '4379-8348-1524', text: 'Add me on GYMBOX: 4379 8348 1524', url: 'https://gymbox-placeholder.com/friend/add/4379-8348-1524'
+      title: '4379-8348-1524', text: 'Add me on FORTIS: 4379 8348 1524', url: 'https://fortis-placeholder.com/friend/add/4379-8348-1524'
     }).then((response) => {
       console.log(response);
     })

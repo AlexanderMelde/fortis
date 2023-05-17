@@ -24,7 +24,7 @@ jobs:
         run: npm run build-gh
 
       - name: Copy App Index to 404
-        run: cp ./dist/gymbox/index.html ./dist/gymbox/404.html
+        run: cp ./dist/fortis/index.html ./dist/fortis/404.html
 
       - name: Build Storybook
         run: npm run build-storybook

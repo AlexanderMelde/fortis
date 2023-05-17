@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "gymbox": {
+    "fortis": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/gymbox",
+            "outputPath": "dist/fortis",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "gymbox:build:production"
+              "browserTarget": "fortis:build:production"
             },
             "development": {
-              "browserTarget": "gymbox:build:development"
+              "browserTarget": "fortis:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gymbox:build"
+            "browserTarget": "fortis:build"
           }
         },
         "test": {
@@ -99,14 +99,14 @@
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
-            "browserTarget": "gymbox:serve-storybook",
+            "browserTarget": "fortis:serve-storybook",
             "port": 6006
           }
         },
         "storybook-docs": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
-            "browserTarget": "gymbox:serve-storybook",
+            "browserTarget": "fortis:serve-storybook",
             "port": 6007,
             "docs": true
           }
@@ -115,7 +115,7 @@
           "builder": "@storybook/angular:build-storybook",
           "options": {
             "outputDir": "dist/storybook",
-            "browserTarget": "gymbox:serve-storybook"
+            "browserTarget": "fortis:serve-storybook"
           }
         },
         "build-storybook-docs": {
@@ -123,7 +123,7 @@
           "options": {
             "docs": true,
             "outputDir": "dist/storybook-docs",
-            "browserTarget": "gymbox:serve-storybook"
+            "browserTarget": "fortis:serve-storybook"
           }
         },
         "serve-storybook": {
@@ -140,11 +140,11 @@
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "gymbox:serve"
+            "devServerTarget": "fortis:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "gymbox:serve:production"
+              "devServerTarget": "fortis:serve:production"
             }
           }
         },
@@ -158,27 +158,27 @@
         "ct": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "gymbox:serve",
+            "devServerTarget": "fortis:serve",
             "watch": true,
             "headless": false,
             "testingType": "component"
           },
           "configurations": {
             "development": {
-              "devServerTarget": "gymbox:serve:development"
+              "devServerTarget": "fortis:serve:development"
             }
           }
         },
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "gymbox:serve",
+            "devServerTarget": "fortis:serve",
             "watch": true,
             "headless": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "gymbox:serve:production"
+              "devServerTarget": "fortis:serve:production"
             }
           }
         }
