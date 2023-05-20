@@ -7,7 +7,7 @@
       [orientation]="(stepperOrientation | async)!">
       <mat-step [stepControl]="firstFormGroup" label="Time & Date">
         You have selected the following gym:
-        <app-gym-card name="FORTIS BERLIN" description="12€"></app-gym-card>
+        <app-gym-card name="FORTIS BERLIN" description="Description"></app-gym-card>
         <p>This gym can be booked in the following time slots:</p>
         <div class="side-by-side-time-date-picker">
           <div class="date-picker">
@@ -66,8 +66,8 @@
 <!--                   required>-->
 <!--          </mat-form-field>-->
           <div class="trainer-buttons">
-            <button mat-button matStepperPrevious>Change Time</button>
-            <button mat-button matStepperNext>Continue without a Trainer</button>
+            <button mat-button matStepperPrevious color="primary">Change Time</button>
+            <button mat-button mat-raised-button matStepperNext color="primary">Continue without a Trainer</button>
           </div>
 <!--        </form>-->
       </mat-step>
@@ -81,8 +81,8 @@
 <!--        </form>-->
         <p>No extras available.</p>
         <div class="extras-buttons">
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Review Booking</button>
+          <button mat-button matStepperPrevious color="primary">Back</button>
+          <button mat-button matStepperNext mat-raised-button color="primary">Review Booking</button>
         </div>
 
       </mat-step>
@@ -93,8 +93,8 @@
         <p>Your payment method (**** **** **** *324) will be charged a total of <b>32.45€</b>.</p>
 
         <div class="extras-buttons">
-          <button mat-button matStepperPrevious>Back</button>
-          <a mat-button routerLink="/home">Confirm Booking</a>
+          <button mat-button matStepperPrevious color="primary">Back</button>
+          <a mat-button routerLink="/home" mat-raised-button color="primary">Confirm Booking</a>
 <!--          TODO: Great Confirmation / Success Page once confirmed -->
 <!--          TODO: Show cancellation policy -->
         </div>

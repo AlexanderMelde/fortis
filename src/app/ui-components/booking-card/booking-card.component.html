@@ -5,7 +5,7 @@
       <mat-card-subtitle>{{date?.toFormat('HH:mm')}} – {{date?.plus({minutes: 90})?.toFormat('HH:mm')}}</mat-card-subtitle>
   </div>
 
-    <button *ngIf="ongoing" mat-stroked-button class="start-button"  routerLink="/room">
+    <button *ngIf="ongoing" mat-raised-button class="start-button" color="primary"  routerLink="/room">
       START
     </button>
     <button *ngIf="!ongoing"  aria-label="Example icon-button with a bell icon" mat-icon-button

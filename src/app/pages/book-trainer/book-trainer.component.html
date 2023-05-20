@@ -1,5 +1,5 @@
 <div class="content_width_wrapper">
-  <mat-card-title>Book a personal trainer</mat-card-title>
+  <mat-card-title>Book a Personal Trainer</mat-card-title>
 <!--  <p>This site is under construction!</p>-->
   <mat-stepper
     #stepper
@@ -7,14 +7,14 @@
     [orientation]="(stepperOrientation | async)!">
 
     <mat-step [stepControl]="secondFormGroup" label="Personal Trainer">
-      <p>The following personal trainers are available:</p>
+      <p>Available personal trainers:</p>
       <div class="trainer-cards-container">
-        <app-trainer-card name="Jessy" [stepper]="stepper"></app-trainer-card>
-        <app-trainer-card name="José" [stepper]="stepper"></app-trainer-card>
+        <app-trainer-card name="Jessy" [stepper]="stepper" primary></app-trainer-card>
+        <app-trainer-card name="José" [stepper]="stepper" primary></app-trainer-card>
       </div>
 
       <div class="trainer-buttons">
-        <a mat-button routerLink="/room" >Continue without a Trainer</a>
+        <a mat-button color="primary" routerLink="/room" >Continue without a Trainer</a>
       </div>
       <!--        </form>-->
     </mat-step>
@@ -26,8 +26,8 @@
         be charged an additional <b>32.45€</b>.</p>
 
       <div class="extras-buttons">
-        <button mat-button matStepperPrevious>Back</button>
-        <a mat-button routerLink="/home">Confirm Booking</a>
+        <button mat-button matStepperPrevious color="primary">Back</button>
+        <a mat-button routerLink="/home" mat-raised-button color="primary">Confirm Booking</a>
         <!--          TODO: Great Confirmation / Success Page once confirmed -->
         <!--          TODO: Show cancellation policy -->
       </div>

@@ -52,7 +52,7 @@ describe('GymCardComponent', () => {
     component.name = 'My Gym';
     fixture.detectChanges();
     const items = fixture.nativeElement.querySelectorAll('app-icon-list-item');
-    expect(items.length).toEqual(3);
+    expect(items.length).toEqual(2);
     expect(items[0].querySelector('span b').textContent).toContain(component.name);
   });
 

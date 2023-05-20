@@ -7,13 +7,13 @@
   <mat-card-content>
     <app-icon-list>
       <app-icon-list-item [icon]="faLocationPin" [name]="name" description="City Center"></app-icon-list-item>
-      <app-icon-list-item [icon]="faUser" name="Make you sweat core workout with Jessy"></app-icon-list-item>
+<!--      <app-icon-list-item [icon]="faUser" name="Make you sweat core workout with Jessy"></app-icon-list-item>-->
       <app-icon-list-item [icon]="faClock" name="12:30 - 14:00"
-                          description="(73 minutes remaining)"></app-icon-list-item>
+                          description="next available slot"></app-icon-list-item>
     </app-icon-list>
     <mat-divider class="divider-with-margin"></mat-divider>
     <mat-card-actions align="end">
-      <a mat-button routerLink="/book_gym"> Book gym</a>
+      <a mat-button mat-raised-button color="primary" routerLink="/book_gym"> Book gym</a>
     </mat-card-actions>
   </mat-card-content>
 

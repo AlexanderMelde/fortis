@@ -37,10 +37,19 @@
           </mat-error>
         </mat-form-field>
 
+<!--        TODO: Move Invite Code to separate screen. -->
+        <mat-form-field class="full-width-form-input" appearance="outline">
+          <mat-label>Invitation Code</mat-label>
+          <input type="email" matInput [formControl]="registerForm.controls.inviteCode">
+          <mat-error *ngIf="registerForm.controls.inviteCode.hasError('required')">
+            You need to be invited to join Fortis.
+          </mat-error>
+        </mat-form-field>
+
         <div class="spreaded_buttons">
           <button color="primary" mat-raised-button  type="submit" [disabled]="!registerForm.valid">Register</button>
           <div>
-            <a mat-button routerLink="/login">Login to existing Account</a>
+            <a mat-button routerLink="/login" color="primary">Login to existing Account</a>
           </div>
         </div>
       </form>

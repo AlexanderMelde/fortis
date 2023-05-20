@@ -51,6 +51,7 @@ mat-sidenav.nav_side {
   position: sticky;
   top: 0;
   z-index: 5;
+  gap: var(--min-content-wrap-margin);
 }
 .title_link {
   color: inherit;
@@ -60,4 +61,22 @@ mat-sidenav.nav_side {
 .nav-end, .nav-start {
   display: flex;
   gap: var(--min-content-wrap-margin);
+}
+.nav-mid {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-mid a {
+  height: 100%;
+  max-height: calc(100% - 2 * var(--min-content-wrap-margin) );
+  display: flex;
+  align-items: center;
+}
+.nav-mid a img {
+  max-height: 100%;
+  max-width: 100%;
+  vertical-align: middle;
 }

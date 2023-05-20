@@ -1,6 +1,7 @@
 <mat-card>
   <mat-card-content>
-    <img class="trainer-image" ngSrc="https://source.unsplash.com/100x100/?sports+coach" alt="Photo of a Trainer" height="100" width="100">
+    <img class="trainer-image" ngSrc="https://source.unsplash.com/100x100/?sports+coach" alt="Photo of a Trainer"
+         height="100" width="100">
 
     <div class="name">{{name}}</div>
 
@@ -12,7 +13,8 @@
 
     <mat-divider class="divider-with-margin"></mat-divider>
     <mat-card-actions align="end">
-      <a mat-button (click)="stepper?.next()"> Book Trainer</a>
+      <a *ngIf="primary" mat-button (click)="stepper?.next()" mat-raised-button color="primary"> Book Trainer</a>
+      <a *ngIf="!primary" mat-button (click)="stepper?.next()" mat-stroked-button color="primary"> Book Trainer</a>
     </mat-card-actions>
   </mat-card-content>
 </mat-card>

@@ -16,13 +16,13 @@
                        description="City Center" course="Relaxmax Yoga" coach="José"></app-booking-card>
   </div>
 <div class="content_width_wrapper">
-  <mat-card-actions class="workout-from-home">
-    <mat-card-subtitle>Want to start right away?</mat-card-subtitle>
-    <button mat-button mat-stroked-button routerLink="/room">
-      Workout from Home
-      <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>
-    </button>
-  </mat-card-actions>
+<!--  <mat-card-actions class="workout-from-home">-->
+<!--    <mat-card-subtitle>Want to start right away?</mat-card-subtitle>-->
+<!--    <button mat-button mat-stroked-button routerLink="/room">-->
+<!--      Workout from Home-->
+<!--      <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>-->
+<!--    </button>-->
+<!--  </mat-card-actions>-->
   <p><mat-card-title>
     <ng-container *ngIf="gym_list_show_all === undefined">Available</ng-container>
     <ng-container *ngIf="gym_list_show_all === 'show_all'">All</ng-container>
@@ -50,26 +50,26 @@
 
   <div *ngIf="!isLoading && gyms.length === 0">
 
-    <mat-card>
-      <mat-card-header>
-        <mat-card-subtitle>Connection Error</mat-card-subtitle>
-        <mat-card-title>Could not connect to FORTIS database</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Please view the contents of the other pages of this app.</p>
-        <mat-divider></mat-divider>
-      </mat-card-content>
-      <mat-card-actions align="end">
-        <button mat-button color="primary" (click)="loadGyms()">
-          RETRY
-        </button>
-      </mat-card-actions>
-    </mat-card>
-    <h3 style="padding-top: 12px">Offline List of nearby Gyms:</h3>
-    <app-gym-card *ngFor="let number of [0,1]" name="FORTIS BERLIN" description="12€"></app-gym-card>
+<!--    <mat-card>-->
+<!--      <mat-card-header>-->
+<!--        <mat-card-subtitle>Connection Error</mat-card-subtitle>-->
+<!--        <mat-card-title>Could not connect to FORTIS database</mat-card-title>-->
+<!--      </mat-card-header>-->
+<!--      <mat-card-content>-->
+<!--        <p>Please view the contents of the other pages of this app.</p>-->
+<!--        <mat-divider></mat-divider>-->
+<!--      </mat-card-content>-->
+<!--      <mat-card-actions align="end">-->
+<!--        <button mat-button color="primary" (click)="loadGyms()">-->
+<!--          RETRY-->
+<!--        </button>-->
+<!--      </mat-card-actions>-->
+<!--    </mat-card>-->
+<!--    <h3 style="padding-top: 12px">Offline List of nearby Gyms:</h3>-->
+    <app-gym-card *ngFor="let number of [0,1]" name="FORTIS BERLIN" description="Short Description"></app-gym-card>
 
   </div>
 
-  <app-gym-card *ngFor="let gym of gyms" [name]="gym.name" description="{{gym.price}} $/ {{gym.quantity}}"></app-gym-card>
+  <app-gym-card *ngFor="let gym of gyms" [name]="gym.name" description="Short Description {{gym.price}} $/ {{gym.quantity}}"></app-gym-card>
 
 </div>

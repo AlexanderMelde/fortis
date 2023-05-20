@@ -14,7 +14,7 @@ import {
   faPersonBooth, faPumpSoap, faRing,
   faSheetPlastic,
   faShower, faSoap, faTarp,
-  faUser, faVault,
+  faUser, faVault, faVolumeHigh,
   faWeightHanging, faWheatAwn
 } from '@fortawesome/free-solid-svg-icons';
 import {BaseComponent} from "../../helpers/base/base.component";
@@ -39,21 +39,23 @@ export class RoomComponent extends BaseComponent implements OnInit, OnDestroy {
   protected readonly faVault = faVault;
   protected readonly faTarp = faTarp;
   protected readonly faRing = faRing;
-  faLocationPin = faLocationPin;
-  faClock = faClock;
-  faUser = faUser;
-  faLightbulb = faLightbulb;
-  faPersonBooth = faPersonBooth;
-  faDoorOpen = faDoorOpen;
-  faAngleRight = faAngleRight;
-  faDumbbell = faDumbbell;
-  faWeightHanging = faWeightHanging;
-  faPersonBiking = faPersonBiking;
-  faSheetPlastic = faSheetPlastic;
-  faShower = faShower;
-  faHotTubPerson = faHotTubPerson;
-  faFan = faFan;
-  faBottleWater = faBottleWater;
+  protected readonly faLockOpen = faLockOpen;
+  protected readonly faVolumeHigh = faVolumeHigh;
+  protected readonly faLocationPin = faLocationPin;
+  protected readonly faClock = faClock;
+  protected readonly faUser = faUser;
+  protected readonly faLightbulb = faLightbulb;
+  protected readonly faPersonBooth = faPersonBooth;
+  protected readonly faDoorOpen = faDoorOpen;
+  protected readonly faAngleRight = faAngleRight;
+  protected readonly faDumbbell = faDumbbell;
+  protected readonly faWeightHanging = faWeightHanging;
+  protected readonly faPersonBiking = faPersonBiking;
+  protected readonly faSheetPlastic = faSheetPlastic;
+  protected readonly faShower = faShower;
+  protected readonly faHotTubPerson = faHotTubPerson;
+  protected readonly faFan = faFan;
+  protected readonly faBottleWater = faBottleWater;
   LightsHelpComponent = LightsHelpComponent;
   BlindsHelpComponent = BlindsHelpComponent;
   ClimateHelpComponent = ClimateHelpComponent;
@@ -98,5 +100,5 @@ export class RoomComponent extends BaseComponent implements OnInit, OnDestroy {
     event.stopPropagation();
   }
 
-  protected readonly faLockOpen = faLockOpen;
+
 }

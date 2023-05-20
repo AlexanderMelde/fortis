@@ -23,13 +23,9 @@ export class AppComponent {
       link: '/home',
       index: 0
     }, {
-      label: 'Room',
+      label: 'My Reservation',
       link: '/room',
       index: 1
-    }, {
-      label: 'About',
-      link: '/about',
-      index: 2
     }
   ];
   activeLinkIndex = -1;

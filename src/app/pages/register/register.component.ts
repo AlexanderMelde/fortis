@@ -14,7 +14,8 @@ export class RegisterComponent {
   registerForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
-    confirmPassword: new FormControl('', Validators.required)
+    confirmPassword: new FormControl('', Validators.required),
+    inviteCode: new FormControl('', Validators.required)
   },
     [CustomValidators.MatchValidator('password', 'confirmPassword')]
   );

@@ -6,7 +6,7 @@
         <div>
           <mat-card-title>Your Reservation is starting soon!</mat-card-title>
 <!--          <mat-card-subtitle><b>Welcome!</b> Your reservation starts at <fa-icon [icon]="faClock"></fa-icon><b>12:30</b>.</mat-card-subtitle>-->
-          <mat-card-subtitle>Welcome, let's get you ready to go!</mat-card-subtitle>
+          <mat-card-subtitle>The door can be opened 5 minutes before booking</mat-card-subtitle>
         </div>
         <button aria-label="Example icon-button with a close icon" mat-icon-button
                 class="close-button" matTooltip="Close" (click)="showGettingStarted=false">
@@ -30,11 +30,11 @@
             <mat-card-title>2) Unlock</mat-card-title>
             Your <fa-icon [icon]="faLockOpen"></fa-icon> Door Unlock Code is:
             <code>5467</code>
-            Please confirm it with the <kbd>#</kbd> key.
+            Please confirm with the <kbd>#</kbd> key.
           </div>
           <div class="step">
             <mat-card-title>3) Workout</mat-card-title>
-            Your personal coach
+<!--            Your personal coach-->
             <div class="user"><fa-icon [icon]="faUser"></fa-icon> <b> Jessy</b> </div>
             has confirmed your booking and will arrive on time.
 
@@ -43,11 +43,11 @@
       </mat-card-content>
 
     </mat-card>
-    <h1>Current Workout</h1>
+    <h1>Your Reservation</h1>
     <mat-card class="room-details-card">
-      <mat-card-header>
-        <mat-card-title>Your Reservation</mat-card-title>
-      </mat-card-header>
+<!--      <mat-card-header>-->
+<!--        <mat-card-title>Your Reservation</mat-card-title>-->
+<!--      </mat-card-header>-->
       <img alt="Photo of a Gym" mat-card-image src="https://source.unsplash.com/1000x300/?gym">
       <mat-card-content>
         <app-icon-list>
@@ -93,6 +93,9 @@
       <mat-sq-button [icon]="faPersonBooth" [popup]="BlindsHelpComponent">
         Window Blinds
       </mat-sq-button>
+      <mat-sq-button [icon]="faVolumeHigh" (click)="openBottomSheet()">
+        Music Speaker
+      </mat-sq-button>
     </div>
   </section>
 
@@ -137,12 +140,12 @@
         <mat-sq-button [icon]="faShower" help_topic="help_shower">
           Shower
         </mat-sq-button>
-        <mat-sq-button [icon]="faHotTubPerson" help_topic="help_sauna">
-          Sauna
-        </mat-sq-button>
-        <mat-sq-button [icon]="faBottleWater" help_topic="help_drinks">
-          Drinks
-        </mat-sq-button>
+<!--        <mat-sq-button [icon]="faHotTubPerson" help_topic="help_sauna">-->
+<!--          Sauna-->
+<!--        </mat-sq-button>-->
+<!--        <mat-sq-button [icon]="faBottleWater" help_topic="help_drinks">-->
+<!--          Drinks-->
+<!--        </mat-sq-button>-->
         <mat-sq-button [icon]="faVault" help_topic="help_lockers">
           Lockers
         </mat-sq-button>
