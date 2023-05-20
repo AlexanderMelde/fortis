@@ -1022,13 +1022,13 @@ export class HomeComponent implements OnInit {
                        description&#x3D;&quot;City Center&quot; course&#x3D;&quot;Relaxmax Yoga&quot; coach&#x3D;&quot;José&quot;&gt;&lt;/app-booking-card&gt;
   &lt;/div&gt;
 &lt;div class&#x3D;&quot;content_width_wrapper&quot;&gt;
-  &lt;mat-card-actions class&#x3D;&quot;workout-from-home&quot;&gt;
-    &lt;mat-card-subtitle&gt;Want to start right away?&lt;/mat-card-subtitle&gt;
-    &lt;button mat-button mat-stroked-button routerLink&#x3D;&quot;/room&quot;&gt;
-      Workout from Home
-      &lt;fa-icon [icon]&#x3D;&quot;faAngleRight&quot; class&#x3D;&quot;caret_icon&quot;&gt;&lt;/fa-icon&gt;
-    &lt;/button&gt;
-  &lt;/mat-card-actions&gt;
+&lt;!--  &lt;mat-card-actions class&#x3D;&quot;workout-from-home&quot;&gt;--&gt;
+&lt;!--    &lt;mat-card-subtitle&gt;Want to start right away?&lt;/mat-card-subtitle&gt;--&gt;
+&lt;!--    &lt;button mat-button mat-stroked-button routerLink&#x3D;&quot;/room&quot;&gt;--&gt;
+&lt;!--      Workout from Home--&gt;
+&lt;!--      &lt;fa-icon [icon]&#x3D;&quot;faAngleRight&quot; class&#x3D;&quot;caret_icon&quot;&gt;&lt;/fa-icon&gt;--&gt;
+&lt;!--    &lt;/button&gt;--&gt;
+&lt;!--  &lt;/mat-card-actions&gt;--&gt;
   &lt;p&gt;&lt;mat-card-title&gt;
     &lt;ng-container *ngIf&#x3D;&quot;gym_list_show_all &#x3D;&#x3D;&#x3D; undefined&quot;&gt;Available&lt;/ng-container&gt;
     &lt;ng-container *ngIf&#x3D;&quot;gym_list_show_all &#x3D;&#x3D;&#x3D; &#x27;show_all&#x27;&quot;&gt;All&lt;/ng-container&gt;
@@ -1056,27 +1056,27 @@ export class HomeComponent implements OnInit {
 
   &lt;div *ngIf&#x3D;&quot;!isLoading &amp;&amp; gyms.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;
 
-    &lt;mat-card&gt;
-      &lt;mat-card-header&gt;
-        &lt;mat-card-subtitle&gt;Connection Error&lt;/mat-card-subtitle&gt;
-        &lt;mat-card-title&gt;Could not connect to FORTIS database&lt;/mat-card-title&gt;
-      &lt;/mat-card-header&gt;
-      &lt;mat-card-content&gt;
-        &lt;p&gt;Please view the contents of the other pages of this app.&lt;/p&gt;
-        &lt;mat-divider&gt;&lt;/mat-divider&gt;
-      &lt;/mat-card-content&gt;
-      &lt;mat-card-actions align&#x3D;&quot;end&quot;&gt;
-        &lt;button mat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;loadGyms()&quot;&gt;
-          RETRY
-        &lt;/button&gt;
-      &lt;/mat-card-actions&gt;
-    &lt;/mat-card&gt;
-    &lt;h3 style&#x3D;&quot;padding-top: 12px&quot;&gt;Offline List of nearby Gyms:&lt;/h3&gt;
-    &lt;app-gym-card *ngFor&#x3D;&quot;let number of [0,1]&quot; name&#x3D;&quot;FORTIS BERLIN&quot; description&#x3D;&quot;12€&quot;&gt;&lt;/app-gym-card&gt;
+&lt;!--    &lt;mat-card&gt;--&gt;
+&lt;!--      &lt;mat-card-header&gt;--&gt;
+&lt;!--        &lt;mat-card-subtitle&gt;Connection Error&lt;/mat-card-subtitle&gt;--&gt;
+&lt;!--        &lt;mat-card-title&gt;Could not connect to FORTIS database&lt;/mat-card-title&gt;--&gt;
+&lt;!--      &lt;/mat-card-header&gt;--&gt;
+&lt;!--      &lt;mat-card-content&gt;--&gt;
+&lt;!--        &lt;p&gt;Please view the contents of the other pages of this app.&lt;/p&gt;--&gt;
+&lt;!--        &lt;mat-divider&gt;&lt;/mat-divider&gt;--&gt;
+&lt;!--      &lt;/mat-card-content&gt;--&gt;
+&lt;!--      &lt;mat-card-actions align&#x3D;&quot;end&quot;&gt;--&gt;
+&lt;!--        &lt;button mat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;loadGyms()&quot;&gt;--&gt;
+&lt;!--          RETRY--&gt;
+&lt;!--        &lt;/button&gt;--&gt;
+&lt;!--      &lt;/mat-card-actions&gt;--&gt;
+&lt;!--    &lt;/mat-card&gt;--&gt;
+&lt;!--    &lt;h3 style&#x3D;&quot;padding-top: 12px&quot;&gt;Offline List of nearby Gyms:&lt;/h3&gt;--&gt;
+    &lt;app-gym-card *ngFor&#x3D;&quot;let number of [0,1]&quot; name&#x3D;&quot;FORTIS BERLIN&quot; description&#x3D;&quot;Short Description&quot;&gt;&lt;/app-gym-card&gt;
 
   &lt;/div&gt;
 
-  &lt;app-gym-card *ngFor&#x3D;&quot;let gym of gyms&quot; [name]&#x3D;&quot;gym.name&quot; description&#x3D;&quot;{{gym.price}} $/ {{gym.quantity}}&quot;&gt;&lt;/app-gym-card&gt;
+  &lt;app-gym-card *ngFor&#x3D;&quot;let gym of gyms&quot; [name]&#x3D;&quot;gym.name&quot; description&#x3D;&quot;Short Description {{gym.price}} $/ {{gym.quantity}}&quot;&gt;&lt;/app-gym-card&gt;
 
 &lt;/div&gt;
 </code></pre>
@@ -1156,7 +1156,7 @@ app-gym-card {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="content_width_wrapper">  <div class="welcome">    <div>      <p><mat-card-title>{{get_greeting()}} {{get_firstname()}}!</mat-card-title></p>      <p><mat-card-subtitle>Your upcoming bookings:</mat-card-subtitle></p>    </div>    <button aria-label="Example icon-button with a bell icon" mat-icon-button class="notification-button"  (click)="openNotifications()" matTooltip="Notifications">      <mat-icon matBadge="1" matBadgeColor="accent"  >notifications</mat-icon>    </button>  </div></div>  <div class="bookings">    <app-booking-card name="FORTIS Berlin" description="City Center" [ongoing]="true" [date]="DateTime.now().minus({ minutes: 32 })"                      [duration]="Duration.fromObject({minutes: 90})" course="Make you sweat core workout" coach="Jessy"></app-booking-card>    <app-booking-card  *ngFor="let number of [1,2,3]" [date]="DateTime.now().plus({ days: number, hours: number*2 })" name="FORTIS Berlin"                       description="City Center" course="Relaxmax Yoga" coach="José"></app-booking-card>  </div><div class="content_width_wrapper">  <mat-card-actions class="workout-from-home">    <mat-card-subtitle>Want to start right away?</mat-card-subtitle>    <button mat-button mat-stroked-button routerLink="/room">      Workout from Home      <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>    </button>  </mat-card-actions>  <p><mat-card-title>    <ng-container *ngIf="gym_list_show_all === undefined">Available</ng-container>    <ng-container *ngIf="gym_list_show_all === \'show_all\'">All</ng-container>    Gyms  </mat-card-title></p>  <div class="list_filters">    <mat-form-field appearance="fill">      <mat-label>Sort list</mat-label>      <mat-select [(value)]="gym_list_sorting">        <mat-option value="nearby">Nearby</mat-option>        <mat-option value="a_to_z">A-Z</mat-option>        <mat-option value="price">Price</mat-option>      </mat-select>    </mat-form-field>    <mat-chip-listbox aria-label="Select to show all or only available gyms" [(ngModel)]="gym_list_show_all">      <mat-chip-option value="show_all">Show All</mat-chip-option>    </mat-chip-listbox>  </div>  <mat-progress-bar    mode="indeterminate"    *ngIf="isLoading && gyms.length === 0">  </mat-progress-bar>  <div *ngIf="!isLoading && gyms.length === 0">    <mat-card>      <mat-card-header>        <mat-card-subtitle>Connection Error</mat-card-subtitle>        <mat-card-title>Could not connect to FORTIS database</mat-card-title>      </mat-card-header>      <mat-card-content>        <p>Please view the contents of the other pages of this app.</p>        <mat-divider></mat-divider>      </mat-card-content>      <mat-card-actions align="end">        <button mat-button color="primary" (click)="loadGyms()">          RETRY        </button>      </mat-card-actions>    </mat-card>    <h3 style="padding-top: 12px">Offline List of nearby Gyms:</h3>    <app-gym-card *ngFor="let number of [0,1]" name="FORTIS BERLIN" description="12€"></app-gym-card>  </div>  <app-gym-card *ngFor="let gym of gyms" [name]="gym.name" description="{{gym.price}} $/ {{gym.quantity}}"></app-gym-card></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="content_width_wrapper">  <div class="welcome">    <div>      <p><mat-card-title>{{get_greeting()}} {{get_firstname()}}!</mat-card-title></p>      <p><mat-card-subtitle>Your upcoming bookings:</mat-card-subtitle></p>    </div>    <button aria-label="Example icon-button with a bell icon" mat-icon-button class="notification-button"  (click)="openNotifications()" matTooltip="Notifications">      <mat-icon matBadge="1" matBadgeColor="accent"  >notifications</mat-icon>    </button>  </div></div>  <div class="bookings">    <app-booking-card name="FORTIS Berlin" description="City Center" [ongoing]="true" [date]="DateTime.now().minus({ minutes: 32 })"                      [duration]="Duration.fromObject({minutes: 90})" course="Make you sweat core workout" coach="Jessy"></app-booking-card>    <app-booking-card  *ngFor="let number of [1,2,3]" [date]="DateTime.now().plus({ days: number, hours: number*2 })" name="FORTIS Berlin"                       description="City Center" course="Relaxmax Yoga" coach="José"></app-booking-card>  </div><div class="content_width_wrapper"><!--  <mat-card-actions class="workout-from-home">--><!--    <mat-card-subtitle>Want to start right away?</mat-card-subtitle>--><!--    <button mat-button mat-stroked-button routerLink="/room">--><!--      Workout from Home--><!--      <fa-icon [icon]="faAngleRight" class="caret_icon"></fa-icon>--><!--    </button>--><!--  </mat-card-actions>-->  <p><mat-card-title>    <ng-container *ngIf="gym_list_show_all === undefined">Available</ng-container>    <ng-container *ngIf="gym_list_show_all === \'show_all\'">All</ng-container>    Gyms  </mat-card-title></p>  <div class="list_filters">    <mat-form-field appearance="fill">      <mat-label>Sort list</mat-label>      <mat-select [(value)]="gym_list_sorting">        <mat-option value="nearby">Nearby</mat-option>        <mat-option value="a_to_z">A-Z</mat-option>        <mat-option value="price">Price</mat-option>      </mat-select>    </mat-form-field>    <mat-chip-listbox aria-label="Select to show all or only available gyms" [(ngModel)]="gym_list_show_all">      <mat-chip-option value="show_all">Show All</mat-chip-option>    </mat-chip-listbox>  </div>  <mat-progress-bar    mode="indeterminate"    *ngIf="isLoading && gyms.length === 0">  </mat-progress-bar>  <div *ngIf="!isLoading && gyms.length === 0"><!--    <mat-card>--><!--      <mat-card-header>--><!--        <mat-card-subtitle>Connection Error</mat-card-subtitle>--><!--        <mat-card-title>Could not connect to FORTIS database</mat-card-title>--><!--      </mat-card-header>--><!--      <mat-card-content>--><!--        <p>Please view the contents of the other pages of this app.</p>--><!--        <mat-divider></mat-divider>--><!--      </mat-card-content>--><!--      <mat-card-actions align="end">--><!--        <button mat-button color="primary" (click)="loadGyms()">--><!--          RETRY--><!--        </button>--><!--      </mat-card-actions>--><!--    </mat-card>--><!--    <h3 style="padding-top: 12px">Offline List of nearby Gyms:</h3>-->    <app-gym-card *ngFor="let number of [0,1]" name="FORTIS BERLIN" description="Short Description"></app-gym-card>  </div>  <app-gym-card *ngFor="let gym of gyms" [name]="gym.name" description="Short Description {{gym.price}} $/ {{gym.quantity}}"></app-gym-card></div></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BaseComponent', 'selector': ''},{'name': 'BlindsHelpComponent', 'selector': 'app-blinds-help'},{'name': 'BookGymComponent', 'selector': 'app-book-gym'},{'name': 'BookingCardComponent', 'selector': 'app-booking-card'},{'name': 'BookTrainerComponent', 'selector': 'app-book-trainer'},{'name': 'ButtonComponent', 'selector': 'storybook-button'},{'name': 'ClimateHelpComponent', 'selector': 'app-climate-help'},{'name': 'DoorHelpComponent', 'selector': 'app-door-help'},{'name': 'FriendsComponent', 'selector': 'app-friends'},{'name': 'GymCardComponent', 'selector': 'app-gym-card'},{'name': 'HeaderComponent', 'selector': 'storybook-header'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconListComponent', 'selector': 'app-icon-list'},{'name': 'IconListItemComponent', 'selector': 'app-icon-list-item'},{'name': 'InfobannerComponent', 'selector': 'app-infobanner'},{'name': 'LightsHelpComponent', 'selector': 'app-lights'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MatAccordionResponsiveComponent', 'selector': 'mat-accordion-responsive'},{'name': 'MatSqButtonComponent', 'selector': 'mat-sq-button'},{'name': 'MediacontrolComponent', 'selector': 'app-mediacontrol'},{'name': 'PageComponent', 'selector': 'storybook-page'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RoomComponent', 'selector': 'app-room'},{'name': 'SocialComponent', 'selector': 'app-social'},{'name': 'TaskComponent', 'selector': 'app-task'},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'TrainerCardComponent', 'selector': 'app-trainer-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'},{'name': 'WorkoutToolsComponent', 'selector': 'app-workout-tools'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HomeComponent'};

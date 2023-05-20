@@ -341,7 +341,7 @@ export class BookTrainerComponent {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;content_width_wrapper&quot;&gt;
-  &lt;mat-card-title&gt;Book a personal trainer&lt;/mat-card-title&gt;
+  &lt;mat-card-title&gt;Book a Personal Trainer&lt;/mat-card-title&gt;
 &lt;!--  &lt;p&gt;This site is under construction!&lt;/p&gt;--&gt;
   &lt;mat-stepper
     #stepper
@@ -349,14 +349,14 @@ export class BookTrainerComponent {
     [orientation]&#x3D;&quot;(stepperOrientation | async)!&quot;&gt;
 
     &lt;mat-step [stepControl]&#x3D;&quot;secondFormGroup&quot; label&#x3D;&quot;Personal Trainer&quot;&gt;
-      &lt;p&gt;The following personal trainers are available:&lt;/p&gt;
+      &lt;p&gt;Available personal trainers:&lt;/p&gt;
       &lt;div class&#x3D;&quot;trainer-cards-container&quot;&gt;
-        &lt;app-trainer-card name&#x3D;&quot;Jessy&quot; [stepper]&#x3D;&quot;stepper&quot;&gt;&lt;/app-trainer-card&gt;
-        &lt;app-trainer-card name&#x3D;&quot;José&quot; [stepper]&#x3D;&quot;stepper&quot;&gt;&lt;/app-trainer-card&gt;
+        &lt;app-trainer-card name&#x3D;&quot;Jessy&quot; [stepper]&#x3D;&quot;stepper&quot; primary&gt;&lt;/app-trainer-card&gt;
+        &lt;app-trainer-card name&#x3D;&quot;José&quot; [stepper]&#x3D;&quot;stepper&quot; primary&gt;&lt;/app-trainer-card&gt;
       &lt;/div&gt;
 
       &lt;div class&#x3D;&quot;trainer-buttons&quot;&gt;
-        &lt;a mat-button routerLink&#x3D;&quot;/room&quot; &gt;Continue without a Trainer&lt;/a&gt;
+        &lt;a mat-button color&#x3D;&quot;primary&quot; routerLink&#x3D;&quot;/room&quot; &gt;Continue without a Trainer&lt;/a&gt;
       &lt;/div&gt;
       &lt;!--        &lt;/form&gt;--&gt;
     &lt;/mat-step&gt;
@@ -368,8 +368,8 @@ export class BookTrainerComponent {
         be charged an additional &lt;b&gt;32.45€&lt;/b&gt;.&lt;/p&gt;
 
       &lt;div class&#x3D;&quot;extras-buttons&quot;&gt;
-        &lt;button mat-button matStepperPrevious&gt;Back&lt;/button&gt;
-        &lt;a mat-button routerLink&#x3D;&quot;/home&quot;&gt;Confirm Booking&lt;/a&gt;
+        &lt;button mat-button matStepperPrevious color&#x3D;&quot;primary&quot;&gt;Back&lt;/button&gt;
+        &lt;a mat-button routerLink&#x3D;&quot;/home&quot; mat-raised-button color&#x3D;&quot;primary&quot;&gt;Confirm Booking&lt;/a&gt;
         &lt;!--          TODO: Great Confirmation / Success Page once confirmed --&gt;
         &lt;!--          TODO: Show cancellation policy --&gt;
       &lt;/div&gt;
@@ -415,7 +415,7 @@ export class BookTrainerComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="content_width_wrapper">  <mat-card-title>Book a personal trainer</mat-card-title><!--  <p>This site is under construction!</p>-->  <mat-stepper    #stepper    class="example-stepper"    [orientation]="(stepperOrientation | async)!">    <mat-step [stepControl]="secondFormGroup" label="Personal Trainer">      <p>The following personal trainers are available:</p>      <div class="trainer-cards-container">        <app-trainer-card name="Jessy" [stepper]="stepper"></app-trainer-card>        <app-trainer-card name="José" [stepper]="stepper"></app-trainer-card>      </div>      <div class="trainer-buttons">        <a mat-button routerLink="/room" >Continue without a Trainer</a>      </div>      <!--        </form>-->    </mat-step>    <mat-step>      <ng-template matStepLabel>Review</ng-template>      <p>You are about to invite personal trainer <b>Jessy</b> to your        booking Fortis <b>BERLIN CITY CENTER</b> on {{DateTime.now().setLocale(\'en\').toLocaleString(DateTime.DATE_MED)}} from 14:15 - 15:45.</p>      <p>Your payment method (**** **** **** *324) will        be charged an additional <b>32.45€</b>.</p>      <div class="extras-buttons">        <button mat-button matStepperPrevious>Back</button>        <a mat-button routerLink="/home">Confirm Booking</a>        <!--          TODO: Great Confirmation / Success Page once confirmed -->        <!--          TODO: Show cancellation policy -->      </div>    </mat-step>  </mat-stepper></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="content_width_wrapper">  <mat-card-title>Book a Personal Trainer</mat-card-title><!--  <p>This site is under construction!</p>-->  <mat-stepper    #stepper    class="example-stepper"    [orientation]="(stepperOrientation | async)!">    <mat-step [stepControl]="secondFormGroup" label="Personal Trainer">      <p>Available personal trainers:</p>      <div class="trainer-cards-container">        <app-trainer-card name="Jessy" [stepper]="stepper" primary></app-trainer-card>        <app-trainer-card name="José" [stepper]="stepper" primary></app-trainer-card>      </div>      <div class="trainer-buttons">        <a mat-button color="primary" routerLink="/room" >Continue without a Trainer</a>      </div>      <!--        </form>-->    </mat-step>    <mat-step>      <ng-template matStepLabel>Review</ng-template>      <p>You are about to invite personal trainer <b>Jessy</b> to your        booking Fortis <b>BERLIN CITY CENTER</b> on {{DateTime.now().setLocale(\'en\').toLocaleString(DateTime.DATE_MED)}} from 14:15 - 15:45.</p>      <p>Your payment method (**** **** **** *324) will        be charged an additional <b>32.45€</b>.</p>      <div class="extras-buttons">        <button mat-button matStepperPrevious color="primary">Back</button>        <a mat-button routerLink="/home" mat-raised-button color="primary">Confirm Booking</a>        <!--          TODO: Great Confirmation / Success Page once confirmed -->        <!--          TODO: Show cancellation policy -->      </div>    </mat-step>  </mat-stepper></div></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BaseComponent', 'selector': ''},{'name': 'BlindsHelpComponent', 'selector': 'app-blinds-help'},{'name': 'BookGymComponent', 'selector': 'app-book-gym'},{'name': 'BookingCardComponent', 'selector': 'app-booking-card'},{'name': 'BookTrainerComponent', 'selector': 'app-book-trainer'},{'name': 'ButtonComponent', 'selector': 'storybook-button'},{'name': 'ClimateHelpComponent', 'selector': 'app-climate-help'},{'name': 'DoorHelpComponent', 'selector': 'app-door-help'},{'name': 'FriendsComponent', 'selector': 'app-friends'},{'name': 'GymCardComponent', 'selector': 'app-gym-card'},{'name': 'HeaderComponent', 'selector': 'storybook-header'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconListComponent', 'selector': 'app-icon-list'},{'name': 'IconListItemComponent', 'selector': 'app-icon-list-item'},{'name': 'InfobannerComponent', 'selector': 'app-infobanner'},{'name': 'LightsHelpComponent', 'selector': 'app-lights'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MatAccordionResponsiveComponent', 'selector': 'mat-accordion-responsive'},{'name': 'MatSqButtonComponent', 'selector': 'mat-sq-button'},{'name': 'MediacontrolComponent', 'selector': 'app-mediacontrol'},{'name': 'PageComponent', 'selector': 'storybook-page'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RoomComponent', 'selector': 'app-room'},{'name': 'SocialComponent', 'selector': 'app-social'},{'name': 'TaskComponent', 'selector': 'app-task'},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'TrainerCardComponent', 'selector': 'app-trainer-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'},{'name': 'WorkoutToolsComponent', 'selector': 'app-workout-tools'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'BookTrainerComponent'};

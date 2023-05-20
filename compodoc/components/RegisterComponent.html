@@ -240,8 +240,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/pages/register/register.component.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/pages/register/register.component.ts:23</a></div>
                 </td>
             </tr>
 
@@ -279,7 +279,8 @@
                         <i>Default value : </i><code>new FormGroup({
     email: new FormControl(&#x27;&#x27;, [Validators.required, Validators.email]),
     password: new FormControl(&#x27;&#x27;, Validators.required),
-    confirmPassword: new FormControl(&#x27;&#x27;, Validators.required)
+    confirmPassword: new FormControl(&#x27;&#x27;, Validators.required),
+    inviteCode: new FormControl(&#x27;&#x27;, Validators.required)
   },
     [CustomValidators.MatchValidator(&#x27;password&#x27;, &#x27;confirmPassword&#x27;)]
   )</code>
@@ -343,7 +344,8 @@ export class RegisterComponent {
   registerForm &#x3D; new FormGroup({
     email: new FormControl(&#x27;&#x27;, [Validators.required, Validators.email]),
     password: new FormControl(&#x27;&#x27;, Validators.required),
-    confirmPassword: new FormControl(&#x27;&#x27;, Validators.required)
+    confirmPassword: new FormControl(&#x27;&#x27;, Validators.required),
+    inviteCode: new FormControl(&#x27;&#x27;, Validators.required)
   },
     [CustomValidators.MatchValidator(&#x27;password&#x27;, &#x27;confirmPassword&#x27;)]
   );
@@ -399,10 +401,19 @@ export class RegisterComponent {
           &lt;/mat-error&gt;
         &lt;/mat-form-field&gt;
 
+&lt;!--        TODO: Move Invite Code to separate screen. --&gt;
+        &lt;mat-form-field class&#x3D;&quot;full-width-form-input&quot; appearance&#x3D;&quot;outline&quot;&gt;
+          &lt;mat-label&gt;Invitation Code&lt;/mat-label&gt;
+          &lt;input type&#x3D;&quot;email&quot; matInput [formControl]&#x3D;&quot;registerForm.controls.inviteCode&quot;&gt;
+          &lt;mat-error *ngIf&#x3D;&quot;registerForm.controls.inviteCode.hasError(&#x27;required&#x27;)&quot;&gt;
+            You need to be invited to join Fortis.
+          &lt;/mat-error&gt;
+        &lt;/mat-form-field&gt;
+
         &lt;div class&#x3D;&quot;spreaded_buttons&quot;&gt;
           &lt;button color&#x3D;&quot;primary&quot; mat-raised-button  type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;!registerForm.valid&quot;&gt;Register&lt;/button&gt;
           &lt;div&gt;
-            &lt;a mat-button routerLink&#x3D;&quot;/login&quot;&gt;Login to existing Account&lt;/a&gt;
+            &lt;a mat-button routerLink&#x3D;&quot;/login&quot; color&#x3D;&quot;primary&quot;&gt;Login to existing Account&lt;/a&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/form&gt;
@@ -463,7 +474,7 @@ export class RegisterComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="content_width_wrapper small">  <mat-card>    <mat-card-header>      <mat-card-title>Register</mat-card-title>      <mat-card-subtitle>Create a new account</mat-card-subtitle>    </mat-card-header>    <mat-card-content>      <form class="login-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()"  >        <mat-form-field class="full-width-form-input" appearance="outline">          <mat-label>Email</mat-label>          <input type="email" matInput [formControl]="registerForm.controls.email"> <!--placeholder="pat@example.com"-->          <mat-error *ngIf="registerForm.controls.email.hasError(\'email\') && !registerForm.controls.email.hasError(\'required\')">            Please enter a valid email address          </mat-error>          <mat-error *ngIf="registerForm.controls.email.hasError(\'required\')">            Email is <strong>required</strong>          </mat-error>        </mat-form-field>        <mat-form-field class="full-width-form-input" appearance="outline">          <mat-label>Password</mat-label>          <input  matInput  [formControl]="registerForm.controls.password" name="password" type="password">          <mat-error *ngIf="registerForm.controls.password.hasError(\'required\')">            Password is <strong>required</strong>          </mat-error>        </mat-form-field>        <mat-form-field class="full-width-form-input" appearance="outline">          <mat-label>Confirm Password</mat-label>          <input  matInput  [formControl]="registerForm.controls.confirmPassword" name="password" type="password"><!--          <mat-error *ngIf="registerForm.controls.confirmPassword.hasError(\'required\')">--><!--            Confirm Password is <strong>required</strong>--><!--          </mat-error>-->          <mat-error *ngIf="registerForm.hasError(\'mismatch\')">            Passwords <strong>do not match</strong>          </mat-error>        </mat-form-field>        <div class="spreaded_buttons">          <button color="primary" mat-raised-button  type="submit" [disabled]="!registerForm.valid">Register</button>          <div>            <a mat-button routerLink="/login">Login to existing Account</a>          </div>        </div>      </form>    </mat-card-content>  </mat-card></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="content_width_wrapper small">  <mat-card>    <mat-card-header>      <mat-card-title>Register</mat-card-title>      <mat-card-subtitle>Create a new account</mat-card-subtitle>    </mat-card-header>    <mat-card-content>      <form class="login-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()"  >        <mat-form-field class="full-width-form-input" appearance="outline">          <mat-label>Email</mat-label>          <input type="email" matInput [formControl]="registerForm.controls.email"> <!--placeholder="pat@example.com"-->          <mat-error *ngIf="registerForm.controls.email.hasError(\'email\') && !registerForm.controls.email.hasError(\'required\')">            Please enter a valid email address          </mat-error>          <mat-error *ngIf="registerForm.controls.email.hasError(\'required\')">            Email is <strong>required</strong>          </mat-error>        </mat-form-field>        <mat-form-field class="full-width-form-input" appearance="outline">          <mat-label>Password</mat-label>          <input  matInput  [formControl]="registerForm.controls.password" name="password" type="password">          <mat-error *ngIf="registerForm.controls.password.hasError(\'required\')">            Password is <strong>required</strong>          </mat-error>        </mat-form-field>        <mat-form-field class="full-width-form-input" appearance="outline">          <mat-label>Confirm Password</mat-label>          <input  matInput  [formControl]="registerForm.controls.confirmPassword" name="password" type="password"><!--          <mat-error *ngIf="registerForm.controls.confirmPassword.hasError(\'required\')">--><!--            Confirm Password is <strong>required</strong>--><!--          </mat-error>-->          <mat-error *ngIf="registerForm.hasError(\'mismatch\')">            Passwords <strong>do not match</strong>          </mat-error>        </mat-form-field><!--        TODO: Move Invite Code to separate screen. -->        <mat-form-field class="full-width-form-input" appearance="outline">          <mat-label>Invitation Code</mat-label>          <input type="email" matInput [formControl]="registerForm.controls.inviteCode">          <mat-error *ngIf="registerForm.controls.inviteCode.hasError(\'required\')">            You need to be invited to join Fortis.          </mat-error>        </mat-form-field>        <div class="spreaded_buttons">          <button color="primary" mat-raised-button  type="submit" [disabled]="!registerForm.valid">Register</button>          <div>            <a mat-button routerLink="/login" color="primary">Login to existing Account</a>          </div>        </div>      </form>    </mat-card-content>  </mat-card></div></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BaseComponent', 'selector': ''},{'name': 'BlindsHelpComponent', 'selector': 'app-blinds-help'},{'name': 'BookGymComponent', 'selector': 'app-book-gym'},{'name': 'BookingCardComponent', 'selector': 'app-booking-card'},{'name': 'BookTrainerComponent', 'selector': 'app-book-trainer'},{'name': 'ButtonComponent', 'selector': 'storybook-button'},{'name': 'ClimateHelpComponent', 'selector': 'app-climate-help'},{'name': 'DoorHelpComponent', 'selector': 'app-door-help'},{'name': 'FriendsComponent', 'selector': 'app-friends'},{'name': 'GymCardComponent', 'selector': 'app-gym-card'},{'name': 'HeaderComponent', 'selector': 'storybook-header'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'IconListComponent', 'selector': 'app-icon-list'},{'name': 'IconListItemComponent', 'selector': 'app-icon-list-item'},{'name': 'InfobannerComponent', 'selector': 'app-infobanner'},{'name': 'LightsHelpComponent', 'selector': 'app-lights'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MatAccordionResponsiveComponent', 'selector': 'mat-accordion-responsive'},{'name': 'MatSqButtonComponent', 'selector': 'mat-sq-button'},{'name': 'MediacontrolComponent', 'selector': 'app-mediacontrol'},{'name': 'PageComponent', 'selector': 'storybook-page'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RoomComponent', 'selector': 'app-room'},{'name': 'SocialComponent', 'selector': 'app-social'},{'name': 'TaskComponent', 'selector': 'app-task'},{'name': 'TaskListComponent', 'selector': 'app-task-list'},{'name': 'TrainerCardComponent', 'selector': 'app-trainer-card'},{'name': 'UserComponent', 'selector': 'app-user'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'},{'name': 'WorkoutToolsComponent', 'selector': 'app-workout-tools'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'RegisterComponent'};
