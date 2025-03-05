@@ -8,7 +8,7 @@ for (let i = 1; i <= 30; i++) {
       name: faker.address.city(),
       description: faker.lorem.sentences(),
       price: faker.commerce.price(),
-      imageUrl: "https://source.unsplash.com/1600x900/?gym",
+      imageUrl: "https://placecats.com/1600/900/?gym",
       quantity: faker.datatype.number()
     });
 }
